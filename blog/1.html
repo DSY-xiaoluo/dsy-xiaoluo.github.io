@@ -1,0 +1,242 @@
+<!--
+  你在干什么？你打开了开发者工具是想对我的网站干啥？？？我的这破网站有什么东西值得你打开开发者模式看看呢？这只是一个普普通通的个人网站啊，相信我，把你那开发者工具给关了吧，对你好，也对我好:)[doge]
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="FFmpeg, 录屏, 软件, 免费, 开源, 电脑, 免费录屏, 开源录屏, 录屏软件">
+  <meta name="description" content="探索FFmpeg：一款开源、免费的屏幕录制神器，提供一个简单、快捷且无限制的屏幕录制解决方案，附自制一键录屏批处理，告别各大录屏软件会员限制">
+  <title>还在开通录屏软件VIP？来试试FFmpeg！完全免费！ | DSY_xiaoluo</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/old/style.css">
+</head>
+
+<body>
+  <div class="grid-container">
+
+    <!--我下面是标题-->
+    <div class="grid-item">
+      <span>www.xiaoluo.link > blog > <strong>1.html</strong></span><br>
+      <h1 style="font-size: 32px;"><strong>还在开通录屏软件VIP？来试试FFmpeg！完全免费！</strong></h1>
+      <h2>
+        <!--这是简介，但我实在不知道该写什么简介好。。。-->
+      </h2>
+    </div>
+
+    <!--我下面是页面信息-->
+    <div class="grid-item" style="text-align: right;">
+      <span>2024年3月7日20时05分：页面创建时间</span><br>
+      <span>2024年3月8日20时31分：页面修改时间</span>
+    </div>
+
+  </div>
+
+  <!--看见标题栏和内容区中间的空隙了吗？没错，那是我-->
+  <div style="height: 10px;"></div>
+
+  <div class="grid-container2">
+    <!--侧边栏~~~-->
+    <div class="grid-item" style="direction: rtl;">
+      <div style="direction: ltr;">
+        <!--导航-->
+        <table class="textbox"
+          style="border: 1px solid rgba(0, 128, 0, 1); width: 100%; text-align: center; box-shadow: -5px 5px 5px rgba(0, 0, 0, 1); line-height: 2;">
+          <thead>
+            <tr>
+              <td
+                style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold; text-align: left; line-height: 1.1145141919810;">
+                <span><strong>导航</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/index.html">首页</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="background-image: linear-gradient(to left, rgb(64, 64, 64), rgb(0, 64, 0)); background-size: 100% 100%; background-repeat: no-repeat; background-position: right top; width: 100%; height: 100%; border-right: 1px solid rgba(64, 64, 64, 1);">
+              <span><a href="/blog.html">博客</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/pages.html">页面</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/about.html">关于</a></span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <!--目录-->
+        <table class="textbox" style="border: 1px solid rgba(0, 128, 0, 1); width: 100%;">
+          <thead>
+            <tr>
+              <td style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold;">
+                <span><strong>目录</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: rgba(0, 63, 0, 1); line-height: 1;">
+              <span><a href="./1.html">文档头</a></span>
+              <br>
+              <span>├ <a href="#导言">导言</a></span>
+              <br>
+              <span>├ <a href="#警告">警告</a></span>
+              <br>
+              <span>├ <a href="#FFmpeg一键录屏批处理">FFmpeg一键录屏批处理</a></span>
+              <br>
+              <span>├ <a href="#如何使用FFmpeg进行屏幕录制">如何使用FFmpeg进行屏幕录制</a></span>
+              <br>
+              <span>文档尾</span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <!--其它杂七杂八的-->
+        <div id="sidebar">
+          <!--动态内容，见sidebar.html-->
+        </div>
+      </div>
+    </div>
+    <!--正文呐-->
+    <div class="grid-item">
+      <a name="导言"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>导言</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              相信大家在使用<del>颠佬</del>电脑的时候总会遇到需要录制电脑屏幕的需求吧，但目前市面上的录屏软件几乎都需要开通会员才能录制，否则就是各种限制，如：时间限制、分辨率限制、帧率限制等等。什么？你说你有OBS？那你还点进来干啥[doge]。这篇博客将会介绍FFmpeg以及安装方法，并附上我自制的FFmpeg一键录屏批处理
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="警告"></a>
+      <table class="textbox" style="border: 1px solid #ffff00; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #ffff00; color: #000000; font-weight: bold;">
+              <h3><strong>警告</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #808000;">
+            <span>
+              此博客的教程和一键录屏批处理仅适用于Windows操作系统
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="FFmpeg一键录屏批处理"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>FFmpeg一键录屏批处理</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              上链接[doge]：<a
+                href="https://www.123pan.com/s/UQ5RVv-1aBb.html">https://www.123pan.com/s/UQ5RVv-1aBb.html</a><br><br>
+              不会吧不会吧，不会我把批处理贴你脸上了你还不会用吧，不会吧不会吧
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="如何使用FFmpeg进行屏幕录制"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>如何使用FFmpeg进行屏幕录制</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              下载FFmpeg：<a
+                href="https://github.com/BtbN/FFmpeg-Builds/releases">https://github.com/BtbN/FFmpeg-Builds/releases</a><br><br>
+              下载完成后解压，进入bin目录，在此处以管理员身份运行命令提示符，输入ffmpeg -h，如果出现帮助信息，说明下载成功<br><br>
+              但我们此时仅能在此处打开命令提示符才有效，所以我们需要将FFmpeg添加到系统环境变量中，以便在任何地方都能使用FFmpeg<br><br>
+              首先，右键此电脑，选择属性<br><br>
+              在系统属性窗口中，点击高级系统设置<br><br>
+              在系统属性窗口中，点击环境变量<br><br>
+              在环境变量窗口中，新建一个用户变量<br><br>
+              在新建用户变量窗口中，变量名填“FFMPEG_HOME”，变量值填“FFmpeg的解压路径（包含/bin文件夹”<br><br>
+              打开你的命令提示符，输入录屏命令<br>
+              <table class="textbox" style="border: 1px solid #4040ff; margin: 10px;">
+                <thead style="top: 9px; z-index: 0;">
+                  <tr>
+                    <td style="background-color: #4040ff; color: rgba(0, 0, 0, 1); font-weight: bold; color: #ffffff;">
+                      <span><strong>batch</strong></span>
+                      <!-- <button onclick="copycontent(code202403081912)">复制</button> -->
+                    </td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td style="background-color: #202080; ">
+                    <code
+                      id="code202403081912">ffmpeg -f gdigrab -framerate 30 -offset_x 114 -offset_y 514 -video_size 1919x810 -i desktop -f dshow -i audio="麦克风名称" -c:v libx264 -preset ultrafast -crf 18 -pix_fmt yuv420p -c:a aac -b:a 128k output.mp4</code>
+                  </td>
+                </tr>
+              </table>
+              命令解释：<br>
+              <strong>-f gdigrab</strong>：指定输入格式为gdigrab，这是Windows特有的，用于抓取屏幕。这是必须项，因为它定义了屏幕录制的方法<br><br>
+              <strong>-framerate 30</strong>：指定帧率，即每秒录制的帧数。这个值是可选项，可根据需要进行调整<br><br>
+              <strong>-offset_x 114 -offset_y 514</strong>：指定抓取区域的偏移量，即相对于屏幕左上角的位置。这个值也是可选项，可根据需要进行调整<br><br>
+              <strong>-video_size 1919x810</strong>：指定抓取区域的尺寸，即宽度和高度。这个值也是可选项，可根据需要进行调整<br><br>
+              <strong>-i desktop</strong>：指定输入设备为桌面，即抓取整个屏幕的内容，这是必须项，如果你想录制特定窗口，需要使用特定窗口的ID或名称（标题）替换“desktop”<br><br>
+              <strong>-f dshow</strong>：指定音频输入格式为dshow，在Windows上用于捕获音频。如果要录制音频的话这是必须项，因为它定义了输出设备的方法<br><br>
+              <strong>-i audio="麦克风名称"</strong>：指定音频输入设备为麦克风，其中“麦克风名称”是你电脑上麦克风的名称。这个值也是必须项，因为它定义了音频输入设备<br><br>
+              <strong>-c:v libx264</strong>：指定视频编码器为libx264，这是H.264编码器。这个值也是必须项，因为它定义了视频编码器<br><br>
+              <strong>-preset ultrafast</strong>：指定编码速度，即编码质量与编码速度之间的平衡。这个值是可选项，可根据需要进行调整<br><br>
+              <strong>-crf 18</strong>：指定常量速率因子为18，这影响视频的质量和文件大小，数值越小，质量越高，文件也越大。这个值也是可选项，可根据需要进行调整<br><br>
+              <strong>-pix_fmt yuv420p</strong>：指定像素格式为yuv420p，yuv420p是一种广泛兼容的格式，适合绝大多数播放器。这个值也是可选项，可根据需要进行调整<br><br>
+              <strong>-c:a aac</strong>：指定音频编码器为aac，这是AAC编码器。这个值也是必须项，因为它定义了音频编码器<br><br>
+              <strong>-b:a 128k</strong>：指定音频码率为128k，即音频质量。这个值也是可选项，可根据需要进行调整<br><br>
+              <strong>output.mp4</strong>：指定输出文件名和格式。这是必须项，你可以根据需要更改文件名和扩展名（比如.mkv）。文件格式将决定使用哪种容器封装视频和音频流<br><br>
+              更多有关FFmpeg的使用方式请参考FFmpeg官方文档或相关教程：<a href="https://ffmpeg.org/documentation.html"
+                target="_blank">https://ffmpeg.org/documentation.html</a>
+              <br>
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+    </div>
+  </div>
+  <div style="width: 100%; text-align: center"><br>© 2024 DSY_xiaoluo - 妙狗国国王</div>
+</body>
+
+<script>
+  // JavaScript 代码，检测用户代理，并根据需要添加类名
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.querySelector('.grid-container2').classList.add('mobile-disable');
+  }
+</script>
+
+</html>

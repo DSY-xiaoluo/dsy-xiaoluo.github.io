@@ -1,0 +1,313 @@
+<!--
+  你在干什么？你打开了开发者工具是想对我的网站干啥？？？我的这破网站有什么东西值得你打开开发者模式看看呢？这只是一个普普通通的个人网站啊，相信我，把你那开发者工具给关了吧，对你好，也对我好:)[doge]
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="自定义元素, customElements API, 前端开发, 网页开发, HTML, JavaScript">
+  <meta name="description"
+    content="使用JavaScript的customElements API来创建自定义的HTML元素！相当于定义一个模板直接套用！妈妈再也不用担心为了一个文本框而复制一大串代码了！">
+  <title>自己定义一个HTML元素！ | DSY_xiaoluo</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/old/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github-dark.min.css">
+</head>
+
+<body>
+  <div class="grid-container">
+
+    <!--我下面是标题-->
+    <div class="grid-item">
+      <span>www.xiaoluo.link > blog > <strong>5html</strong></span><br>
+      <h1 style="font-size: 32px;"><strong>自己定义一个HTML元素！</strong></h1>
+      <!-- <h2>修改此处：网页简介</h2> -->
+    </div>
+
+    <!--我下面是页面信息-->
+    <div class="grid-item" style="text-align: right;">
+      <span>2024年3月28日1时25分：页面创建时间</span><br>
+      <span>2024年3月28日1时25分：页面修改时间</span>
+    </div>
+
+  </div>
+
+  <!--看见标题栏和内容区中间的空隙了吗？没错，那是我-->
+  <div style="height: 10px;"></div>
+
+  <div class="grid-container2">
+    <!--侧边栏~~~-->
+    <div class="grid-item" style="direction: rtl;">
+      <div style="direction: ltr;">
+        <!--导航-->
+        <table class="textbox"
+          style="border: 1px solid rgba(0, 128, 0, 1); width: 100%; text-align: center; box-shadow: -5px 5px 5px rgba(0, 0, 0, 1); line-height: 2;">
+          <thead>
+            <tr>
+              <td
+                style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold; text-align: left; line-height: 1.1145141919810;">
+                <span><strong>导航</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/index.html">首页</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td
+              style="background-image: linear-gradient(to left, rgb(64, 64, 64), rgb(0, 64, 0)); background-size: 100% 100%; background-repeat: no-repeat; background-position: right top; width: 100%; height: 100%; border-right: 1px solid rgba(64, 64, 64, 1);">
+              <span><a href="/blog.html">博客</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/pages.html">页面</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/about.html">关于</a></span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <!--目录-->
+        <table class="textbox" style="border: 1px solid rgba(0, 128, 0, 1); width: 100%;">
+          <thead>
+            <tr>
+              <td style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold;">
+                <span><strong>目录</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: rgba(0, 63, 0, 1); line-height: 1;">
+              <span><a href="">文档头</a></span>
+              <br>
+              <span>├ <a href="#导言">导言</a></span>
+              <br>
+              <span>├ <a href="#步骤">步骤</a></span>
+              <br>
+              <span>│├ <a href="#1.检查欲作为模板的HTML代码">1.检查欲作为模板的HTML代码</a></span>
+              <br>
+              <span>│├ <a href="#2.示例代码">2.示例代码</a></span>
+              <br>
+              <span>│└ <a href="#3.修改代码">3.修改代码</a></span>
+              <br>
+
+              <span>文档尾</span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table class="textbox" style="border: 1px solid rgba(255, 255, 0, 1); width: 100%;">
+          <thead>
+            <tr>
+              <td style="background-color: rgba(255, 255, 0, 1); color: rgba(0, 0, 0, 1); font-weight: bold;">
+                <span><strong>提示</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: rgba(128, 128, 0, 1);">
+              <span>此页面可能无法在移动便携设备UA上正确排版</span>
+            </td>
+          </tr>
+        </table>
+        <br>
+
+        <!--其它杂七杂八的-->
+        <div id="sidebar">
+          <!--动态内容，见sidebar.html-->
+        </div>
+      </div>
+    </div>
+    <!--正文呐-->
+    <div class="grid-item">
+      <table class="textbox" style="border: 1px solid rgba(255, 255, 0, 1); width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: rgba(255, 255, 0, 1); color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <span><strong>提示</strong></span>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: rgba(128, 128, 0, 1);">
+            <span>此页面可能无法在移动便携设备UA上正确排版</span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <text-box title="导言" color="#000" bgcolor="#c0c0c0" bgcolor2="#606060" more="width: 100%;">
+        <span>有时我们会遇到需要创建大量相同的元素的情况，例如文本框、代码框、图片框
+          等。为了解决这个问题，我们可以使用JavaScript的customElements
+          API来创建自定义的HTML元素。通过自定义元素，我们可以定义一个模板，然后根据需要创建多个相同的元素。这样可以大大简化代码<br><br>
+          拿我的个人网站举例，在以前，创建一个类似于你现在看到的文本框需要下面一大串代码：<br>
+          <text-box title="code-HTML" color="#fff" bgcolor="#1A222E" bgcolor2="#0d1117" more="margin: 10px;"
+            more2="style=&quot;top: 9px; z-index: 99;&quot;">
+            <pre>
+              <code class="language-html" id="code202403280201">
+&lt;a name=&quot;标题&quot;&gt;&lt;/a&gt;
+&lt;table class=&quot;textbox&quot; style=&quot;border: 1px solid #c0c0c0; width: 100%;&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;background-color: #c0c0c0; color: #000; font-weight: bold;&quot;&gt;
+        &lt;h3&gt;
+          &lt;strong&gt;标题&lt;/strong&gt;
+        &lt;/h3&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tr&gt;
+    &lt;td style=&quot;background-color: #606060;&quot;&gt;
+      &lt;span&gt;
+        内容
+      &lt;/span&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+              </code>
+            </pre>
+          </text-box><br>
+          现在，使用自定义元素就只需要下面一行（只包括标签）代码：
+          <text-box title="code-HTML" color="#fff" bgcolor="#1A222E" bgcolor2="#0d1117" more="margin: 10px;"
+            more2="style=&quot;top: 9px; z-index: 99;&quot;">
+            <pre>
+              <code class="language-html" id="code202403280328">
+&lt;text-box title=&quot;标题&quot; color=&quot;#000&quot; bgcolor=&quot;#c0c0c0&quot; bgcolor2=&quot;#606060&quot; more=&quot;width: 100%;&quot;&gt;
+  内容
+&lt;/text-box&gt;
+              </code>
+            </pre>
+          </text-box>
+        </span>
+      </text-box>
+      <br>
+      <text-box title="步骤" color="#000" bgcolor="#c0c0c0" bgcolor2="#606060" more="width: 100%;">
+        要使用customElements API来创建自定义的HTML元素，需要以下步骤：<br>
+        <text-box title="1.检查欲作为模板的HTML代码" color="#000" bgcolor="#fff" bgcolor2="#808080" more="margin: 10px;"
+          more2="style=&quot;top: 9px; z-index: 99;&quot;">
+          <span>
+            检查你的代码中有哪些为变量，如内容、字体颜色、边距等等。后续需要将这些变量作为参数传递给自定义元素的构造函数<br>
+          </span>
+        </text-box>
+        <text-box title="2.示例代码" color="#000" bgcolor="#fff" bgcolor2="#808080" more="margin: 10px;"
+          more2="style=&quot;top: 9px; z-index: 99;&quot;">
+          <span>
+            这里直接把示例代码摆这，可以根据自己的要求自行修改<br>
+            <text-box title="code-javascript" color="#fff" bgcolor="#1A222E" bgcolor2="#0d1117" more="margin: 10px;"
+              more2="style=&quot;top: 29px; z-index: 98;&quot;">
+              <pre>
+                <code class="language-javascript" id="code202403280332">
+document.addEventListener('DOMContentLoaded', function () {
+  customElements.define('text-box', class extends HTMLElement {
+    constructor() {
+      super();
+      const title = this.getAttribute('title');
+      const color = this.getAttribute('color');
+      const bgcolor = this.getAttribute('bgcolor');
+      const bgcolor2 = this.getAttribute('bgcolor2');
+      const more = this.getAttribute('more');
+      const more2 = this.getAttribute('more2');
+      const content = this.innerHTML;
+      this.innerHTML = `
+&lt;a name=&quot;#${title}&quot;&gt;&lt;/a&gt;
+&lt;table class=&quot;textbox&quot; style=&quot;border: 1px solid ${bgcolor}; ${more}&quot;&gt;
+&lt;thead ${more2}&gt;
+&lt;tr&gt;
+&lt;td style=&quot;background-color: ${bgcolor}; color: ${color}; font-weight: bold;&quot;&gt;
+&lt;h3&gt;&lt;strong&gt;${title}&lt;/strong&gt;&lt;/h3&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tr&gt;
+&lt;td style=&quot;background-color: ${bgcolor2};&quot;&gt;
+${content}
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+`;
+    }
+  });
+});
+                </code>
+              </pre>
+            </text-box><br>
+            当页面的 DOM 内容加载完成后，就会执行里面的函数<br><br>
+            在示例中，首先获取了一些属性值：<codetext>title</codetext>、<codetext>color</codetext>、<codetext>bgcolor</codetext>、
+            <codetext>bgcolor2</codetext>、<codetext>more</codetext> 和 <codetext>more2</codetext>，以及元素的内容 <codetext>
+              content</codetext><br><br>
+            然后通过 <codetext>innerHTML</codetext> 属性来设置自定义元素的内容<br><br>
+            <strong>注意：在这里，必须使用 HTML 实体编码，比如 &quot;<codetext>&amp;lt;</codetext>&quot; 和 &quot;<codetext>&amp;quot;
+              </codetext>&quot; 来代替 &quot;<codetext>&lt;</codetext>&quot; 和 &quot;<codetext>&quot;</codetext>&quot;
+              （转义），以避免 HTML 解析错误</strong><br><br>
+            接着，会生成了一个包含表格的 HTML 结构，表格的样式和内容根据之前获取的属性值动态生成。表格包含一个标题行和一个内容行，样式和内容也根据传入的属性值动态设置。这就是文本框
+            最后，将生成的 HTML 结构赋值给自定义元素的 <codetext>innerHTML</codetext>，从而将这个自定义元素插入到页面中
+          </span>
+        </text-box>
+        <text-box title="3.修改代码" color="#000" bgcolor="#fff" bgcolor2="#808080" more="margin: 10px;"
+          more2="style=&quot;top: 9px; z-index: 99;&quot;">
+          <span>
+            知道了原理后就很容易了，直接定义一些属性值然后修改 <codetext>innerHTML</codetext> 即可<br>
+            <text-box title="code-javascript" color="#fff" bgcolor="#1A222E" bgcolor2="#0d1117" more="margin: 10px;"
+              more2="style=&quot;top: 29px; z-index: 98;&quot;">
+              <pre>
+              <code class="language-javascript" id="code202403280424">
+document.addEventListener('DOMContentLoaded', function () {
+customElements.define('text-box', class extends HTMLElement {
+  constructor() {
+    super();
+    const title = this.getAttribute('title');
+    // 添加更多...
+    this.innerHTML = `
+<div>
+<h1>
+${title}
+</h1>
+<p>
+${content}
+</p>
+</div>
+    `;
+  }
+});
+});
+              </code>
+            </pre>
+            </text-box>
+
+          </span>
+        </text-box>
+
+      </text-box>
+    </div>
+  </div>
+
+  <div style=" width: 100%; text-align: center"><br>© 2024 DSY_xiaoluo - 妙狗国国王
+  </div>
+</body>
+
+<script>
+
+  // JavaScript 代码，进行代码高亮
+  const codeEle = document.getElementById("code-area");
+  // code202403280201
+  hljs.highlightElement(code202403280201);
+  // code202403280328
+  hljs.highlightElement(code202403280328);
+  // code202403280332
+  hljs.highlightElement(code202403280332);
+  // code202403280424
+  hljs.highlightElement(code202403280424);
+</script>
+
+</html>
