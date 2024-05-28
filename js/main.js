@@ -1,29 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var windowwidth = window.innerWidth;
-  console.log("视口宽度", windowwidth);
-  if (windowwidth < 600) {
-    document.getElementById('jian1rong2xing3ti2shi4').style.width = "unset";
-  }
-
-  // 自定义元素xl-jrxtc
-  customElements.define('xl-jrxtc', class extends HTMLElement {
-    constructor() {
-      super();
-      this.innerHTML = `
-      <dialog id="jian1rong2xing4ti2shi4">
-        <xl-vistatextbox title="兼容性提示" style1="box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);" id="jian1rong2xing3ti2shi4kuang1">
-          <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Edge、Chrome以及Firefox访问此站</span>
-          <br>
-          <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
-          <div style="background-color: #00000020; text-align: right;">
-            <button onclick="jian1rong2xing3ti2shi4.close()">关闭</button>
-            <button id="tan2chuang1bu2zai4xian3shi4" onclick="setNoShow()" style="margin-right: 10px;">不再显示</button>
-          </div>
-        </xl-vistatextbox>
-      </dialog>
-      `;
-    }
-  });
+  if (localStorage.getItem('不显示兼容性提示') === 'true') {
+    guan1bi4jian1rong2xing4ti2shi4();
+  };
 
   // 自定义元素xl-vistatextbox
   customElements.define('xl-vistatextbox', class extends HTMLElement {
@@ -36,11 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const style3 = this.getAttribute('style3') || '';
       const style4 = this.getAttribute('style4') || '';
       const style5 = this.getAttribute('style5') || '';
+      const id1 = this.getAttribute('id1') || '';
+      const id2 = this.getAttribute('id2') || '';
       const content = this.innerHTML || 'Default Content';
       this.innerHTML = `
       <a name="${title}"></a>
-      <div class="vista1" style="${style1}">
-        <div class="vista2" style="background-color: ${color}; ${style2}">
+      <div class="vista1" style="${style1}" id="${id1}">
+        <div class="vista2" style="background-color: ${color}; ${style2}" id="${id2}">
           <div class="vista3" style="${style3}">
             <span>${title}</span>
           </div>
@@ -113,23 +93,44 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px;">
       </div>
       <div>
-        <span style="font-size: 24px;">兼容性提示</span><br>
-        <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
-        <hr>
         <span style="font-size: 24px;">公告</span><br>
         <span>此网站的域名（xiaoluo.link）将在今年7月23日到期，我们后续可能会更换为“xluofox.top”域名，请注意关注此处</span>
+        <hr>
+        <span style="font-size: 24px;">兼容性提示</span><br>
+        <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
       </div>
     </div>
     <br>
-    <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
-    <div style="background-color: #00000020; text-align: right;">
-      <button onclick="jian1rong2xing3ti2shi4.close()">关闭</button>
-      <button id="tan2chuang1bu2zai4xian3shi4" onclick="setNoShow()" style="margin-right: 10px;">不再显示</button>
-    </div>
-     `;
+    <div style="position: sticky; bottom: 0;">
+      <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
+      <div style="background-color: #cbcbcb; text-align: right;">
+        <button onclick="guan1bi4jian1rong2xing4ti2shi4()">关闭</button>
+        <button id="tan2chuang1bu2zai4xian3shi4" onclick="bu2zai4xian3shi4jian1rong2xing4ti2shi4()"
+          style="margin-right: 10px;">不再显示</button>
+      </div>
+    </div>     `;
     }
   });
 
+  var tuo1odng4 = document.getElementById('jian1rong2xing4ti2shi4');
+  var offsetX, offsetY, isDragging = false;
+
+  tuo1odng4.addEventListener('mousedown', function (e) {
+    offsetX = e.clientX - tuo1odng4.offsetLeft;
+    offsetY = e.clientY - tuo1odng4.offsetTop;
+    isDragging = true;
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (isDragging) {
+      tuo1odng4.style.left = (e.clientX - offsetX) + 'px';
+      tuo1odng4.style.top = (e.clientY - offsetY) + 'px';
+    }
+  });
+
+  document.addEventListener('mouseup', function () {
+    isDragging = false;
+  });
 
   // 获取id为"dao3hang2lan2gao1du4huo4qu3yong4"的元素
   const dao3hang2lan2gao1du4huo4qu3yong4Element = document.getElementById('dao3hang2lan2gao1du4huo4qu3yong4');
@@ -146,13 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
     element.style.height = `${heightInView}px`;
   });
 
-  // 检查本地存储中的变量，如果为真则不再显示模态框
-  document.getElementById('jian1rong2xing3ti2shi4').showModal();
-  // document.getElementById('jian1rong2xing3ti2shi4kuang1').style.display = "block";
-  if (localStorage.getItem('noShowDialog') === 'true') {
-    closedialog()
-  }
-});
+})
 
 window.addEventListener('load', function () {
   this.document.getElementById('jia1zai3ti2shi4').style.display = "none";
@@ -175,13 +170,13 @@ function iframesize(iframeid, size) {
 }
 
 // 不再显示兼容性提示
-function setNoShow() {
-  localStorage.setItem('noShowDialog', 'true');
-  closedialog()
+function bu2zai4xian3shi4jian1rong2xing4ti2shi4() {
+  localStorage.setItem('不显示兼容性提示', 'true');
+  guan1bi4jian1rong2xing4ti2shi4();
 }
 
 // 关闭兼容性提示
-function closedialog() {
-  // document.getElementById('jian1rong2xing3ti2shi4kuang1').style.display = "none";
-  document.getElementById('jian1rong2xing3ti2shi4').close();
+function guan1bi4jian1rong2xing4ti2shi4() {
+  // document.getElementById('jian1rong2xing4ti2shi4kuang1').style.display = "none";
+  document.getElementById('jian1rong2xing4ti2shi4').style.display = "none";
 }
