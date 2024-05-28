@@ -48,12 +48,12 @@ ul ul {
   margin-left: 20px;
 }
 
-dialog {
-  background: unset;
-  backdrop-filter: unset;
-  color: unset;
-  border: unset;
-  width: 60%;
+#jian1rong2xing4ti2shi4 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 114514;
 }
 
 button {
