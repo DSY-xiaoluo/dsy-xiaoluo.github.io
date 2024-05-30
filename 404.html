@@ -4,10 +4,28 @@
 <head>
   <meta charset="UTF-8" />
   <title>404|XLuoFox.DSY</title>
-
 </head>
 
-<!-- 拉伸背景至全屏 -->
-<body style="cursor: none;">
-  <img src="/file/img/bsod.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 114514;">
+<body style="cursor: none; background-color: #000;">
+  <img src="/file/img/bsod.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 114514;"
+    id="114514">
+  <script>
+    var audio = new Audio('/file/aud/3000hz.mp3');
+    setTimeout(function () { // 5000 ms
+      document.getElementById("114514").src = "/file/img/black.png";
+      setTimeout(function () { // 2000 ms
+        document.getElementById("114514").src = "/file/img/nosgin.png";
+        setTimeout(function () { // 1000 ms
+          document.getElementById("114514").src = "/file/img/black.png";
+          audio.play();
+          setTimeout(function () { // 1000 ms
+            document.getElementById("114514").src = "/file/img/start.png";
+            setTimeout(function () { // 2000 ms
+              window.location.href = "/index.html";
+            }, 2000);
+          }, 1000);
+        }, 1000);
+      }, 2000);
+    }, 5000);
+  </script>
 </body>
