@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-  if (localStorage.getItem('不显示兼容性提示') === 'true') {
-    guan1bi4jian1rong2xing4ti2shi4();
-  };
 
-  // 自定义元素xl-vistatextbox
+  // 自定义元素xl-vistatextbox（vista文本框）
   customElements.define('xl-vistatextbox', class extends HTMLElement {
     constructor() {
       super();
@@ -35,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 自定义元素xl-navbox
+  // 自定义元素xl-navbox（导航栏）
   customElements.define('xl-navbox', class extends HTMLElement {
     constructor() {
       super();
@@ -64,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 自定义元素xl-ce4bian1lan2
+  // 自定义元素xl-ce4bian1lan2（侧边栏）
   customElements.define('xl-ce4bian1lan2', class extends HTMLElement {
     constructor() {
       super();
@@ -83,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 自定义元素xl-jian1rong2xing4ti2shi4
+  // 自定义元素xl-jian1rong2xing4ti2shi4（兼容性提示）
   customElements.define('xl-jian1rong2xing4ti2shi4', class extends HTMLElement {
     constructor() {
       super();
@@ -104,79 +101,95 @@ document.addEventListener('DOMContentLoaded', function () {
     <div style="position: sticky; bottom: 0;">
       <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
       <div style="background-color: #cbcbcb; text-align: right;">
-        <button onclick="guan1bi4jian1rong2xing4ti2shi4()">关闭</button>
-        <button id="tan2chuang1bu2zai4xian3shi4" onclick="bu2zai4xian3shi4jian1rong2xing4ti2shi4()"
-          style="margin-right: 10px;">不再显示</button>
+        <button onclick="兼容性提示_关闭()">关闭</button>
+        <button onclick="兼容性提示_不再显示()" style="margin-right: 10px;">不再显示</button>
       </div>
-    </div>     `;
+    </div>`;
     }
   });
 
-  var tuo1odng4 = document.getElementById('jian1rong2xing4ti2shi4');
-  var offsetX, offsetY, isDragging = false;
-
-  tuo1odng4.addEventListener('mousedown', function (e) {
-    offsetX = e.clientX - tuo1odng4.offsetLeft;
-    offsetY = e.clientY - tuo1odng4.offsetTop;
-    isDragging = true;
-  });
-
-  document.addEventListener('mousemove', function (e) {
-    if (isDragging) {
-      tuo1odng4.style.left = (e.clientX - offsetX) + 'px';
-      tuo1odng4.style.top = (e.clientY - offsetY) + 'px';
-    }
-  });
-
-  document.addEventListener('mouseup', function () {
-    isDragging = false;
-  });
-
-  // 获取id为"dao3hang2lan2gao1du4huo4qu3yong4"的元素
-  const dao3hang2lan2gao1du4huo4qu3yong4Element = document.getElementById('dao3hang2lan2gao1du4huo4qu3yong4');
-
-  // 获取元素在视口中的高度
-  const heightInView = dao3hang2lan2gao1du4huo4qu3yong4Element.getBoundingClientRect().height;
-
-  // 打印获取的高度到控制台
-  console.log("标题栏在视口中的高度：", heightInView);
-
-  // 应用高度到具有类".empty1"的元素的CSS中
-  const empty1Elements = document.querySelectorAll('.empty1');
-  empty1Elements.forEach(element => {
-    element.style.height = `${heightInView}px`;
-  });
-
+  兼容性提示_判断是否显示();
+  内容_适应标题栏高度();
 })
 
 window.addEventListener('load', function () {
   this.document.getElementById('jia1zai3ti2shi4').style.display = "none";
 })
 
-// 加载iframe
-function loadIframe(iframeId, iframeSrc) {
-  var iframe = document.getElementById(iframeId);
-  iframe.src = iframeSrc;
-  iframe.style.height = 50 + "vh";
-  if (iframeSrc === "") {
-    iframe.style.height = 0 + "vh";
+// 判断是否弹出兼容性提示
+function 兼容性提示_判断是否显示() {
+  const shouldShow = localStorage.getItem('不显示兼容性提示') !== 'true';
+  const 提示元素 = document.getElementById('jian1rong2xing4ti2shi4');
+
+  if (shouldShow) {
+    提示元素.style.display = "block";
+    元素_可拖动(提示元素);
   }
 }
 
-// 改变指定id的iframe尺寸
-function iframesize(iframeid, size) {
-  var iframe = document.getElementById(iframeid);
-  iframe.style.height = size + "vh";
+// 关闭兼容性提示
+function 兼容性提示_关闭() {
+  document.getElementById('jian1rong2xing4ti2shi4').style.display = "none";
 }
 
 // 不再显示兼容性提示
-function bu2zai4xian3shi4jian1rong2xing4ti2shi4() {
+function 兼容性提示_不再显示() {
   localStorage.setItem('不显示兼容性提示', 'true');
-  guan1bi4jian1rong2xing4ti2shi4();
+  document.getElementById('jian1rong2xing4ti2shi4').style.display = "none";
 }
 
-// 关闭兼容性提示
-function guan1bi4jian1rong2xing4ti2shi4() {
-  // document.getElementById('jian1rong2xing4ti2shi4kuang1').style.display = "none";
-  document.getElementById('jian1rong2xing4ti2shi4').style.display = "none";
+// 元素的拖动
+function 元素_可拖动(element) {
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+
+  element.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    initialX = element.offsetLeft;
+    initialY = element.offsetTop;
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  function onMouseMove(e) {
+    if (isDragging) {
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+      element.style.left = initialX + deltaX + 'px';
+      element.style.top = initialY + deltaY + 'px';
+    }
+  }
+
+  function onMouseUp() {
+    isDragging = false;
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  }
+}
+
+// 适应导航栏高度
+function 内容_适应标题栏高度() {
+  const dao3hang2lan2gao1du4huo4qu3yong4Element = document.getElementById('dao3hang2lan2gao1du4huo4qu3yong4');
+  const observer = new ResizeObserver(entries => {
+    for (let entry of entries) {
+      const heightInView = entry.contentRect.height;
+      document.querySelectorAll('.empty1').forEach(element => {
+        element.style.height = `${heightInView}px`;
+      });
+    }
+  });
+  observer.observe(dao3hang2lan2gao1du4huo4qu3yong4Element);
+}
+
+function iframe_改变网址(iframeId, iframeSrc) {
+  const iframe = document.getElementById(iframeId);
+  iframe.setAttribute('src', iframeSrc);
+  iframe.style.height = iframeSrc ? '50vh' : '0vh';
+}
+
+function iframe_改变高度(iframeId, size) {
+  const iframe = document.getElementById(iframeId);
+  iframe.style.height = `${size}vh`;
 }
