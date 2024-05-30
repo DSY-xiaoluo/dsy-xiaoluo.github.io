@@ -50,10 +50,11 @@ ul ul {
 
 #jian1rong2xing4ti2shi4 {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10%;
+  left: 15vw;
+  /* transform: translate(-50%, -50%); */
   z-index: 114514;
+  display: none;
 }
 
 button {
