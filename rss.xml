@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>XLuoFox.DSY 's Bloooooog</title>
+    <link>https://dsy-xiaoluo.github.io/</link>
+    <description>这是XLuoFox.DSY的个人博客~</description>
+    <ttl>86400</ttl>
+
+    <item>
+      <title>开发日志-Rel.5.240601.23</title>
+      <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
+      <description>该版本包含实验性重大更新，修改了404页面，优化了便携设备访问体验和JavaScript代码结构，微调样式，更新了导航栏适应性，优化拖动逻辑，修复了一些小BUG，并新增了开发日志页面</description>
+      <pubDate>Sat, 01 Jun 2024 17:51:12 GMT</pubDate>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://dsy-xiaoluo.github.io/404.html</link>
+      <description>这是一条测试，如不出意外，打开此链接为404页面</description>
+      <pubDate>Sat, 01 Jun 2024 17:38:35 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

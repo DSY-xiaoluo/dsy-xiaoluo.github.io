@@ -39,22 +39,22 @@ document.addEventListener('DOMContentLoaded', function () {
       this.innerHTML = `
       <xl-vistatextbox title="加载指示器" id="jia1zai3ti2shi4">
         <div style="background-color: #ff0;">
-          <span>页面加载未完成<br>
+          <span>页面加载未完成（页面正在加载）<br>
           由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
         </div>
       </xl-vistatextbox>
       <xl-vistatextbox title="导航">
         <a href="/index.html">
-          <div style="padding: 10px; text-align: center;"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="blogbox"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
         <a href="/blog/index.html">
-          <div style="padding: 10px; text-align: center;"><span>博客</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="blogbox"><span>博客</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
         <a href="/page/index.html">
-          <div style="padding: 10px; text-align: center;"><span>页面</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="blogbox"><span>页面</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
         <a href="/about.html">
-          <div style="padding: 10px; text-align: center;"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="blogbox"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
       </xl-vistatextbox>
       `;

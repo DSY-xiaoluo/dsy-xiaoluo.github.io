@@ -51,7 +51,7 @@ ul ul {
 #jian1rong2xing4ti2shi4 {
   position: fixed;
   top: 10%;
-  left: 15vw;
+  left: 12.5vw;
   /* transform: translate(-50%, -50%); */
   z-index: 114514;
   display: none;
@@ -84,13 +84,64 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  box-shadow: inset 0 -1px 0 0 #00f;
 }
 
 /* 清除iframe默认样式 */
 iframe {
   all: unset;
   width: 100%;
+}
+
+/* 无色背景小文本 */
+xl-wsbjxwb {
+  margin: 0px 4px;
+  padding: 0px 2px;
+  font-size: 12px;
+  color: #000;
+  background-color: #00000000;
+  border: 1px solid #000;
+}
+
+/* 黄色背景小文本 */
+xl-hsbjxwb {
+  margin: 0px 4px;
+  padding: 0px 2px;
+  font-size: 12px;
+  color: #000;
+  background-color: #ff0;
+  border: 1px solid #000;
+}
+
+/* 灰色背景小文本 */
+xl-h2sbjxwb {
+  margin: 0px 4px;
+  padding: 0px 2px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #808080;
+  border: 1px solid #fff;
+}
+
+/* 红色背景小文本 */
+xl-h3sbjxwb {
+  margin: 0px 4px;
+  padding: 0px 2px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #f00;
+  border: 1px solid #fff;
+}
+
+/* 蓝色背景小文本 */
+xl-lsbjxwb {
+  margin: 0px 4px;
+  padding: 0px 2px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #00f;
+  border: 1px solid #fff;
 }
 
 /* 菜单栏 */

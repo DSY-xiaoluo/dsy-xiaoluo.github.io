@@ -1,12 +1,3 @@
-@font-face {
-  font-family: 'font';
-  src: url(/files/font.ttf);
-}
-
-@font-face {
-  font-family: 'code';
-  src: url(/files/font-SourceCodePro-ExtraLight.ttf);
-}
 
 /* @font-face {
   font-family: 'simsun';
