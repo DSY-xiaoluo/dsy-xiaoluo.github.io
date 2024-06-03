@@ -1,4 +1,4 @@
-// 通过ID获取元素
+﻿// 通过ID获取元素
 function 元素_获取_使用ID(elementId) {
   return document.getElementById(elementId);
 }
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.innerHTML = `
       <xl-vistatextbox title="RSS订阅">
         <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span>
-        <a href="/other/rss.xml">/other/rss.xml</a>
+        <a href="/rss.xml">/rss.xml</a>
       </xl-vistatextbox>
       <xl-vistatextbox title="COPYRIGHT">
        <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
