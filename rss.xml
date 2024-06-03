@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>XLuoFox.DSY 's Bloooooog</title>
+    <title>XLuoFox.DSY 's Bloooog</title>
     <link>https://dsy-xiaoluo.github.io/</link>
     <description>这是XLuoFox.DSY的个人博客~</description>
-    <ttl>86400</ttl>
+    <ttl>1145</ttl>
+    
+    <item>
+      <title>测试</title>
+      <link>https://dsy-xiaoluo.github.io/404.html</link>
+      <description>这是一条测试，如不出意外，打开此链接为404页面</description>
+      <pubDate>Sat, 01 Jun 2024 17:38:35 GMT</pubDate>
+    </item>
 
     <item>
       <title>开发日志-Rel.5.240601.23</title>
@@ -12,12 +19,19 @@
       <description>该版本包含实验性重大更新，修改了404页面，优化了便携设备访问体验和JavaScript代码结构，微调样式，更新了导航栏适应性，优化拖动逻辑，修复了一些小BUG，并新增了开发日志页面</description>
       <pubDate>Sat, 01 Jun 2024 17:51:12 GMT</pubDate>
     </item>
-    
+
     <item>
-      <title>测试</title>
-      <link>https://dsy-xiaoluo.github.io/404.html</link>
-      <description>这是一条测试，如不出意外，打开此链接为404页面</description>
-      <pubDate>Sat, 01 Jun 2024 17:38:35 GMT</pubDate>
+      <title>开发日志-Rel.6.240601.00</title>
+      <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
+      <description>优化了JavaScript代码结构、新增了开发日志页面的BUG反馈、修改了主页（新增了一些其它板块）、新增了一篇博客、支持了RSS订阅</description>
+      <pubDate>Mon, 03 Jun 2024 18:25:30 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>新博客-此站点已支持RSS订阅（ID:7）</title>
+      <link>https://dsy-xiaoluo.github.io/blog/7.html</link>
+      <description>如题</description>
+      <pubDate>Mon, 03 Jun 2024 18:27:32 GMT</pubDate>
     </item>
   </channel>
 </rss>

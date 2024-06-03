@@ -1,3 +1,58 @@
+// 通过ID获取元素
+function 元素_获取_使用ID(elementId) {
+  return document.getElementById(elementId);
+}
+
+// 调试输出
+function 调试_输出(message) {
+  console.log(`${new Date().toLocaleString()} > ${message}`);
+}
+
+// 通过类名获取元素
+function 元素_获取_使用类名(className) {
+  return document.getElementsByClassName(className);
+}
+
+// 通过标签名获取元素
+function 元素_获取_使用标签名(tagName) {
+  return document.getElementsByTagName(tagName);
+}
+
+// 设置元素的文本内容
+function 元素_设置文本内容(element, text) {
+  element.textContent = text;
+}
+
+// 创建新元素
+function 元素_创建(tagName) {
+  return document.createElement(tagName);
+}
+
+// 获取元素的属性
+function 元素_获取属性(element, attribute) {
+  return element.getAttribute(attribute);
+}
+
+// 设置元素的属性
+function 元素_设置属性(element, attribute, value) {
+  element.setAttribute(attribute, value);
+}
+
+// 移除元素的属性
+function 元素_移除属性(element, attribute) {
+  element.removeAttribute(attribute);
+}
+
+// 给元素添加类
+function 元素_添加类(element, className) {
+  element.classList.add(className);
+}
+
+// 移除元素的类
+function 元素_移除类(element, className) {
+  element.classList.remove(className);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
   // 自定义元素xl-vistatextbox（vista文本框）
@@ -66,6 +121,10 @@ document.addEventListener('DOMContentLoaded', function () {
     constructor() {
       super();
       this.innerHTML = `
+      <xl-vistatextbox title="RSS订阅">
+        <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span>
+        <a href="/other/rss.xml">/other/rss.xml</a>
+      </xl-vistatextbox>
       <xl-vistatextbox title="COPYRIGHT">
        <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
          <span>Copyright © 2024 XLuoFox.DSY</span>
@@ -113,29 +172,30 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 window.addEventListener('load', function () {
-  this.document.getElementById('jia1zai3ti2shi4').style.display = "none";
+  内容_隐藏加载指示器()
 })
 
 // 判断是否弹出兼容性提示
 function 兼容性提示_判断是否显示() {
   const shouldShow = localStorage.getItem('不显示兼容性提示') !== 'true';
-  const 提示元素 = document.getElementById('jian1rong2xing4ti2shi4');
+  const 提示元素 = 元素_获取_使用ID('jian1rong2xing4ti2shi4');
 
   if (shouldShow) {
     提示元素.style.display = "block";
     元素_可拖动(提示元素);
   }
+  调试_输出('是否显示兼容性提示：' + shouldShow);
 }
 
 // 关闭兼容性提示
 function 兼容性提示_关闭() {
-  document.getElementById('jian1rong2xing4ti2shi4').style.display = "none";
+  元素_获取_使用ID('jian1rong2xing4ti2shi4').style.display = "none";
 }
 
 // 不再显示兼容性提示
 function 兼容性提示_不再显示() {
   localStorage.setItem('不显示兼容性提示', 'true');
-  document.getElementById('jian1rong2xing4ti2shi4').style.display = "none";
+  元素_获取_使用ID('jian1rong2xing4ti2shi4').style.display = "none";
 }
 
 // 元素的拖动
@@ -143,38 +203,53 @@ function 元素_可拖动(element) {
   let isDragging = false;
   let startX, startY, initialX, initialY;
 
-  element.addEventListener('mousedown', (e) => {
+  function onStart(event) {
     isDragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = event.clientX || event.touches[0].clientX;
+    startY = event.clientY || event.touches[0].clientY;
     initialX = element.offsetLeft;
     initialY = element.offsetTop;
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-  });
 
-  function onMouseMove(e) {
-    if (isDragging) {
-      const deltaX = e.clientX - startX;
-      const deltaY = e.clientY - startY;
-      element.style.left = initialX + deltaX + 'px';
-      element.style.top = initialY + deltaY + 'px';
-    }
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', onEnd);
+    调试_输出('开始拖动');
   }
 
-  function onMouseUp() {
+  function onMove(event) {
+    if (!isDragging) return;
+
+    const clientX = event.clientX || event.touches[0].clientX;
+    const clientY = event.clientY || event.touches[0].clientY;
+    const deltaX = clientX - startX;
+    const deltaY = clientY - startY;
+
+    element.style.left = initialX + deltaX + 'px';
+    element.style.top = initialY + deltaY + 'px';
+    调试_输出('正在拖动');
+  }
+
+  function onEnd() {
     isDragging = false;
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onEnd);
+    document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchend', onEnd);
+    调试_输出('停止拖动');
   }
+
+  element.addEventListener('mousedown', onStart);
+  element.addEventListener('touchstart', onStart);
 }
 
 // 适应导航栏高度
 function 内容_适应标题栏高度() {
-  const dao3hang2lan2gao1du4huo4qu3yong4Element = document.getElementById('dao3hang2lan2gao1du4huo4qu3yong4');
+  const dao3hang2lan2gao1du4huo4qu3yong4Element = 元素_获取_使用ID('dao3hang2lan2gao1du4huo4qu3yong4');
   const observer = new ResizeObserver(entries => {
     for (let entry of entries) {
       const heightInView = entry.contentRect.height;
+      调试_输出("标题栏高度：" + heightInView);
       document.querySelectorAll('.empty1').forEach(element => {
         element.style.height = `${heightInView}px`;
       });
@@ -184,12 +259,16 @@ function 内容_适应标题栏高度() {
 }
 
 function iframe_改变网址(iframeId, iframeSrc) {
-  const iframe = document.getElementById(iframeId);
+  const iframe = 元素_获取_使用ID(iframeId);
   iframe.setAttribute('src', iframeSrc);
   iframe.style.height = iframeSrc ? '50vh' : '0vh';
 }
 
 function iframe_改变高度(iframeId, size) {
-  const iframe = document.getElementById(iframeId);
+  const iframe = 元素_获取_使用ID(iframeId);
   iframe.style.height = `${size}vh`;
+}
+
+function 内容_隐藏加载指示器() {
+  元素_获取_使用ID('jia1zai3ti2shi4').style.display = "none";
 }
