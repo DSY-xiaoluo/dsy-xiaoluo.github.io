@@ -40,8 +40,8 @@ h6 {
 
 #jian1rong2xing4ti2shi4 {
   position: fixed;
-  top: 10%;
-  left: 12.5vw;
+  bottom: 0;
+  right: 0;
   /* transform: translate(-50%, -50%); */
   z-index: 114514;
   display: none;
@@ -138,6 +138,10 @@ xl-lsbjxwb {
   border: 1px solid #fff;
 }
 
+dialog {
+  all:unset;
+}
+
 /* 菜单栏 */
 .cai4dan1lan2 {
   margin: 0;
@@ -218,12 +222,22 @@ shu4fen1ge1tiao2 {
   height: 110px;
 }
 
+.zhe1zhao41 {
+  background-color: #ffff00ff;
+}
+
+.zhe1zhao411 {
+  background-color: #00000000;
+  transition: all 1s;
+}
+
 .vista1 {
   backdrop-filter: blur(3px);
   margin: 10px;
   border-radius: 5px;
   border: 1px solid #404040;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+
 }
 
 .vista2 {
@@ -264,4 +278,11 @@ shu4fen1ge1tiao2 {
 .blogbox:active {
   background: linear-gradient(#e0f6ff85 0%, #7ecbff64 100%);
   box-shadow: inset 0 0 0 1px #b4e9ff, inset 0 0 0 2px #ffffff64;
+}
+
+/* 遮罩 */
+.zhe1zhao4 {
+  width: 100vw;
+  height: 100vh;
+  color: #00000000;
 }

@@ -1,56 +1,54 @@
-﻿// 通过ID获取元素
-function 元素_获取_使用ID(elementId) {
+let dao3hang2lan2gao1du4 = 110
+
+// 适应导航栏高度
+function xl_内容_适应标题栏高度() {
+  const dao3hang2lan2gao1du4huo4qu3yong4Element = xl_元素_获取_使用ID('dao3hang2lan2gao1du4huo4qu3yong4');
+  const observer = new ResizeObserver(entries => {
+    for (let entry of entries) {
+      dao3hang2lan2gao1du4 = entry.contentRect.height;
+      xl_调试_输出("标题栏高度：" + dao3hang2lan2gao1du4);
+      document.querySelectorAll('.empty1').forEach(element => {
+        element.style.height = `${dao3hang2lan2gao1du4}px`;
+      });
+    }
+  });
+  observer.observe(dao3hang2lan2gao1du4huo4qu3yong4Element);
+}
+// 使用id
+function xl_元素_获取_使用ID(elementId) {
   return document.getElementById(elementId);
 }
-
+// 使用class
+function xl_元素_获取_使用Class(elementClass) {
+  return document.getElementsByClassName(elementClass);
+}
+// 添加样式类
+Element.prototype.xl_元素_样式_添加类 = function(styleClass) {
+  this.classList.add(styleClass);
+};
+// 移除样式类
+Element.prototype.xl_元素_样式_移除类 = function(styleClass) {
+  this.classList.remove(styleClass);
+}
 // 调试输出
-function 调试_输出(message) {
+function xl_调试_输出(message) {
   console.log(`${new Date().toLocaleString()} > ${message}`);
 }
-
-// 通过类名获取元素
-function 元素_获取_使用类名(className) {
-  return document.getElementsByClassName(className);
+// 调试输出错误
+function xl_调试_输出_错误(error) {
+  console.error(`${new Date().toLocaleString()} > ${error}`);
 }
-
-// 通过标签名获取元素
-function 元素_获取_使用标签名(tagName) {
-  return document.getElementsByTagName(tagName);
+// 调试输出警告
+function xl_调试_输出_警告(warning) {
+  console.warn(`${new Date().toLocaleString()} > ${warning}`);
 }
-
-// 设置元素的文本内容
-function 元素_设置文本内容(element, text) {
-  element.textContent = text;
+// 读本地存储
+function xl_本地存储_读(key) {
+  return localStorage.getItem(key);
 }
-
-// 创建新元素
-function 元素_创建(tagName) {
-  return document.createElement(tagName);
-}
-
-// 获取元素的属性
-function 元素_获取属性(element, attribute) {
-  return element.getAttribute(attribute);
-}
-
-// 设置元素的属性
-function 元素_设置属性(element, attribute, value) {
-  element.setAttribute(attribute, value);
-}
-
-// 移除元素的属性
-function 元素_移除属性(element, attribute) {
-  element.removeAttribute(attribute);
-}
-
-// 给元素添加类
-function 元素_添加类(element, className) {
-  element.classList.add(className);
-}
-
-// 移除元素的类
-function 元素_移除类(element, className) {
-  element.classList.remove(className);
+// 写本地存储
+function xl_本地存储_写(key, value) {
+  localStorage.setItem(key, value);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -70,18 +68,19 @@ document.addEventListener('DOMContentLoaded', function () {
       const id2 = this.getAttribute('id2') || '';
       const content = this.innerHTML || 'Default Content';
       this.innerHTML = `
-      <a name="${title}"></a>
-      <div class="vista1" style="${style1}" id="${id1}">
-        <div class="vista2" style="background-color: ${color}; ${style2}" id="${id2}">
-          <div class="vista3" style="${style3}">
-            <span>${title}</span>
-          </div>
-          <div class="vista4" style="${style4}">
-            <div class="vista5" style="${style5}">
-              ${content}
+      <div id="${title}">
+        <div class="vista1" style="${style1}" id="${id1}">
+          <div class="vista2" style="background-color: ${color}; ${style2}" id="${id2}">
+            <div class="vista3" style="${style3}">
+              <span>${title}</span>
+            </div>
+            <div class="vista4" style="${style4}">
+              <div class="vista5" style="${style5}">
+                ${content}
+              </div>
             </div>
           </div>
-       </div>
+        </div>
       </div>
       `;
     }
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
       super();
       this.innerHTML = `
       <xl-vistatextbox title="RSS订阅">
-        <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span>
+        <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span><br>
         <a href="/rss.xml">/rss.xml</a>
       </xl-vistatextbox>
       <xl-vistatextbox title="COPYRIGHT">
@@ -144,62 +143,112 @@ document.addEventListener('DOMContentLoaded', function () {
     constructor() {
       super();
       this.innerHTML = `
-      <div style="display: flex; align-items: center; margin: 10px 10px 0px 10px;">
-      <div>
-        <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px;">
-      </div>
-      <div>
-        <span style="font-size: 24px;">公告</span><br>
-        <span>此网站的域名（xiaoluo.link）将在今年7月23日到期，我们后续可能会更换为“xluofox.top”域名，请注意关注此处</span>
-        <hr>
-        <span style="font-size: 24px;">兼容性提示</span><br>
-        <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
-      </div>
-    </div>
-    <br>
-    <div style="position: sticky; bottom: 0;">
-      <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
-      <div style="background-color: #cbcbcb; text-align: right;">
-        <button onclick="兼容性提示_关闭()">关闭</button>
-        <button onclick="兼容性提示_不再显示()" style="margin-right: 10px;">不再显示</button>
-      </div>
-    </div>`;
+      <xl-vistatextbox title="dialog" style1="box-shadow: 0px 0px 20px rgba(0, 0, 0, 1); cursor: move;" style5="max-width: 40vw; cursor: default;" id="jian1rong2xing4ti2shi4">
+        <div style="display: flex; align-items: center; margin: 10px 10px 10px 10px;">
+          <div>
+            <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px;">
+          </div>
+          <div style="font-size: 12px; overflow: auto; height: 20vh; ">
+            <span style="font-size: 16px;">公告</span><br>
+            <span>此网站的域名（xiaoluo.link）将在今年7月23日到期，我们后续可能会更换为“xluofox.top”域名，请注意关注此处</span>
+            <hr>
+            <span style="font-size: 16px;">兼容性提示</span><br>
+            <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
+          </div>
+        </div>
+        <div style="position: sticky; bottom: 0;">
+          <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
+          <div style="background-color: #cbcbcb; text-align: right;">
+            <button onclick="xl_兼容性提示_关闭()">关闭</button>
+            <button onclick="xl_兼容性提示_不再显示()" style="margin-right: 10px;">不再显示</button>
+          </div>
+        </div>
+      </xl-vistatextbox>`;
     }
   });
 
-  兼容性提示_判断是否显示();
-  内容_适应标题栏高度();
+  xl_兼容性提示_判断是否显示();
+  xl_内容_适应标题栏高度();
+
+  // 锚点链接的滚动
+  document.querySelectorAll('a[href^="#"]').forEach(锚点 => {
+    锚点.addEventListener('click', function (事件) {
+      事件.preventDefault();
+
+      // 获取目标元素的ID
+      const 目标Id = this.getAttribute('href').substring(1);
+      const 目标元素 = xl_元素_获取_使用ID(目标Id);
+      if (目标元素) {
+        
+        // 移除目标元素的类
+        目标元素.xl_元素_样式_移除类('zhe1zhao41');
+        目标元素.xl_元素_样式_移除类('zhe1zhao411');
+
+        const 偏移 = dao3hang2lan2gao1du4; // 导航栏的高度
+        const 滚动容器 = xl_元素_获取_使用ID('nei4rong2'); // 滚动的容器
+
+        if (滚动容器) {
+          const 目标位置 = 目标元素.getBoundingClientRect().top + 滚动容器.scrollTop - 偏移;
+
+          滚动容器.scrollTo({
+            top: 目标位置,
+            behavior: 'smooth'
+          });
+
+          xl_调试_输出(`滚动到目标元素：${目标Id}, 位置：${目标位置}`);
+
+          // 滚动完成后添加CSS类
+          setTimeout(() => {
+            目标元素.xl_元素_样式_添加类('zhe1zhao41');
+            xl_调试_输出(`给目标元素添加类：zhe1zhao41`);
+
+            // 1秒后添加渐隐类
+            setTimeout(() => {
+              目标元素.xl_元素_样式_添加类('zhe1zhao411');
+              xl_调试_输出(`给目标元素添加类：zhe1zhao411`);
+            }, 1000); // 1秒后渐隐
+          }, 500); // 设置一个延迟时间以确保滚动完成
+        } else {
+          xl_调试_输出_警告('未找到滚动容器');
+        }
+      } else {
+        xl_调试_输出_错误(`未找到目标元素：${目标Id}`);
+      }
+    });
+  });
+
 })
 
 window.addEventListener('load', function () {
-  内容_隐藏加载指示器()
+  xl_内容_隐藏加载指示器()
 })
 
+
 // 判断是否弹出兼容性提示
-function 兼容性提示_判断是否显示() {
-  const shouldShow = localStorage.getItem('不显示兼容性提示') !== 'true';
-  const 提示元素 = 元素_获取_使用ID('jian1rong2xing4ti2shi4');
+function xl_兼容性提示_判断是否显示() {
+  const shouldShow = xl_本地存储_读('不显示兼容性提示') !== 'true';
+  const 提示元素 = xl_元素_获取_使用ID('jian1rong2xing4ti2shi4');
 
   if (shouldShow) {
     提示元素.style.display = "block";
-    元素_可拖动(提示元素);
+    xl_元素_可拖动(提示元素);
   }
-  调试_输出('是否显示兼容性提示：' + shouldShow);
-}
-
-// 关闭兼容性提示
-function 兼容性提示_关闭() {
-  元素_获取_使用ID('jian1rong2xing4ti2shi4').style.display = "none";
+  xl_调试_输出('是否显示兼容性提示：' + shouldShow);
 }
 
 // 不再显示兼容性提示
-function 兼容性提示_不再显示() {
-  localStorage.setItem('不显示兼容性提示', 'true');
-  元素_获取_使用ID('jian1rong2xing4ti2shi4').style.display = "none";
+function xl_兼容性提示_不再显示() {
+  xl_本地存储_写('不显示兼容性提示', 'true');
+  xl_兼容性提示_关闭()
+}
+
+// 关闭兼容性提示
+function xl_兼容性提示_关闭() {
+  xl_元素_获取_使用ID('jian1rong2xing4ti2shi4').style.display = "none";
 }
 
 // 元素的拖动
-function 元素_可拖动(element) {
+function xl_元素_可拖动(element) {
   let isDragging = false;
   let startX, startY, initialX, initialY;
 
@@ -214,7 +263,7 @@ function 元素_可拖动(element) {
     document.addEventListener('mouseup', onEnd);
     document.addEventListener('touchmove', onMove);
     document.addEventListener('touchend', onEnd);
-    调试_输出('开始拖动');
+    xl_调试_输出('开始拖动');
   }
 
   function onMove(event) {
@@ -227,7 +276,7 @@ function 元素_可拖动(element) {
 
     element.style.left = initialX + deltaX + 'px';
     element.style.top = initialY + deltaY + 'px';
-    调试_输出('正在拖动');
+    xl_调试_输出('正在拖动');
   }
 
   function onEnd() {
@@ -236,39 +285,24 @@ function 元素_可拖动(element) {
     document.removeEventListener('mouseup', onEnd);
     document.removeEventListener('touchmove', onMove);
     document.removeEventListener('touchend', onEnd);
-    调试_输出('停止拖动');
+    xl_调试_输出('停止拖动');
   }
 
   element.addEventListener('mousedown', onStart);
   element.addEventListener('touchstart', onStart);
 }
 
-// 适应导航栏高度
-function 内容_适应标题栏高度() {
-  const dao3hang2lan2gao1du4huo4qu3yong4Element = 元素_获取_使用ID('dao3hang2lan2gao1du4huo4qu3yong4');
-  const observer = new ResizeObserver(entries => {
-    for (let entry of entries) {
-      const heightInView = entry.contentRect.height;
-      调试_输出("标题栏高度：" + heightInView);
-      document.querySelectorAll('.empty1').forEach(element => {
-        element.style.height = `${heightInView}px`;
-      });
-    }
-  });
-  observer.observe(dao3hang2lan2gao1du4huo4qu3yong4Element);
-}
-
-function iframe_改变网址(iframeId, iframeSrc) {
-  const iframe = 元素_获取_使用ID(iframeId);
+function xl_iframe_改变网址(iframeId, iframeSrc) {
+  const iframe = xl_元素_获取_使用ID(iframeId);
   iframe.setAttribute('src', iframeSrc);
   iframe.style.height = iframeSrc ? '50vh' : '0vh';
 }
 
-function iframe_改变高度(iframeId, size) {
-  const iframe = 元素_获取_使用ID(iframeId);
+function xl_iframe_改变高度(iframeId, size) {
+  const iframe = xl_元素_获取_使用ID(iframeId);
   iframe.style.height = `${size}vh`;
 }
 
-function 内容_隐藏加载指示器() {
-  元素_获取_使用ID('jia1zai3ti2shi4').style.display = "none";
+function xl_内容_隐藏加载指示器() {
+  xl_元素_获取_使用ID('jia1zai3ti2shi4').style.display = "none";
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -11,10 +11,7 @@
 
 <body>
   <!-- 兼容性提示 -->
-  <xl-vistatextbox title="dialog" style1="box-shadow: 0px 0px 20px rgba(0, 0, 0, 1); cursor: move;"
-    style5="width: 70vw; max-height: 50vh; cursor: default;" id="jian1rong2xing4ti2shi4">
-    <xl-jian1rong2xing4ti2shi4>被你发现力，悲</xl-jian1rong2xing4ti2shi4>
-  </xl-vistatextbox>
+  <xl-jian1rong2xing4ti2shi4></xl-jian1rong2xing4ti2shi4>
   <!-- 标题栏 -->
   <div class="dao3hang2lan2" id="dao3hang2lan2gao1du4huo4qu3yong4">
     <xl-vistatextbox title="标题栏" style4="border: unset;"
@@ -37,19 +34,14 @@
         <a href="#最新的博客">├最新的博客</a><br>
         <a href="#代表项目">├代表项目</a><br>
         <a href="#个人介绍">├个人介绍</a><br>
-        <a href="#网站样式说明">└网站样式说明</a><br>
+        <a href="#联系方式">└联系方式</a><br>
       </xl-vistatextbox>
       <xl-ce4bian1lan2></xl-ce4bian1lan2>
     </div>
   </div>
   <!-- 内容 -->
-  <div class="nei4rong2">
+  <div class="nei4rong2" id="nei4rong2">
     <div class="empty1"></div>
-    <xl-vistatextbox style5="height: 50vh;">
-      <span>最近不是MC15周年庆嘛，价格打骨折五折，我趁这个机会入正了，把截图拿出来炫耀炫耀</span>
-      <img src="/file/img/Screenshot_20240521_200502.jpg" style="width: 100%;">
-      <img src="/file/img/Screenshot_20240521_201448.jpg" style="width: 100%;">
-    </xl-vistatextbox>
     <xl-vistatextbox title="个人网站建议">
       <div class="cai4dan1lan2">
         <div style="display: grid; grid-template-columns: auto auto; grid-template-columns: auto auto;">
@@ -58,12 +50,12 @@
                 src="/file/img/wai4bu4lian4jie1.png"></a>
           </div>
           <div style="text-align: right;">
-            <a onclick="iframe_改变网址('iframe1', 'https://wj.qq.com/s2/14669515/1958/')">&nbsp;显示&nbsp;</a>
-            <a onclick="iframe_改变网址('iframe1', '')">&nbsp;隐藏&nbsp;</a>
+            <a onclick="xl_iframe_改变网址('iframe1', 'https://wj.qq.com/s2/14669515/1958/')">&nbsp;显示&nbsp;</a>
+            <a onclick="xl_iframe_改变网址('iframe1', '')">&nbsp;隐藏&nbsp;</a>
             <shu4fen1ge1tiao2></shu4fen1ge1tiao2>
-            <a onclick="iframe_改变高度('iframe1', 25)">&nbsp;25vh&nbsp;</a>
-            <a onclick="iframe_改变高度('iframe1', 50)">&nbsp;50vh&nbsp;</a>
-            <a onclick="iframe_改变高度('iframe1', 75)">&nbsp;75vh&nbsp;</a>
+            <a onclick="xl_iframe_改变高度('iframe1', 25)">&nbsp;25vh&nbsp;</a>
+            <a onclick="xl_iframe_改变高度('iframe1', 50)">&nbsp;50vh&nbsp;</a>
+            <a onclick="xl_iframe_改变高度('iframe1', 75)">&nbsp;75vh&nbsp;</a>
           </div>
         </div>
       </div>
@@ -135,11 +127,24 @@
       </span>
       -->
     </xl-vistatextbox>
-    <xl-vistatextbox title="网站样式说明">
-      <span>
-        此板块将迁移至<a href="/page/updatelog/index.html" target="_blank">/page/updatelog/index.html<img
-            src="/file/img/wai4bu4lian4jie1.png"></a>
-      </span>
+    <xl-vistatextbox title="联系方式">
+      <ul>
+        <li>
+          <span>GitHub：</span><a href="https://github.com/dsy-xiaoluo/" target="_blank">DSY_xiaoluo</a>
+        </li>
+        <li>
+          <span>邮箱：</span><a href="mailto:XLuoFox.DSY@outlook.com" target="_blank">XLuoFox.DSY@outlook.com</a>
+        </li>
+        <li>
+          <span>Bilibili：</span><a href="https://space.bilibili.com/1561166904/" target="_blank">妙狗国国王</a>
+        </li>
+        <li>
+          <span>QQ：</span><a href="tencent://message/?uin=2046665121" target="_blank">2046665121</a>
+        </li>
+        <li>
+          <span>云湖UID：9131970</span>
+        </li>
+      </ul>
     </xl-vistatextbox>
   </div>
 </body>
