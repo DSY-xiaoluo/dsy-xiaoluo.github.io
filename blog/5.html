@@ -38,7 +38,7 @@
 
   </div>
 
-  <!--看见标题栏和内容区中间的空隙了吗？没错，那是我-->
+  <!--看见标题栏和xl_内容区中间的空隙了吗？没错，那是我-->
   <div style="height: 10px;"></div>
 
   <div class="grid-container2">
@@ -126,7 +126,7 @@
 
         <!--其它杂七杂八的-->
         <div id="sidebar">
-          <!--动态内容，见sidebar.html-->
+          <!--动态xl_内容，见sidebar.html-->
         </div>
       </div>
     </div>
@@ -170,7 +170,7 @@
   &lt;tr&gt;
     &lt;td style=&quot;background-color: #606060;&quot;&gt;
       &lt;span&gt;
-        内容
+        xl_内容
       &lt;/span&gt;
     &lt;/td&gt;
   &lt;/tr&gt;
@@ -184,7 +184,7 @@
             <pre>
               <code class="language-html" id="code202403280328">
 &lt;text-box title=&quot;标题&quot; color=&quot;#000&quot; bgcolor=&quot;#c0c0c0&quot; bgcolor2=&quot;#606060&quot; more=&quot;width: 100%;&quot;&gt;
-  内容
+  xl_内容
 &lt;/text-box&gt;
               </code>
             </pre>
@@ -197,7 +197,7 @@
         <text-box title="1.检查欲作为模板的HTML代码" color="#000" bgcolor="#fff" bgcolor2="#808080" more="margin: 10px;"
           more2="style=&quot;top: 9px; z-index: 99;&quot;">
           <span>
-            检查你的代码中有哪些为变量，如内容、字体颜色、边距等等。后续需要将这些变量作为参数传递给自定义元素的构造函数<br>
+            检查你的代码中有哪些为变量，如xl_内容、字体颜色、边距等等。后续需要将这些变量作为参数传递给自定义元素的构造函数<br>
           </span>
         </text-box>
         <text-box title="2.示例代码" color="#000" bgcolor="#fff" bgcolor2="#808080" more="margin: 10px;"
@@ -242,15 +242,15 @@ ${content}
                 </code>
               </pre>
             </text-box><br>
-            当页面的 DOM 内容加载完成后，就会执行里面的函数<br><br>
+            当页面的 DOM xl_内容加载完成后，就会执行里面的函数<br><br>
             在示例中，首先获取了一些属性值：<codetext>title</codetext>、<codetext>color</codetext>、<codetext>bgcolor</codetext>、
-            <codetext>bgcolor2</codetext>、<codetext>more</codetext> 和 <codetext>more2</codetext>，以及元素的内容 <codetext>
+            <codetext>bgcolor2</codetext>、<codetext>more</codetext> 和 <codetext>more2</codetext>，以及元素的xl_内容 <codetext>
               content</codetext><br><br>
-            然后通过 <codetext>innerHTML</codetext> 属性来设置自定义元素的内容<br><br>
+            然后通过 <codetext>innerHTML</codetext> 属性来设置自定义元素的xl_内容<br><br>
             <strong>注意：在这里，必须使用 HTML 实体编码，比如 &quot;<codetext>&amp;lt;</codetext>&quot; 和 &quot;<codetext>&amp;quot;
               </codetext>&quot; 来代替 &quot;<codetext>&lt;</codetext>&quot; 和 &quot;<codetext>&quot;</codetext>&quot;
               （转义），以避免 HTML 解析错误</strong><br><br>
-            接着，会生成了一个包含表格的 HTML 结构，表格的样式和内容根据之前获取的属性值动态生成。表格包含一个标题行和一个内容行，样式和内容也根据传入的属性值动态设置。这就是文本框
+            接着，会生成了一个包含表格的 HTML 结构，表格的样式和xl_内容根据之前获取的属性值动态生成。表格包含一个标题行和一个xl_内容行，样式和xl_内容也根据传入的属性值动态设置。这就是文本框
             最后，将生成的 HTML 结构赋值给自定义元素的 <codetext>innerHTML</codetext>，从而将这个自定义元素插入到页面中
           </span>
         </text-box>

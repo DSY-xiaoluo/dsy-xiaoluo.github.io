@@ -41,7 +41,6 @@ h6 {
 #jian1rong2xing4ti2shi4 {
   position: fixed;
   bottom: 0;
-  right: 0;
   /* transform: translate(-50%, -50%); */
   z-index: 114514;
   display: none;
@@ -89,7 +88,7 @@ iframe {
 }
 
 /* 无色背景小文本 */
-xl-wsbjxwb {
+xl_标签文本透明 {
   /* margin: 0px 4px; */
   padding: 0px 2px;
   font-size: 12px;
@@ -99,7 +98,7 @@ xl-wsbjxwb {
 }
 
 /* 黄色背景小文本 */
-xl-hsbjxwb {
+xl_标签文本黄色 {
   /* margin: 0px 4px; */
   padding: 0px 2px;
   font-size: 12px;
@@ -109,7 +108,7 @@ xl-hsbjxwb {
 }
 
 /* 灰色背景小文本 */
-xl-h2sbjxwb {
+xl_标签文本灰色 {
   /* margin: 0px 4px; */
   padding: 0px 2px;
   font-size: 12px;
@@ -119,7 +118,7 @@ xl-h2sbjxwb {
 }
 
 /* 红色背景小文本 */
-xl-h3sbjxwb {
+xl_标签文本红色 {
   /* margin: 0px 4px; */
   padding: 0px 2px;
   font-size: 12px;
@@ -129,7 +128,7 @@ xl-h3sbjxwb {
 }
 
 /* 蓝色背景小文本 */
-xl-lsbjxwb {
+xl_标签文本蓝色 {
   /* margin: 0px 4px; */
   padding: 0px 2px;
   font-size: 12px;
@@ -143,7 +142,7 @@ dialog {
 }
 
 /* 菜单栏 */
-.cai4dan1lan2 {
+.xl_菜单栏 {
   margin: 0;
   padding: 2px;
   background: linear-gradient(0deg, #ffffff64 0%, #ffffff00 5%, #ffffff00 100%), linear-gradient(0deg, #92dbe564 0%, #ffffff00 36%, #ffffff00 100%), linear-gradient(0deg, #a0d2d264 0%, #ffffff00 16%, #ffffff00 100%), linear-gradient(0deg, #00000016 53%, #ffffff00 53%, #ffffff00 100%), linear-gradient(0deg, #ffffff 1%, #ffffff00 2%, #ffffff00 100%), linear-gradient(to bottom, #ffffff 1%, #ffffff00 2%, #ffffff00 100%), linear-gradient(0deg, #ffffff00 53%, #ffffff32 53%, #ffffff85 100%), linear-gradient(to right, rgba(4, 80, 130, 1) 0%, rgba(17, 101, 132, 1) 53%, rgba(29, 121, 134, 1) 100%);
@@ -154,7 +153,7 @@ dialog {
   cursor: default;
 }
 
-.cai4dan1lan2>div>div>a {
+.xl_菜单栏>div>div>a {
   text-shadow: 0px 1px 1px #000;
   color: #fff;
   border: 1px solid transparent;
@@ -163,7 +162,7 @@ dialog {
   font-size: 14px;
 }
 
-.cai4dan1lan2>div>div>a:hover {
+.xl_菜单栏>div>div>a:hover {
   text-decoration: none;
   background: linear-gradient(to bottom, #ffffff85 0%, #ffffff32 25%, #0000 100%);
   box-shadow: inset 0 0 0 1px #ffffff85;
@@ -175,20 +174,20 @@ dialog {
   border-color: #00000064 #00000064 #00000085 #00000064;
 }
 
-.cai4dan1lan2>div>div>a:active {
+.xl_菜单栏>div>div>a:active {
   background: linear-gradient(to bottom, #00000064 0%, #00000016 16%, #0000 100%);
   box-shadow: inset 0 0 0 1px #ffffff00;
   border: 1px solid #00000085;
 }
 
 /* 竖分割条 */
-shu4fen1ge1tiao2 {
+xl_竖分割条 {
   border: 1px solid #00000000;
   border-left-color: #00000040;
   border-right-color: #ffffff40;
 }
 
-.dao3hang2lan2 {
+.xl_导航栏 {
   position: fixed;
   left: 0;
   top: 0;
@@ -196,7 +195,7 @@ shu4fen1ge1tiao2 {
   z-index: 1;
 }
 
-.ce4bian1lan2 {
+.xl_侧边栏 {
   position: fixed;
   left: 0;
   top: 0;
@@ -208,7 +207,7 @@ shu4fen1ge1tiao2 {
   direction: rtl;
 }
 
-.nei4rong2 {
+.xl_内容 {
   position: fixed;
   left: 25%;
   top: 0;
@@ -218,15 +217,15 @@ shu4fen1ge1tiao2 {
   overflow-y: auto;
 }
 
-.empty1 {
+.xl_占位1 {
   height: 110px;
 }
 
-.zhe1zhao41 {
+.xl_遮罩1 {
   background-color: #ffff00ff;
 }
 
-.zhe1zhao411 {
+.xl_遮罩11 {
   background-color: #00000000;
   transition: all 1s;
 }
@@ -270,19 +269,12 @@ shu4fen1ge1tiao2 {
 }
 
 
-.blogbox:hover {
+.xl_项目列表:hover {
   box-shadow: inset 0 0 0 1px #b7eaff, inset 0 0 0 2px #ffffff64;
   background: linear-gradient(to bottom, #e0efff26 0%, #c7e7ff33 50%, #b2e3ff5e 100%);
 }
 
-.blogbox:active {
+.xl_项目列表:active {
   background: linear-gradient(#e0f6ff85 0%, #7ecbff64 100%);
   box-shadow: inset 0 0 0 1px #b4e9ff, inset 0 0 0 2px #ffffff64;
-}
-
-/* 遮罩 */
-.zhe1zhao4 {
-  width: 100vw;
-  height: 100vh;
-  color: #00000000;
 }

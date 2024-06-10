@@ -146,14 +146,14 @@ button {
   border: 1px solid #0080ff;
 }
 
-.blogbox {
+.xl_项目列表 {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
   padding: 10px;
   margin: 10px;
   transition: box-shadow 0.3s;
 }
 
-.blogbox:hover {
+.xl_项目列表:hover {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 1);
 }
 

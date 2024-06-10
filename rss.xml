@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
     <title>XLuoFox.DSY 's Bloooog</title>
     <link>https://dsy-xiaoluo.github.io/</link>
     <description>这是XLuoFox.DSY的个人博客~</description>
     <ttl>114</ttl>
-    
+
     <item>
       <title>测试</title>
       <link>https://dsy-xiaoluo.github.io/404.html</link>
@@ -16,7 +16,8 @@
     <item>
       <title>开发日志-Rel.5.240601.23</title>
       <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
-      <description>该版本包含实验性重大更新，修改了404页面，优化了便携设备访问体验和JavaScript代码结构，微调样式，更新了导航栏适应性，优化拖动逻辑，修复了一些小BUG，并新增了开发日志页面</description>
+      <description>
+        该版本包含实验性重大更新，修改了404页面，优化了便携设备访问体验和JavaScript代码结构，微调样式，更新了导航栏适应性，优化拖动逻辑，修复了一些小BUG，并新增了开发日志页面</description>
       <pubDate>Sat, 01 Jun 2024 17:51:12 GMT</pubDate>
     </item>
 
@@ -37,8 +38,15 @@
     <item>
       <title>优化了锚点链接的滚动方式！开发日志-Rel.7.240609.01</title>
       <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
-      <description>修复了404页面无任何反应的BUG、修改了主页的部分内容、修改并优化了信息浮动窗</description>
+      <description>修复了404页面无任何反应的BUG、修改了主页的部分xl_内容、修改并优化了信息浮动窗</description>
       <pubDate>Sat, 08 Jun 2024 17:17:24 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>[开发日志][Rel.8.240611.04]添加了节日系统！等3条更新</title>
+      <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
+      <description>优化了信息浮动窗(2)、优化了代码结构</description>
+      <pubDate>Mon, 10 Jun 2024 20:59:22 GMT</pubDate>
     </item>
 
   </channel>

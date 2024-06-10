@@ -35,7 +35,7 @@
 
   </div>
 
-  <!--看见标题栏和内容区中间的空隙了吗？没错，那是我-->
+  <!--看见标题栏和xl_内容区中间的空隙了吗？没错，那是我-->
   <div style="height: 10px;"></div>
 
   <div class="grid-container2">
@@ -104,7 +104,7 @@
         <br>
         <!--其它杂七杂八的-->
         <div id="sidebar">
-          <!--动态内容，见sidebar.html-->
+          <!--动态xl_内容，见sidebar.html-->
         </div>
       </div>
     </div>
@@ -209,7 +209,7 @@
               <strong>-framerate 30</strong>：指定帧率，即每秒录制的帧数。这个值是可选项，可根据需要进行调整<br><br>
               <strong>-offset_x 114 -offset_y 514</strong>：指定抓取区域的偏移量，即相对于屏幕左上角的位置。这个值也是可选项，可根据需要进行调整<br><br>
               <strong>-video_size 1919x810</strong>：指定抓取区域的尺寸，即宽度和高度。这个值也是可选项，可根据需要进行调整<br><br>
-              <strong>-i desktop</strong>：指定输入设备为桌面，即抓取整个屏幕的内容，这是必须项，如果你想录制特定窗口，需要使用特定窗口的ID或名称（标题）替换“desktop”<br><br>
+              <strong>-i desktop</strong>：指定输入设备为桌面，即抓取整个屏幕的xl_内容，这是必须项，如果你想录制特定窗口，需要使用特定窗口的ID或名称（标题）替换“desktop”<br><br>
               <strong>-f dshow</strong>：指定音频输入格式为dshow，在Windows上用于捕获音频。如果要录制音频的话这是必须项，因为它定义了输出设备的方法<br><br>
               <strong>-i audio="麦克风名称"</strong>：指定音频输入设备为麦克风，其中“麦克风名称”是你电脑上麦克风的名称。这个值也是必须项，因为它定义了音频输入设备<br><br>
               <strong>-c:v libx264</strong>：指定视频编码器为libx264，这是H.264编码器。这个值也是必须项，因为它定义了视频编码器<br><br>
