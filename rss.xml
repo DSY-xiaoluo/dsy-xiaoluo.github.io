@@ -49,5 +49,12 @@
       <pubDate>Mon, 10 Jun 2024 20:59:22 GMT</pubDate>
     </item>
 
+    <item>
+      <title>[开发日志][Rel.9.240614.01]重写了信息浮动窗！等2条更新</title>
+      <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
+      <description>新增了按下F12键打开开发人员工具后自动弹出BUG报告页面、修改了主页的部分内容</description>
+      <pubDate>Thu, 13 Jun 2024 20:25:32 GMT</pubDate>
+    </item>
+
   </channel>
 </rss>

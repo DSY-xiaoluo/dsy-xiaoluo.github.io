@@ -1,4 +1,16 @@
+//  __  ___                _____           ____  ______   __
+//  \ \/ / |   _   _  ___ |  ___|____  __ |  _ \/ ___\ \ / /
+//   \  /| |  | | | |/ _ \| |_ / _ \ \/ / | | | \___ \\ V /
+//   /  \| |__| |_| | (_) |  _| (_) >  < _| |_| |___) || |
+//  /_/\_\_____\__,_|\___/|_|  \___/_/\_(_)____/|____/ |_|
+//
+// main.js
+
 let 导航栏高度 = 110;
+
+function xl_you_know() {
+  xl_调试_输出("\n\n __  ___                _____           ____  ______   __\n \\ \\/ / |   _   _  ___ |  ___|____  __ |  _ \\/ ___\\ \\ / /\n  \\  /| |  | | | |/ _ \\| |_ / _ \\ \\/ / | | | \\___ \\\\ V / \n  /  \\| |__| |_| | (_) |  _| (_) >  < _| |_| |___) || |  \n /_/\\_\\_____\\__,_|\\___/|_|  \\___/_/\\_(_)____/|____/ |_|  \n                                                         \n\nfound bugs? chick here -> https://wj.qq.com/s2/14752724/59a5/");
+}
 
 // 适应导航栏高度
 function xl_内容_适应标题栏高度() {
@@ -51,167 +63,30 @@ function xl_本地存储_写(key, value) {
   localStorage.setItem(key, value);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // 自定义元素xl-vistatextbox（vista文本框）
-  customElements.define(
-    "xl-vistatextbox",
-    class extends HTMLElement {
-      constructor() {
-        super();
-        const color = this.getAttribute("color") || "#00000000";
-        const title = this.getAttribute("title") || "Default Title";
-        const style1 = this.getAttribute("style1") || "";
-        const style2 = this.getAttribute("style2") || "";
-        const style3 = this.getAttribute("style3") || "";
-        const style4 = this.getAttribute("style4") || "";
-        const style5 = this.getAttribute("style5") || "";
-        const id1 = this.getAttribute("id1") || "";
-        const id2 = this.getAttribute("id2") || "";
-        const content = this.innerHTML || "Default Content";
-        this.innerHTML = `
-      <div id="${title}">
-        <div class="vista1" style="${style1}" id="${id1}">
-          <div class="vista2" style="background-color: ${color}; ${style2}" id="${id2}">
-            <div class="vista3" style="${style3}">
-              <span>${title}</span>
-            </div>
-            <div class="vista4" style="${style4}">
-              <div class="vista5" style="${style5}">
-                ${content}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      `;
-      }
-    }
-  );
-
-  // 自定义元素xl-navbox（导航栏）
-  customElements.define(
-    "xl-navbox",
-    class extends HTMLElement {
-      constructor() {
-        super();
-        this.innerHTML = `
-      <xl-vistatextbox title="加载指示器" id="jia1zai3ti2shi4">
-        <div style="background-color: #ff0;">
-          <span>页面加载未完成（页面正在加载）<br>
-          由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
-        </div>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="导航">
-        <a href="/index.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
-        </a>
-        <a href="/blog/index.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>博客</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
-        </a>
-        <a href="/page/index.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>页面</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
-        </a>
-        <a href="/about.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
-        </a>
-      </xl-vistatextbox>
-      `;
-      }
-    }
-  );
-
-  // 自定义元素xl-xl_侧边栏（侧边栏）
-  customElements.define(
-    "xl-xl_侧边栏",
-    class extends HTMLElement {
-      constructor() {
-        super();
-        this.innerHTML = `
-      <xl-vistatextbox title="RSS订阅">
-        <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span><br>
-        <a href="/rss.xml">/rss.xml</a>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="节日系统">
-        <span id="节日系统_祝福语显示框"></span>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="COPYRIGHT">
-       <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
-         <span>Copyright © 2024 XLuoFox.DSY</span>
-         <hr>
-         <span>特别鸣谢：<br>
-         <a href="https://www.stylestar.win/" target="_blank">StyleStar论坛<img src="/file/img/wai4bu4lian4jie1.png"></a><br>
-         <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/wai4bu4lian4jie1.png"></a>
-         </span>
-       </div>
-      </xl-vistatextbox>
-      `;
-      }
-    }
-  );
-
-  // 自定义元素xl-兼容性提示（兼容性提示）
-  customElements.define(
-    "xl-兼容性提示",
-    class extends HTMLElement {
-      constructor() {
-        super();
-        this.innerHTML = `
-      <xl-vistatextbox title="dialog" style1="box-shadow: 0px 0px 20px rgba(0, 0, 0, 1); cursor: move;" style5="max-width: 40vw; cursor: default;" id="jian1rong2xing4ti2shi4">
-        <div style="display: flex; align-items: center; margin: 10px 10px 10px 10px;">
-          <div>
-            <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px;">
-          </div>
-          <div style="font-size: 12px; overflow: auto; height: 20vh; ">
-            <span style="font-size: 16px;">公告</span><br>
-            <span>此网站的域名（xiaoluo.link）将在今年7月23日到期，我们后续可能会更换为“xluofox.top”域名，请注意关注此处</span>
-            <hr>
-            <span style="font-size: 16px;">兼容性提示</span><br>
-            <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
-          </div>
-        </div>
-        <div style="position: sticky; bottom: 0;">
-          <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40;"></div>
-          <div style="background-color: #cbcbcb; text-align: right;">
-            <button onclick="xl_兼容性提示_关闭()">关闭</button>
-            <button onclick="xl_兼容性提示_不再显示()" style="margin-right: 10px;">不再显示</button>
-          </div>
-        </div>
-      </xl-vistatextbox>`;
-      }
-    }
-  );
-
-  xl_兼容性提示_判断是否显示();
-  xl_内容_适应标题栏高度();
-  xl_内容_实现锚点链接平滑滚动();
-  xl_节日系统();
-});
-
-window.addEventListener("load", function () {
-  xl_内容_隐藏加载指示器();
-});
-
 // 判断是否弹出兼容性提示
 function xl_兼容性提示_判断是否显示() {
-  const 应该显示 = xl_本地存储_读("不显示兼容性提示") !== "true";
-  const 提示元素 = xl_元素_获取_使用ID("jian1rong2xing4ti2shi4");
+  const c_应该显示 = xl_本地存储_读("显示兼容性提示") !== "false";
+  const c_提示元素 = xl_元素_获取_使用ID("公告");
 
-  if (应该显示) {
-    提示元素.style.display = "block";
-    xl_元素_可拖动(提示元素);
+  if (c_应该显示) {
+    c_提示元素.showModal();
+    xl_元素_可拖动(c_提示元素);
+  } else {
+    xl_兼容性提示_关闭();
   }
-  xl_调试_输出("兼容性提示_判断是否显示 > \n 是否显示兼容性提示：" + 应该显示);
+  xl_调试_输出("兼容性提示_判断是否显示 > \n 是否显示兼容性提示：" + c_应该显示);
 }
 
 // 不再显示兼容性提示
 function xl_兼容性提示_不再显示() {
-  xl_本地存储_写("不显示兼容性提示", "true");
+  xl_本地存储_写("显示兼容性提示", "false");
   xl_兼容性提示_关闭();
 }
 
 // 关闭兼容性提示
 function xl_兼容性提示_关闭() {
-  xl_元素_获取_使用ID("jian1rong2xing4ti2shi4").style.display = "none";
+  xl_元素_获取_使用ID("公告").close();
+  xl_元素_获取_使用ID("公告").style.display = "none";
 }
 
 // 元素的拖动
@@ -362,3 +237,169 @@ function xl_节日系统() {
     xl_调试_输出_警告("节日系统 > \n 今天没有特别的节日，奖励你一个警告[doge]");
   }
 }
+
+function xl_BUG反馈页面_弹出() {
+  const c_是否弹出BUG反馈页面 = xl_本地存储_读("弹出BUG反馈页面") !== "false"
+  if (c_是否弹出BUG反馈页面) {
+    window.open("/page/bugsreport/index.html", "_blank");
+  }
+  xl_调试_输出("BUG反馈页面_弹出 > \n 是否弹出BUG反馈页面：" + c_是否弹出BUG反馈页面);
+}
+
+function xl_BUG反馈页面_设置不再弹出() {
+  xl_本地存储_写("弹出BUG反馈页面", "false");
+  window.close();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  xl_you_know();
+
+  // 自定义元素xl-vistatextbox（vista文本框）
+  customElements.define(
+    "xl-vistatextbox",
+    class extends HTMLElement {
+      constructor() {
+        super();
+        const color = this.getAttribute("color") || "#00000000";
+        const title = this.getAttribute("title") || "Default Title";
+        const style1 = this.getAttribute("style1") || "";
+        const style2 = this.getAttribute("style2") || "";
+        const style3 = this.getAttribute("style3") || "";
+        const style4 = this.getAttribute("style4") || "";
+        const style5 = this.getAttribute("style5") || "";
+        const id1 = this.getAttribute("id1") || "";
+        const id2 = this.getAttribute("id2") || "";
+        const content = this.innerHTML || "Default Content";
+        this.innerHTML = `
+      <div id="${title}">
+        <div class="vista1" style="${style1}" id="${id1}">
+          <div class="vista2" style="background-color: ${color}; ${style2}" id="${id2}">
+            <div class="vista3" style="${style3}">
+              <span>${title}</span>
+            </div>
+            <div class="vista4" style="${style4}">
+              <div class="vista5" style="${style5}">
+                ${content}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      `;
+      }
+    }
+  );
+
+  // 自定义元素xl-navbox（导航栏）
+  customElements.define(
+    "xl-navbox",
+    class extends HTMLElement {
+      constructor() {
+        super();
+        this.innerHTML = `
+      <xl-vistatextbox title="加载指示器" id="jia1zai3ti2shi4">
+        <div style="background-color: #ff0;">
+          <span>页面加载未完成（页面正在加载）<br>
+          由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
+        </div>
+      </xl-vistatextbox>
+      <xl-vistatextbox title="导航">
+        <a href="/index.html">
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+        </a>
+        <a href="/blog/index.html">
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>博客</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+        </a>
+        <a href="/page/index.html">
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>页面</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+        </a>
+        <a href="/about.html">
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+        </a>
+      </xl-vistatextbox>
+      `;
+      }
+    }
+  );
+
+  // 自定义元素xl-xl_侧边栏（侧边栏）
+  customElements.define(
+    "xl-xl_侧边栏",
+    class extends HTMLElement {
+      constructor() {
+        super();
+        this.innerHTML = `
+      <xl-vistatextbox title="RSS订阅">
+        <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span><br>
+        <a href="/rss.xml">/rss.xml</a>
+      </xl-vistatextbox>
+      <xl-vistatextbox title="节日系统">
+        <span id="节日系统_祝福语显示框"></span>
+      </xl-vistatextbox>
+      <xl-vistatextbox title="COPYRIGHT">
+       <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
+         <span>Copyright © 2024 XLuoFox.DSY</span>
+         <hr>
+         <span>特别鸣谢：<br>
+         <a href="https://www.stylestar.win/" target="_blank">StyleStar论坛<img src="/file/img/wai4bu4lian4jie1.png"></a><br>
+         <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/wai4bu4lian4jie1.png"></a>
+         </span>
+       </div>
+      </xl-vistatextbox>
+      `;
+      }
+    }
+  );
+
+  // 自定义元素xl-兼容性提示（兼容性提示）
+  customElements.define(
+    "xl-兼容性提示",
+    class extends HTMLElement {
+      constructor() {
+        super();
+        this.innerHTML = `
+<dialog id="公告">
+  <xl-vistatextbox title="dialog">
+    <div style="display: flex; align-items: center; margin: 10px 10px 10px 10px">
+      <div>
+        <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px" />
+      </div>
+      <div style="font-size: 12px; overflow: auto;">
+        <span style="font-size: 16px">公告</span><br />
+        <span>此网站的域名（xiaoluo.link）将在今年7月23日到期，我们后续可能会更换为“xluofox.top”域名，请注意关注此处</span>
+        <hr />
+        <span style="font-size: 16px">兼容性提示</span><br />
+        <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
+      </div>
+    </div>
+    <div style="position: sticky; bottom: 0">
+      <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40"></div>
+      <div style="background-color: #cbcbcb; text-align: right">
+        <button onclick="xl_兼容性提示_关闭()">关闭</button>
+        <button onclick="xl_兼容性提示_不再显示()" style="margin-right: 10px">不再显示</button>
+      </div>
+    </div>
+  </xl-vistatextbox>
+</dialog>
+      `;
+      }
+    }
+  );
+
+  xl_兼容性提示_判断是否显示();
+  xl_内容_适应标题栏高度();
+  xl_内容_实现锚点链接平滑滚动();
+  xl_节日系统();
+});
+
+window.addEventListener("load", function () {
+  xl_内容_隐藏加载指示器();
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.shiftKey && event.key === "J") || (event.ctrlKey && event.key === "U")) {
+    setTimeout(function () {
+      xl_BUG反馈页面_弹出()
+    }, 1000);
+  }
+});
