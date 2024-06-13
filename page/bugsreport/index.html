@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>报告|XLuoFox.DSY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/main.js"></script>
+  </head>
+
+  <body>
+    <!-- 标题栏 -->
+    <div class="xl_导航栏" id="导航栏">
+      <xl-vistatextbox title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
+        <div>
+          <span
+            >dsy-xiaoluo.github.io >
+            <strong>index.html</strong>
+            :
+          </span>
+          <h1 style="font-size: 24px; line-height: 32px; color: #8080ff">报告</h1>
+        </div>
+      </xl-vistatextbox>
+    </div>
+    <xl-vistatextbox title="info" style1="position: fixed; top: 10%; left: 60%;">
+      <div style="margin: 10px">
+        <span>发现了BUG？在下方反馈！你现在可以返回到先前的页面</span>
+      </div>
+
+      <div style="position: sticky; bottom: 0">
+        <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40"></div>
+        <div style="background-color: #cbcbcb; text-align: right">
+          <button onclick="xl_BUG反馈页面_设置不再弹出();">不再弹出</button>
+          <button onclick="window.close();" style="margin-right: 10px">返回</button>
+        </div>
+      </div>
+    </xl-vistatextbox>
+    <xl-vistatextbox title="BUG反馈" style="display: grid; place-items: center; height: 100vh" style5="width: 75vw;">
+      <div class="xl_菜单栏">
+        <div style="display: grid; grid-template-columns: auto auto; grid-template-columns: auto auto">
+          <div>
+            <a href="https://wj.qq.com/s2/14752724/59a5/" target="_blank">https://wj.qq.com/s2/14752724/59a5/<img src="/file/img/wai4bu4lian4jie1.png" /></a>
+          </div>
+          <div style="text-align: right">
+            <a onclick="xl_iframe_改变网址('iframe1', 'https://wj.qq.com/s2/14752724/59a5/')">&nbsp;显示&nbsp;</a>
+            <a onclick="xl_iframe_改变网址('iframe1', '')">&nbsp;隐藏&nbsp;</a>
+            <xl_竖分割条></xl_竖分割条>
+            <a onclick="xl_iframe_改变高度('iframe1', 25)">&nbsp;25vh&nbsp;</a>
+            <a onclick="xl_iframe_改变高度('iframe1', 50)">&nbsp;50vh&nbsp;</a>
+            <a onclick="xl_iframe_改变高度('iframe1', 75)">&nbsp;75vh&nbsp;</a>
+          </div>
+        </div>
+      </div>
+      <iframe src="" id="iframe1" style="height: 0"></iframe>
+    </xl-vistatextbox>
+  </body>
+</html>
