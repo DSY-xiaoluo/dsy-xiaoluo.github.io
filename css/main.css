@@ -69,6 +69,7 @@ button:active {
 
 a {
   text-decoration: none;
+  color: #00f;
 }
 
 a:hover {
@@ -146,6 +147,32 @@ dialog {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.树状列表 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.树状列表 ul {
+  margin-left: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.树状列表 li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.树状列表 li::before {
+  content: "├";
+}
+
+.树状列表 li:last-child::before {
+  content: "└";
 }
 
 /* 菜单栏 */
