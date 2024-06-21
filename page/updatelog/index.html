@@ -13,37 +13,44 @@
     <xl-兼容性提示></xl-兼容性提示>
     <!-- 标题栏 -->
     <div class="xl_导航栏" id="导航栏">
-      <xl-vistatextbox title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
+      <xl-vista文本框 title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
         <div>
           <span>dsy-xiaoluo.github.io > page > updatelog > <strong>index.html</strong> : </span>
           <h1 style="font-size: 24px; line-height: 32px; color: #8080ff">开发日志</h1>
           <br />
           <span>欢迎提出开发建议！</span>
         </div>
-      </xl-vistatextbox>
+      </xl-vista文本框>
     </div>
     <!-- 侧边栏 -->
     <div class="xl_侧边栏">
       <div style="direction: ltr">
         <div class="xl_占位1"></div>
-        <xl-navbox></xl-navbox>
-        <xl-vistatextbox title="目录" style5="line-height: 0.88; padding: 4px 0px;">
-          <a href="">index.html<img src="/file/img/mao2dian3lian4jie1.png" /></a><br />
-          <a href="#BUG反馈">├BUG反馈</a><br />
-          <a href="#标签含义说明">├标签含义说明</a><br />
-          <a href="#Rel.9.240614.01">├Rel.9.240614.01</a><br />
-          <a href="#Rel.8.240611.04">├Rel.8.240611.04</a><br />
-          <a href="#Rel.7.240609.01">├Rel.7.240609.01</a><br />
-          <a href="#Rel.6.240601.00">├Rel.6.240601.00</a><br />
-          <a href="#Rel.5.240601.23">└Rel.5.240601.23</a><br />
-        </xl-vistatextbox>
-        <xl-xl_侧边栏></xl-xl_侧边栏>
+        <xl-目录上></xl-目录上>
+        <xl-vista文本框 title="目录" style5="line-height: 0.87; padding: 4px 0px;">
+          <ul class="xl_树状列表">
+            <li>
+              <a href="">index.html<img src="/file/img/mao2dian3lian4jie1.png" /></a><br />
+              <ul>
+                <li><a href="#BUG反馈">BUG反馈</a><br /></li>
+                <li><a href="#说明">说明</a><br /></li>
+                <li><a href="#Rel.10.240622.01">Rel.10.240622.01</a><br /></li>
+                <li><a href="#Rel.9.240614.01">Rel.9.240614.01</a><br /></li>
+                <li><a href="#Rel.8.240611.04">Rel.8.240611.04</a><br /></li>
+                <li><a href="#Rel.7.240609.01">Rel.7.240609.01</a><br /></li>
+                <li><a href="#Rel.6.240601.00">Rel.6.240601.00</a><br /></li>
+                <li><a href="#Rel.5.240601.23">Rel.5.240601.23</a><br /></li>
+              </ul>
+            </li>
+          </ul>
+        </xl-vista文本框>
+        <xl-目录下></xl-目录下>
       </div>
     </div>
     <!-- 内容 -->
     <div class="xl_内容" id="xl_内容">
       <div class="xl_占位1"></div>
-      <xl-vistatextbox title="BUG反馈">
+      <xl-vista文本框 title="BUG反馈">
         <div class="xl_菜单栏">
           <div style="display: grid; grid-template-columns: auto auto; grid-template-columns: auto auto">
             <div>
@@ -60,9 +67,11 @@
           </div>
         </div>
         <iframe src="" id="iframe1" style="height: 0"></iframe>
-      </xl-vistatextbox>
+      </xl-vista文本框>
 
-      <xl-vistatextbox title="标签含义说明">
+      <xl-vista文本框 title="说明">
+        <span>闲着没事干想第一时间知道此站更新了什么？没问题！复制下面的RSS订阅链接！<br /><a href="/rss/updatelog.xml">/rss/updatelog.xml</a><button onclick="xl_剪贴板_设置文本('http://dsy-xiaoluo.github.io/rss/updatelog.xml')">复制</button></span>
+        <hr />
         <span> <xl_标签文本黄色>B</xl_标签文本黄色>：Beta，实验性 </span><br />
         <span> <xl_标签文本红色>H</xl_标签文本红色>：Huge，重大更新（建议清除浏览器缓存） </span><br />
         <span> <xl_标签文本灰色>N</xl_标签文本灰色>：Normal，普通更新 </span><br />
@@ -71,9 +80,31 @@
         <span> <xl_标签文本透明>H</xl_标签文本透明>HTML </span><br />
         <span> <xl_标签文本透明>C</xl_标签文本透明>CSS </span><br />
         <span> <xl_标签文本透明>J</xl_标签文本透明>JavaScript </span><br />
-      </xl-vistatextbox>
+      </xl-vista文本框>
 
-      <xl-vistatextbox title="Rel.9.240614.01">
+      <xl-vista文本框 title="Rel.10.240622.01">
+        <span>
+          <xl_标签文本黄色>B</xl_标签文本黄色>
+          <xl_标签文本透明>J</xl_标签文本透明>
+          新增了用于复制文本至粘贴板的函数 </span
+        ><br />
+        <span>
+          <xl_标签文本灰色>N</xl_标签文本灰色>
+          <xl_标签文本透明>C</xl_标签文本透明>
+          重写了树状列表框 </span
+        ><br />
+        <span>
+          <xl_标签文本灰色>N</xl_标签文本灰色>
+          <xl_标签文本透明>H</xl_标签文本透明>
+          修复了有一篇博客无法打开的问题 </span
+        ><br />
+        <span>
+          <xl_标签文本灰色>N</xl_标签文本灰色>
+          分离了博客的RSS和开发日志的Rss </span
+        ><br />
+      </xl-vista文本框>
+
+      <xl-vista文本框 title="Rel.9.240614.01">
         <span>
           <xl_标签文本黄色>B</xl_标签文本黄色>
           <xl_标签文本红色>H</xl_标签文本红色>
@@ -94,9 +125,9 @@
           <xl_标签文本透明>H</xl_标签文本透明>
           修改了主页的部分内容 </span
         ><br />
-      </xl-vistatextbox>
+      </xl-vista文本框>
 
-      <xl-vistatextbox title="Rel.8.240611.04">
+      <xl-vista文本框 title="Rel.8.240611.04">
         <span>
           <xl_标签文本红色>H</xl_标签文本红色>
           <xl_标签文本蓝色>N</xl_标签文本蓝色>
@@ -123,9 +154,9 @@
           <xl_标签文本透明>J</xl_标签文本透明>
           优化了代码结构 </span
         ><br />
-      </xl-vistatextbox>
+      </xl-vista文本框>
 
-      <xl-vistatextbox title="Rel.7.240609.01">
+      <xl-vista文本框 title="Rel.7.240609.01">
         <span>
           <xl_标签文本红色>H</xl_标签文本红色>
           <xl_标签文本透明>J</xl_标签文本透明>
@@ -147,9 +178,9 @@
           <xl_标签文本透明>H</xl_标签文本透明>
           修改并优化了信息浮动窗 </span
         ><br />
-      </xl-vistatextbox>
+      </xl-vista文本框>
 
-      <xl-vistatextbox title="Rel.6.240601.00">
+      <xl-vista文本框 title="Rel.6.240601.00">
         <span>
           <xl_标签文本红色>H</xl_标签文本红色>
           <xl_标签文本透明>J</xl_标签文本透明>优化了JavaScript代码结构 </span
@@ -173,9 +204,9 @@
           <xl_标签文本灰色>N</xl_标签文本灰色>
           <xl_标签文本蓝色>N</xl_标签文本蓝色>支持了RSS订阅
         </span>
-      </xl-vistatextbox>
+      </xl-vista文本框>
 
-      <xl-vistatextbox title="Rel.5.240601.23">
+      <xl-vista文本框 title="Rel.5.240601.23">
         <span>
           <xl_标签文本黄色>B</xl_标签文本黄色>
           <xl_标签文本红色>H</xl_标签文本红色>
@@ -213,7 +244,7 @@
           <xl_标签文本蓝色>N</xl_标签文本蓝色>
           <xl_标签文本透明>H</xl_标签文本透明>新增了开发日志页面 </span
         ><br />
-      </xl-vistatextbox>
+      </xl-vista文本框>
     </div>
   </body>
 </html>

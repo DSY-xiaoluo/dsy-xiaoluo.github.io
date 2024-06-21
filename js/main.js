@@ -18,7 +18,7 @@ function xl_内容_适应标题栏高度() {
   const observer = new ResizeObserver((entries) => {
     for (let entry of entries) {
       导航栏高度 = entry.contentRect.height;
-      xl_调试_输出("xl_内容_适应标题栏高度 > \n 标题栏高度：" + 导航栏高度);
+      xl_调试_输出("内容_适应标题栏高度 > \n 标题栏高度：" + 导航栏高度);
       document.querySelectorAll(".xl_占位1").forEach((element) => {
         element.style.height = `${导航栏高度}px`;
       });
@@ -61,6 +61,41 @@ function xl_本地存储_读(key) {
 // 写本地存储
 function xl_本地存储_写(key, value) {
   localStorage.setItem(key, value);
+}
+
+// 复制文本到剪贴板函数
+function xl_剪贴板_设置文本(xl_文本) {
+  if (!navigator.clipboard) {
+    xl_调试_输出_警告("剪贴板_设置文本 > \n不支持 Clipboard API，使用备用方法");
+    xl_剪贴板_设置文本_备用(xl_文本);
+    return;
+  }
+  navigator.clipboard.writeText(xl_文本).then(
+    function () {
+      xl_调试_输出("剪贴板_设置文本 > \n已成功复制到剪贴板：" + xl_文本);
+    },
+    function (错误) {
+      xl_调试_输出_错误(`剪贴板_设置文本 > \n无法复制文本到剪贴板: ${错误}`);
+    }
+  );
+}
+
+// 备用方法复制文本
+function xl_剪贴板_设置文本_备用(xl_文本) {
+  var xl_文本区域 = document.createElement("textarea");
+  xl_文本区域.value = xl_文本;
+  xl_文本区域.style.position = "fixed"; // 避免在 iOS 上出现滚动问题
+  document.body.appendChild(xl_文本区域);
+  xl_文本区域.focus();
+  xl_文本区域.select();
+  try {
+    var xl_成功 = document.execCommand("copy");
+    var xl_信息 = xl_成功 ? "成功" : "失败";
+    xl_调试_输出(`xl_剪贴板_设置文本_备用 > \n复制文本： ${xl_文本}指令： ${xl_信息}`);
+  } catch (xl_错误) {
+    xl_调试_输出_错误(`xl_剪贴板_设置文本_备用 > \n无法使用备用方法复制文本: ${xl_错误}`);
+  }
+  document.body.removeChild(xl_文本区域);
 }
 
 // 判断是否弹出兼容性提示
@@ -134,11 +169,6 @@ function xl_元素_可拖动(元素) {
   元素.addEventListener("touchstart", 开始拖动);
 }
 
-// 调试输出函数
-function xl_调试_输出(消息) {
-  console.log(消息);
-}
-
 function xl_iframe_改变网址(iframeId, iframeSrc) {
   const iframe = xl_元素_获取_使用ID(iframeId);
   iframe.setAttribute("src", iframeSrc);
@@ -210,7 +240,7 @@ function xl_节日系统() {
     "04-01": "愚人节快乐！开怀大笑，轻松一下，愿你每一天都开心愉快！",
     "05-01": "劳动节快乐！向所有辛勤工作的劳动者致敬，愿你们节日愉快！",
     "06-01": "儿童节快乐！愿所有的孩子们都能健康成长，快乐无忧！",
-    "06-15": "祝此站2周年快乐！感谢一路有你，未来更精彩！",
+    "06-15": "祝此站3周年快乐！感谢一路有你，未来更精彩！",
     "09-10": "教师节快乐！感谢所有辛勤工作的老师们，您们辛苦了！",
     "10-01": "国庆节快乐！愿我们的国家繁荣昌盛，人民幸福安康！",
     "11-19": "站长生日[doge]",
@@ -239,7 +269,7 @@ function xl_节日系统() {
 }
 
 function xl_BUG反馈页面_弹出() {
-  const c_是否弹出BUG反馈页面 = xl_本地存储_读("弹出BUG反馈页面") !== "false"
+  const c_是否弹出BUG反馈页面 = xl_本地存储_读("弹出BUG反馈页面") !== "false";
   if (c_是否弹出BUG反馈页面) {
     window.open("/page/bugsreport/index.html", "_blank");
   }
@@ -254,9 +284,8 @@ function xl_BUG反馈页面_设置不再弹出() {
 document.addEventListener("DOMContentLoaded", function () {
   xl_you_know();
 
-  // 自定义元素xl-vistatextbox（vista文本框）
   customElements.define(
-    "xl-vistatextbox",
+    "xl-vista文本框",
     class extends HTMLElement {
       constructor() {
         super();
@@ -290,20 +319,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   );
 
-  // 自定义元素xl-navbox（导航栏）
   customElements.define(
-    "xl-navbox",
+    "xl-目录上",
     class extends HTMLElement {
       constructor() {
         super();
         this.innerHTML = `
-      <xl-vistatextbox title="加载指示器" id="jia1zai3ti2shi4">
+      <xl-vista文本框 title="加载指示器" id="jia1zai3ti2shi4">
         <div style="background-color: #ff0;">
           <span>页面加载未完成（页面正在加载）<br>
           由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
         </div>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="导航">
+      </xl-vista文本框>
+      <xl-vista文本框 title="导航">
         <a href="/index.html">
           <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
@@ -316,27 +344,27 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="/about.html">
           <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
-      </xl-vistatextbox>
+      </xl-vista文本框>
       `;
       }
     }
   );
 
-  // 自定义元素xl-xl_侧边栏（侧边栏）
   customElements.define(
-    "xl-xl_侧边栏",
+    "xl-目录下",
     class extends HTMLElement {
       constructor() {
         super();
         this.innerHTML = `
-      <xl-vistatextbox title="RSS订阅">
-        <span>此站已支持RSS订阅！复制下方的链接即可订阅！</span><br>
-        <a href="/rss.xml">/rss.xml</a>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="节日系统">
+      <xl-vista文本框 title="RSS订阅">
+        <span>想第一时间知道更新了什么？此站已支持RSS订阅！复制下方的链接即可订阅！↓↓↓</span><br>
+        <a href="/rss/main.xml">/rss/main.xml</a>
+        <button onclick="xl_剪贴板_设置文本('http://dsy-xiaoluo.github.io/rss/main.xml')">复制</button>
+      </xl-vista文本框>
+      <xl-vista文本框 title="节日系统">
         <span id="节日系统_祝福语显示框"></span>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="COPYRIGHT">
+      </xl-vista文本框>
+      <xl-vista文本框 title="COPYRIGHT">
        <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
          <span>Copyright © 2024 XLuoFox.DSY</span>
          <hr>
@@ -347,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
          <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/wai4bu4lian4jie1.png"></a>
          </span>
        </div>
-      </xl-vistatextbox>
+      </xl-vista文本框>
       `;
       }
     }
@@ -361,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
         super();
         this.innerHTML = `
 <dialog id="公告">
-  <xl-vistatextbox title="dialog">
+  <xl-vista文本框 title="dialog">
     <div style="display: flex; align-items: center; margin: 10px 10px 10px 10px">
       <div>
         <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px" />
@@ -381,7 +409,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button onclick="xl_兼容性提示_不再显示()" style="margin-right: 10px">不再显示</button>
       </div>
     </div>
-  </xl-vistatextbox>
+  </xl-vista文本框>
 </dialog>
       `;
       }
@@ -401,7 +429,7 @@ window.addEventListener("load", function () {
 document.addEventListener("keydown", function (event) {
   if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I") || (event.ctrlKey && event.shiftKey && event.key === "J") || (event.ctrlKey && event.key === "U")) {
     setTimeout(function () {
-      xl_BUG反馈页面_弹出()
+      xl_BUG反馈页面_弹出();
     }, 1000);
   }
 });

@@ -149,30 +149,34 @@ dialog {
   height: 100%;
 }
 
-.树状列表 {
+.xl_树状列表 {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.树状列表 ul {
+.xl_树状列表 ul {
   margin-left: 18px;
   padding: 0;
   list-style: none;
 }
 
-.树状列表 li {
+.xl_树状列表 li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.树状列表 li::before {
+.xl_树状列表 li::before {
   content: "├";
+  color: #00f;
+  margin-right: 2px;
 }
 
-.树状列表 li:last-child::before {
+.xl_树状列表 li:last-child::before {
   content: "└";
+  color: #00f;
+  margin-right: 2px;
 }
 
 /* 菜单栏 */

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>XLuoFox.DSY 's Bloooog</title>
+    <link>https://dsy-xiaoluo.github.io/</link>
+    <description>这是XLuoFox.DSY的个人博客~</description>
+    <ttl>114</ttl>
+
+    <item>
+      <title>测试</title>
+      <link>https://dsy-xiaoluo.github.io/404.html</link>
+      <description>这是一条测试，如不出意外，打开此链接为404页面</description>
+      <pubDate>Sat, 01 Jun 2024 17:38:35 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>[新博客][ID:7]此站点已支持RSS订阅</title>
+      <link>https://dsy-xiaoluo.github.io/blog/7.html</link>
+      <description>如题</description>
+      <pubDate>Mon, 03 Jun 2024 18:27:32 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>

@@ -1,106 +1,111 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>博客|XLuoFox.DSY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>博客|XLuoFox.DSY</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/main.css" />
-  <script src="/js/main.js"></script>
-</head>
-
-<body>
-  <!-- 兼容性提示 -->
-  <xl-兼容性提示></xl-兼容性提示>
-  <!-- 标题栏 -->
-  <div class="xl_导航栏" id="导航栏">
-    <xl-vistatextbox title="标题栏" style4="border: unset;"
-      style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
-      <div>
-        <span>dsy-xiaoluo.github.io > blog > <strong>index.html</strong> : </span>
-        <h1 style="font-size: 24px; line-height: 32px; color: #8080ff;">博客</h1><br>
-        <span>在此页面查看所有博客和项目</span>
-      </div>
-    </xl-vistatextbox>
-  </div>
-  <!-- 侧边栏 -->
-  <div class="xl_侧边栏">
-    <div style="direction: ltr;">
-      <div class="xl_占位1"></div>
-      <xl-navbox></xl-navbox>
-      <xl-vistatextbox title="目录" style5="line-height: 0.88; padding: 4px 0px;">
-        <a href="">index.html<img src="/file/img/mao2dian3lian4jie1.png"></a><br>
-        <a href="#博客">├博客</a><br>
-        <a href="#项目">└项目</a><br>
-      </xl-vistatextbox>
-      <xl-xl_侧边栏></xl-xl_侧边栏>
+  <body>
+    <!-- 兼容性提示 -->
+    <xl-兼容性提示></xl-兼容性提示>
+    <!-- 标题栏 -->
+    <div class="xl_导航栏" id="导航栏">
+      <xl-vista文本框 title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
+        <div>
+          <span>dsy-xiaoluo.github.io > blog > <strong>index.html</strong> : </span>
+          <h1 style="font-size: 24px; line-height: 32px; color: #8080ff">博客</h1>
+          <br />
+          <span>在此页面查看所有博客和项目</span>
+        </div>
+      </xl-vista文本框>
     </div>
-  </div>
-  <!-- xl_内容 -->
-  <div class="xl_内容" id="xl_内容">
-    <div class="xl_占位1"></div>
-    <xl-vistatextbox title="博客" style5="background-color: #fff;">
-      <a href="/blog/7.html" style="color: unset; text-decoration: none;">
-        <div class="xl_项目列表">
-          <span><strong>此站点已支持RSS订阅</strong><img src="/file/img/mao2dian3lian4jie1.png"></span>
-          <span style="font-size: 12px;">（ID:7）</span><br>
-          <span>如题</span><br>
-          <span style="font-size: 12px;">2024年6月4日01时40分</span><br>
-        </div>
-      </a>
+    <!-- 侧边栏 -->
+    <div class="xl_侧边栏">
+      <div style="direction: ltr">
+        <div class="xl_占位1"></div>
+        <xl-目录上></xl-目录上>
+        <xl-vista文本框 title="目录" style5="line-height: 0.87; padding: 4px 0px;">
+          <ul class="xl_树状列表">
+            <li>
+              <a href="">index.html<img src="/file/img/mao2dian3lian4jie1.png" /></a><br />
+              <ul>
+                <li><a href="#博客">博客</a><br /></li>
+                <li><a href="#项目">项目</a><br /></li>
+              </ul>
+            </li>
+          </ul>
+        </xl-vista文本框>
+        <xl-目录下></xl-目录下>
+      </div>
+    </div>
+    <!-- xl_内容 -->
+    <div class="xl_内容" id="xl_内容">
+      <div class="xl_占位1"></div>
+      <xl-vista文本框 title="博客" style5="background-color: #fff;">
+        <a href="/blog/7.html" style="color: unset; text-decoration: none">
+          <div class="xl_项目列表">
+            <span><strong>此站点已支持RSS订阅</strong><img src="/file/img/mao2dian3lian4jie1.png" /></span>
+            <span style="font-size: 12px">（ID:7）</span><br />
+            <span>如题</span><br />
+            <span style="font-size: 12px">2024年6月4日01时40分</span><br />
+          </div>
+        </a>
 
-      <hr>
-      <xl-vistatextbox title="警告" color="#ffff0080">
-        <span>以下博客为旧博客（2024年4月23日前）<br>
-        其样式为旧版，JavaScript全部丢失</span>
-      </xl-vistatextbox>
-      <a href="/blog/5.html" style="color: unset; text-decoration: none;" target="_blank">
-        <div class="xl_项目列表">
-          <span><strong>自己定义一个HTML元素！</strong><img src="/file/img/wai4bu4lian4jie1.png"></span>
-          <span style="font-size: 12px;">（ID:5）</span><br>
-          <span>使用JavaScript的customElements API来创建自定义的HTML元素！妈妈再也不用担心为了一个文本框而复制一大串代码了！</span><br>
-          <span style="font-size: 12px;">2024年3月28日1时25分</span><br>
-        </div>
-      </a>
+        <hr />
+        <xl-vista文本框 title="警告" color="#ffff0080">
+          <span
+            >以下博客为旧博客（2024年4月23日前）<br />
+            其样式为旧版，JavaScript全部丢失</span
+          >
+        </xl-vista文本框>
+        <a href="/blog/5.html" style="color: unset; text-decoration: none" target="_blank">
+          <div class="xl_项目列表">
+            <span><strong>自己定义一个HTML元素！</strong><img src="/file/img/wai4bu4lian4jie1.png" /></span>
+            <span style="font-size: 12px">（ID:5）</span><br />
+            <span>使用JavaScript的customElements API来创建自定义的HTML元素！妈妈再也不用担心为了一个文本框而复制一大串代码了！</span><br />
+            <span style="font-size: 12px">2024年3月28日1时25分</span><br />
+          </div>
+        </a>
 
-      <a href="/blog/4.html" style="color: unset; text-decoration: none;" target="_blank">
-        <div class="xl_项目列表">
-          <span><strong>自制强制修改窗口位置大小的小程序</strong><img src="/file/img/wai4bu4lian4jie1.png"></span>
-          <span style="font-size: 12px;">（ID:4）</span><br>
-          <span>不小心拖动窗口导致位置不居中？无法精确调整窗口大小？本博客介绍一个自制小程序，帮助你轻松实现强制修改窗口位置大小的功能，让窗口操作更加便捷！</span><br>
-          <span style="font-size: 12px;">2024年3月23日0时43分</span><br>
-        </div>
-      </a>
+        <a href="/blog/4.html" style="color: unset; text-decoration: none" target="_blank">
+          <div class="xl_项目列表">
+            <span><strong>自制强制修改窗口位置大小的小程序</strong><img src="/file/img/wai4bu4lian4jie1.png" /></span>
+            <span style="font-size: 12px">（ID:4）</span><br />
+            <span>不小心拖动窗口导致位置不居中？无法精确调整窗口大小？本博客介绍一个自制小程序，帮助你轻松实现强制修改窗口位置大小的功能，让窗口操作更加便捷！</span><br />
+            <span style="font-size: 12px">2024年3月23日0时43分</span><br />
+          </div>
+        </a>
 
-      <a href="/blog/3.html" style="color: unset; text-decoration: none;" target="_blank">
-        <div class="xl_项目列表">
-          <span><strong>美化FireFox：标签栏底部与地址栏顶部合并！</strong><img src="/file/img/wai4bu4lian4jie1.png"></span>
-          <span style="font-size: 12px;">（ID:3）</span><br>
-          <span>美化FireFox：合并标签栏底部与地址栏顶部！安装第三方主题包！让你的FireFox焕然一新！</span><br>
-          <span style="font-size: 12px;">2024年3月18日19时46分</span><br>
-        </div>
-      </a>
+        <a href="/blog/3.html" style="color: unset; text-decoration: none" target="_blank">
+          <div class="xl_项目列表">
+            <span><strong>美化FireFox：标签栏底部与地址栏顶部合并！</strong><img src="/file/img/wai4bu4lian4jie1.png" /></span>
+            <span style="font-size: 12px">（ID:3）</span><br />
+            <span>美化FireFox：合并标签栏底部与地址栏顶部！安装第三方主题包！让你的FireFox焕然一新！</span><br />
+            <span style="font-size: 12px">2024年3月18日19时46分</span><br />
+          </div>
+        </a>
 
-      <a href="/blog/2.html" style="color: unset; text-decoration: none;" target="_blank">
-        <div class="xl_项目列表">
-          <span><strong>Word也能制作网页！教你使用Word可视化制作网页</strong><img src="/file/img/wai4bu4lian4jie1.png"></span>
-          <span style="font-size: 12px;">（ID:2）</span><br>
-          <span>探索Word的隐藏功能：制作网页！Word不仅适用于文档编辑，还能轻松制作网页。兼容性强，操作简单，是小白的理想选择！</span><br>
-          <span style="font-size: 12px;">2024年3月17日0时40分</span><br>
-        </div>
-      </a>
+        <a href="/blog/2.html" style="color: unset; text-decoration: none" target="_blank">
+          <div class="xl_项目列表">
+            <span><strong>Word也能制作网页！教你使用Word可视化制作网页</strong><img src="/file/img/wai4bu4lian4jie1.png" /></span>
+            <span style="font-size: 12px">（ID:2）</span><br />
+            <span>探索Word的隐藏功能：制作网页！Word不仅适用于文档编辑，还能轻松制作网页。兼容性强，操作简单，是小白的理想选择！</span><br />
+            <span style="font-size: 12px">2024年3月17日0时40分</span><br />
+          </div>
+        </a>
 
-      <a href="/blog/1.html" style="color: unset; text-decoration: none;" target="_blank">
-        <div class="xl_项目列表">
-          <span><strong>还在开通录屏软件VIP？来试试FFmpeg！完全免费！</strong><img src="/file/img/wai4bu4lian4jie1.png"></span>
-          <span style="font-size: 12px;">（ID:1）</span><br>
-          <span>探索FFmpeg：一款开源、免费的屏幕录制神器，提供一个简单、快捷且无限制的屏幕录制解决方案，附自制一键录屏批处理，告别各大录屏软件会员限制</span><br>
-          <span style="font-size: 12px;">2024年3月7日20时05分</span><br>
-        </div>
-      </a>
-
-    </xl-vistatextbox>
-  </div>
-</body>
-
+        <a href="/blog/1.html" style="color: unset; text-decoration: none" target="_blank">
+          <div class="xl_项目列表">
+            <span><strong>还在开通录屏软件VIP？来试试FFmpeg！完全免费！</strong><img src="/file/img/wai4bu4lian4jie1.png" /></span>
+            <span style="font-size: 12px">（ID:1）</span><br />
+            <span>探索FFmpeg：一款开源、免费的屏幕录制神器，提供一个简单、快捷且无限制的屏幕录制解决方案，附自制一键录屏批处理，告别各大录屏软件会员限制</span><br />
+            <span style="font-size: 12px">2024年3月7日20时05分</span><br />
+          </div>
+        </a>
+      </xl-vista文本框>
+    </div>
+  </body>
 </html>
