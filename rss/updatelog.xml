@@ -50,9 +50,16 @@
     </item>
 
     <item>
-      <title>[开发日志][Rel.10.240622.011]修复了有一篇博客无法打开的问题！等3条更新</title>
+      <title>[开发日志][Rel.10.240622.01]修复了有一篇博客无法打开的问题！等3条更新</title>
       <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
       <description>新增了用于复制文本至粘贴板的函数、重写了树状列表框、分离了博客的RSS和开发日志的Rss</description>
+      <pubDate>Fri, 21 Jun 2024 20:41:32 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>[开发日志][Rel.11.240623.01]新增了一个在线工具！等1条更新</title>
+      <link>https://dsy-xiaoluo.github.io/page/updatelog/index.html</link>
+      <description>微调了样式</description>
       <pubDate>Fri, 21 Jun 2024 20:41:32 GMT</pubDate>
     </item>
 
