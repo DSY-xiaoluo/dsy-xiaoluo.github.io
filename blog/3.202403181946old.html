@@ -1,0 +1,257 @@
+<!--
+  你在干什么？你打开了开发者工具是想对我的网站干啥？？？我的这破网站有什么东西值得你打开开发者模式看看呢？这只是一个普普通通的个人网站啊，相信我，把你那开发者工具给关了吧，对你好，也对我好:)[doge]
+-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="firefox, 标签栏, 地址栏, 太高, 变小, 如何, 美化, 主题">
+  <meta name="description" content="美化FireFox：合并标签栏底部与地址栏顶部！安装第三方主题包！让你的FireFox焕然一新！">
+  <title>美化FireFox：标签栏底部与地址栏顶部合并！ | DSY_xiaoluo</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/old/style.css">
+</head>
+
+<body>
+  <div class="grid-container">
+
+    <!--我下面是标题-->
+    <div class="grid-item">
+      <span>www.xiaoluo.link > blog > <strong>3.html</strong></span><br>
+      <h1 style="font-size: 32px;"><strong>美化FireFox：标签栏底部与地址栏顶部合并！</strong></h1>
+      <!-- <h2>修改此处：网页简介</h2> -->
+    </div>
+
+    <!--我下面是页面信息-->
+    <div class="grid-item" style="text-align: right;">
+      <span>2024年3月18日19时46分：页面创建时间</span><br>
+      <span>2024年3月18日19时46分：页面修改时间</span>
+    </div>
+
+  </div>
+
+  <!--看见标题栏和xl_内容区中间的空隙了吗？没错，那是我-->
+  <div style="height: 10px;"></div>
+
+  <div class="grid-container2">
+    <!--侧边栏~~~-->
+    <div class="grid-item" style="direction: rtl;">
+      <div style="direction: ltr;">
+        <!--导航-->
+        <table class="textbox"
+          style="border: 1px solid rgba(0, 128, 0, 1); width: 100%; text-align: center; box-shadow: -5px 5px 5px rgba(0, 0, 0, 1); line-height: 2;">
+          <thead>
+            <tr>
+              <td
+                style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold; text-align: left; line-height: 1.1145141919810;">
+                <span><strong>导航</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td
+              style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/index.html">首页</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-image: linear-gradient(to left, rgb(64, 64, 64), rgb(0, 64, 0)); background-size: 100% 100%; background-repeat: no-repeat; background-position: right top; width: 100%; height: 100%; border-right: 1px solid rgba(64, 64, 64, 1);">
+              <span><a href="/blog.html">博客</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/pages.html">页面</a></span>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgba(0, 64, 0, 1);">
+              <span><a href="/about.html">关于</a></span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <!--目录-->
+        <table class="textbox" style="border: 1px solid rgba(0, 128, 0, 1); width: 100%;">
+          <thead>
+            <tr>
+              <td style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold;">
+                <span><strong>目录</strong></span>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: rgba(0, 63, 0, 1); line-height: 1;">
+              <span><a href="./3.html">文档头</a></span>
+              <br>
+              <span>├ <a href="#导言">导言</a></span>
+              <br>
+              <span>├ <a href="#下载主题包">下载主题包</a></span>
+              <br>
+              <span>├ <a href="#警告">警告</a></span>
+              <br>
+              <span>├ <a href="#安装主题包">安装主题包</a></span>
+              <br>
+              <span>├ <a href="#效果预览">效果预览</a></span>
+              <br>
+
+              <span>文档尾</span>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <!--其它杂七杂八的-->
+        <div id="sidebar">
+          <!--动态xl_内容，见sidebar.html-->
+        </div>
+      </div>
+    </div>
+    <!--正文呐-->
+    <div class="grid-item">
+      <a name="导言"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>导言</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              <img src="/files/Snipaste_2024-03-18_19-53-39.png"><br><br>你是否认为FireFox标签栏与地址栏的高度过于高以致于对屏幕尺寸小的人特别不友好？<br>
+              █度搜索上流传的工具栏密度改为“紧凑”的方式还是不够？<br>
+              那么恭喜你，你来对地方了！<br>
+              此博客将会帮助你将FireFox标签栏与地址栏的高度减小并美化！
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="下载主题包"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>下载主题包</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              FireFox自带的主题大部分实在是没什么亮点，且FireFox Color能修改的地方也十分有限，这时就要有请第三方FireFox主题站了！<br>
+              <a href="https://firefoxcss-store.github.io/" target="_blank">https://firefoxcss-store.github.io/</a><br>
+              这是一个第三方的FireFox主题站，它收集了众多优秀美观的FireFox主题，并且每一种主题都有预览<br>
+              <img src="/files/Snipaste_2024-03-18_20-11-14.png"><br>
+              这是我最喜欢的主题，那么此博客就以它为例<br><br>
+              将鼠标悬浮在卡片上，会出现“Download”按钮，点击会跳转到该主题包的GitHub地址<br>
+              还是以我喜欢的“Firefox Plus”主题为例，它的下载链接是<br>
+              <a href="https://github.com/amnweb/firefox-plus/"
+                target="_blank">https://github.com/amnweb/firefox-plus/</a><br>
+              如果你能直接访问GitHub，那么直接Download ZIP就行了，如果你不能直接访问GitHub，请使用霍格沃兹环境（）
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="警告"></a>
+      <table class="textbox" style="border: 1px solid #ffff00; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #ffff00; color: #000000; font-weight: bold;">
+              <h3><strong>警告</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #808000;">
+            <span>
+              每个主题包的安装方式不一定相同，我无法保证你喜欢的主题包的安装方式和我的一样，请以“README.md”文件内的安装方式为准！
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="安装主题包"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>安装主题包</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              下载完主题包后，解压，点进去会有一个“README.md”文件，里面就有安装该主题包的步骤，直接照做即可<br>
+              还还是以我喜欢的“Firefox Plus”主题为例，在它的“README.md”文件中有这样一段：
+              <table class="textbox" style="border: 1px solid #4040ff; margin: 10px;">
+                <thead style="top: 9px; z-index: 0;">
+                  <tr>
+                    <td style="background-color: #4040ff; color: rgba(0, 0, 0, 1); font-weight: bold; color: #ffffff;">
+                      <span><strong>README.md (ln:15 to ln:18)</strong></span>
+                    </td>
+                  </tr>
+                </thead>
+                <tr>
+                  <td style="background-color: #202080; ">
+                    <code>
+                      # How to install<br>
+                      1. Go to `about:support` and click the "Open Folder/Show in Finder" button for the root directory of your browser profile/s.<br>
+                      2. Download and copy the `chrome` folder and `user.js` into the profile folder.<br>
+                      3. Restart firefox.
+                    </code>
+                  </td>
+                </tr>
+              </table>
+              翻译过来就是<br>
+              1. 进入“about:support”页面，并点击"配置文件夹"右侧的的“打开文件夹/在文件管理器中显示”按钮。<br>
+              2. 下载并复制“chrome”文件夹和“user.js”文件到配置文件夹。<br>
+              3. 重启Firefox。<br>
+              <br>
+              顾名思义，就是把下载的“chrome”文件夹和“user.js”文件复制到配置文件夹中，重启就彳亍了<br><br>
+              如果你没有看到效果，或是崩溃了，请检查目录是否正确，或下载的文件是否损坏。<br>
+              如果你没有看到无法启动浏览器，那么<del>恭喜你，</del>重装吧（）
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <a name="效果预览"></a>
+      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
+        <thead>
+          <tr>
+            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
+              <h3><strong>效果预览</strong></h3>
+            </td>
+          </tr>
+        </thead>
+        <tr>
+          <td style="background-color: #606060;">
+            <span>
+              <img src="/files/Snipaste_2024-03-18_20-41-18.png">
+            </span>
+          </td>
+        </tr>
+      </table>
+      <br>
+
+    </div>
+  </div>
+  <div style="width: 100%; text-align: center"><br>© 2024 DSY_xiaoluo - 妙狗国国王</div>
+</body>
+
+<script>
+  // JavaScript 代码，检测用户代理，并根据需要添加类名
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.querySelector('.grid-container2').xl_元素_样式_添加类('mobile-disable');
+  }
+</script>
+
+</html>
