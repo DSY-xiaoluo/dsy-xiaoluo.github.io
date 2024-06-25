@@ -162,7 +162,16 @@ dialog {
   height: 100%;
 }
 
-input {
+textarea {
+  font-family: inherit;
+  width: calc(100% - 10px);
+  min-width: calc(100% - 10px);
+  height: 20vh;
+  min-height: 40px;
+}
+
+input,
+textarea {
   margin: 2px;
   border: 1px solid #00000000;
   border-top-color: #00000080;
@@ -173,7 +182,8 @@ input {
   transition: all 1s;
 }
 
-input:hover {
+input:hover,
+textarea:hover {
   border-top-color: #0000ffc0;
   border-left-color: #0000ff80;
   border-bottom-color: #0000ff40;
