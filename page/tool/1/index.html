@@ -54,10 +54,9 @@
       <xl-vista文本框 title="base64转图片">
         <textarea id="输入-Base64转图片" placeholder="粘贴Base64编码的数据" style="width: 50%"></textarea>
         <br />
-        <button onclick="xl_base64_转换_图片(xl_元素_获取_使用ID('输入-Base64转图片').value, xl_元素_获取_使用ID('结果-Base64转图片'), false);">转换</button>
-        <button onclick="xl_base64_转换_图片(xl_元素_获取_使用ID('输入-Base64转图片').value, xl_元素_获取_使用ID('结果-Base64转图片'), true);">转换并下载</button>
+        <button onclick="xl_base64_转换_图片(xl_元素_获取_使用ID('输入-Base64转图片').value, xl_元素_获取_使用ID('结果-Base64转图片'));">转换</button>
         <hr />
-        <img id="结果-Base64转图片" alt="转换后的图片" style="max-width: 100%; height: auto" />
+        <img id="结果-Base64转图片" src="" alt="转换结果：" />
       </xl-vista文本框>
     </div>
   </body>

@@ -53,7 +53,7 @@ button {
   margin: 5px 5px;
   font-family: msyh;
   padding: 2px 10px;
-  transition: all 0.5s;
+  transition: all 0.1s;
 }
 
 button:hover {

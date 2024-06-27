@@ -21,25 +21,20 @@ function xl_图片_转换_base64(xl_图片, xl_结果输出元素, xl_完成后�
 }
 
 // CODEGEEX:失败
-function xl_base64_转换_图片(xl_base64数据, xl_结果输出元素, xl_完成后下载) {
-  var xl_图片 = new Image();
-  xl_图片.onload = function () {
-    var xl_画布 = document.createElement("canvas");
-    xl_画布.width = xl_图片.width;
-    xl_画布.height = xl_图片.height;
-    var xl_上下文 = xl_画布.getContext("2d");
-    xl_上下文.drawImage(xl_图片, 0, 0);
-    var xl_图片URL = xl_画布.toDataURL("image/png");
-    xl_结果输出元素.src = xl_图片URL;
+function xl_base64_转换_图片(xl_base64数据, xl_结果输出元素) {
+  // 创建一个新的图像对象
+  let xl_图像 = new Image();
 
-    if (xl_完成后下载) {
-      var xl_链接 = document.createElement("a");
-      var xl_mime类型 = xl_base64数据.split(";")[0].split(":")[1];
-      var xl_扩展名 = xl_mime类型.split("/")[1];
-      xl_链接.href = xl_图片URL;
-      xl_链接.download = "base64转换后的图片." + xl_扩展名;
-      xl_链接.click();
-    }
+  // 将图像的来源设置为 Base64 数据
+  xl_图像.src = xl_base64数据;
+
+  // 当图像加载完成后，将其添加到输出元素中
+  xl_图像.onload = function () {
+    xl_结果输出元素.appendChild(xl_图像);
   };
-  xl_图片.src = xl_base64数据;
+
+  // 处理加载错误的情况
+  xl_图像.onerror = function () {
+    console.error("图片加载失败，请检查 Base64 数据格式是否正确。");
+  };
 }
