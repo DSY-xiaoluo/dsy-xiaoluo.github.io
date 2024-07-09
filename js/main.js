@@ -84,7 +84,7 @@ function xl_剪贴板_设置文本(xl_文本) {
 function xl_剪贴板_设置文本_备用(xl_文本) {
   var xl_文本区域 = document.createElement("textarea");
   xl_文本区域.value = xl_文本;
-  xl_文本区域.style.position = "fixed"; // 避免在 iOS 上出现滚动问题
+  xl_文本区域.style.position = "fixed";
   document.body.appendChild(xl_文本区域);
   xl_文本区域.focus();
   xl_文本区域.select();
