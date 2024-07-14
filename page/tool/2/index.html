@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <title>图片互转base64 < 1 < tool < page < dsy-xiaoluo.github.io</title>
+    <title>Unicode码位位移 < 2 < tool < page < dsy-xiaoluo.github.io</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
     <script src="/js/main.js"></script>
@@ -16,10 +16,10 @@
     <div class="xl_导航栏" id="导航栏">
       <xl-vistatextbox title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
         <div>
-          <span>dsy-xiaoluo.github.io > page > tool > 1 > <strong>index.html</strong>:</span>
-          <h1 style="font-size: 24px; line-height: 32px; color: #8080ff">base64工具集合</h1>
+          <span>dsy-xiaoluo.github.io > page > tool > 2 > <strong>index.html</strong>:</span>
+          <h1 style="font-size: 24px; line-height: 32px; color: #8080ff">Unicode码位位移</h1>
           <br />
-          <h2>图片转换为base64，base64转换为图片</h2>
+          <h2>位移文本的Unicode编码</h2>
         </div>
       </xl-vistatextbox>
     </div>
@@ -33,7 +33,7 @@
             <li>
               <a href="">index.html<img src="/file/img/mao2dian3lian4jie1.png" /></a><br />
               <ul>
-                <li><a href="#"></a><br /></li>
+                <li><a href="#">Unicode码位位移</a><br /></li>
               </ul>
             </li>
           </ul>
@@ -44,19 +44,16 @@
     <!-- xl_内容 -->
     <div class="xl_内容" id="xl_内容">
       <div class="xl_占位1"></div>
-      <xl-vistatextbox title="图片转base64">
-        <input type="file" accept="image/*" id="图片-图片转base64" style="width: 50%" />
-        <button onclick="xl_图片_转换_base64(xl_元素_获取_使用ID('图片-图片转base64').files[0], xl_元素_获取_使用ID('结果-图片转base64'), false);">转换</button>
-        <button onclick="xl_图片_转换_base64(xl_元素_获取_使用ID('图片-图片转base64').files[0], xl_元素_获取_使用ID('结果-图片转base64'), true);">转换并复制</button>
-        <hr />
-        <textarea id="结果-图片转base64" readonly></textarea>
-      </xl-vistatextbox>
-      <xl-vistatextbox title="base64转图片">
-        <textarea id="输入-Base64转图片" placeholder="粘贴Base64编码的数据" style="width: 50%"></textarea>
+      <xl-vistatextbox title="Unicode码位位移">
+        <textarea id="xl_原文本" placeholder="原文本" style="width: 50%"></textarea>
         <br />
-        <button onclick="xl_base64_转换_图片(xl_元素_获取_使用ID('输入-Base64转图片').value, xl_元素_获取_使用ID('结果-Base64转图片'));">转换</button>
-        <hr />
-        <img id="结果-Base64转图片" src="" alt="转换结果：" />
+        <input type="number" id="xl_偏移量" value="1" style="width: 50%" />
+        <br />
+        <button onclick="xl_unicode_位移编码('xl_原文本', 'xl_偏移量', 'xl_结果输出', false);">开始</button>
+        <button onclick="xl_unicode_位移编码('xl_原文本', 'xl_偏移量', 'xl_结果输出', true);">开始并复制结果</button>
+      </xl-vistatextbox>
+      <xl-vistatextbox title="结果">
+        <textarea id="xl_结果输出" placeholder="结果" style="width: 50%"></textarea>
       </xl-vistatextbox>
     </div>
   </body>

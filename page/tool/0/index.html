@@ -14,21 +14,21 @@
     <xl-兼容性提示></xl-兼容性提示>
     <!-- 标题栏 -->
     <div class="xl_导航栏" id="导航栏">
-      <xl-vista文本框 title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
+      <xl-vistatextbox title="标题栏" style4="border: unset;" style5="background: unset; border: unset; text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 10px #fff;">
         <div>
           <span>dsy-xiaoluo.github.io > page > tool > 0 > <strong>index.html</strong>:</span>
           <h1 style="font-size: 24px; line-height: 32px; color: #8080ff">时间格式转换</h1>
           <br />
           <h2>在线转换时间格式！支持ISO 8601、RFC 7231和Unix 时间戳等格式！</h2>
         </div>
-      </xl-vista文本框>
+      </xl-vistatextbox>
     </div>
     <!-- 侧边栏 -->
     <div class="xl_侧边栏">
       <div style="direction: ltr">
         <div class="xl_占位1"></div>
         <xl-目录上></xl-目录上>
-        <xl-vista文本框 title="目录" style5="line-height: 0.87; padding: 4px 0px;">
+        <xl-vistatextbox title="目录" style5="line-height: 0.87; padding: 4px 0px;">
           <ul class="xl_树状列表">
             <li>
               <a href="">index.html<img src="/file/img/mao2dian3lian4jie1.png" /></a><br />
@@ -43,42 +43,42 @@
               </ul>
             </li>
           </ul>
-        </xl-vista文本框>
+        </xl-vistatextbox>
         <xl-目录下></xl-目录下>
       </div>
     </div>
     <!-- xl_内容 -->
     <div class="xl_内容" id="xl_内容">
       <div class="xl_占位1"></div>
-      <xl-vista文本框 title="输入时间">
+      <xl-vistatextbox title="输入时间">
         <input type="text" placeholder="请输入时间" style="width: 400px" id="时间输入框" />
         <button onclick="xl_元素_获取_使用ID('时间输入框').value = new Date().toString();xl_时间_转换();">使用当前时间（JS toString ）</button>
         <button onclick="xl_时间_转换();">转换</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="JS toString">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="JS toString">
         <input type="text" placeholder="请按下转换按钮以显示结果" style="width: 400px" id="转换结果_JS_toString" readonly />
         <button onclick="xl_剪贴板_设置文本(xl_元素_获取_使用ID('转换结果_JS_toString').value);">复制到剪贴板</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="ISO 8601">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="ISO 8601">
         <input type="text" placeholder="请按下转换按钮以显示结果" style="width: 400px" id="转换结果_ISO_8601" readonly />
         <button onclick="xl_剪贴板_设置文本(xl_元素_获取_使用ID('转换结果_ISO_8601').value);">复制到剪贴板</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="ISO 9075">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="ISO 9075">
         <input type="text" placeholder="请按下转换按钮以显示结果" style="width: 400px" id="转换结果_ISO_9075" readonly />
         <button onclick="xl_剪贴板_设置文本(xl_元素_获取_使用ID('转换结果_ISO_9075').value);">复制到剪贴板</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="RFC 7231(UTC Format)">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="RFC 7231(UTC Format)">
         <input type="text" placeholder="请按下转换按钮以显示结果" style="width: 400px" id="转换结果_RFC_7231" readonly />
         <button onclick="xl_剪贴板_设置文本(xl_元素_获取_使用ID('转换结果_RFC_7231').value);">复制到剪贴板</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="本地字符串">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="本地字符串">
         <input type="text" placeholder="请按下转换按钮以显示结果" style="width: 400px" id="转换结果_LocaleString" readonly />
         <button onclick="xl_剪贴板_设置文本(xl_元素_获取_使用ID('转换结果_LocaleString').value);">复制到剪贴板</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="Unix 时间戳">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="Unix 时间戳">
         <input type="text" placeholder="请按下转换按钮以显示结果" style="width: 400px" id="转换结果_UnixTimestamp" readonly />
         <button onclick="xl_剪贴板_设置文本(xl_元素_获取_使用ID('转换结果_UnixTimestamp').value);">复制到剪贴板</button>
-      </xl-vista文本框>
+      </xl-vistatextbox>
     </div>
   </body>
 </html>

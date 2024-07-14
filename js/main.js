@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
   xl_you_know();
 
   customElements.define(
-    "xl-vista文本框",
+    "xl-vistatextbox",
     class extends HTMLElement {
       constructor() {
         super();
@@ -325,13 +325,13 @@ document.addEventListener("DOMContentLoaded", function () {
       constructor() {
         super();
         this.innerHTML = `
-      <xl-vista文本框 title="加载指示器" id="jia1zai3ti2shi4">
+      <xl-vistatextbox title="加载指示器" id="jia1zai3ti2shi4">
         <div style="background-color: #ff0;">
           <span>页面加载未完成（页面正在加载）<br>
           由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
         </div>
-      </xl-vista文本框>
-      <xl-vista文本框 title="导航">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="导航">
         <a href="/index.html">
           <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
@@ -344,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <a href="/about.html">
           <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
         </a>
-      </xl-vista文本框>
+      </xl-vistatextbox>
       `;
       }
     }
@@ -356,15 +356,15 @@ document.addEventListener("DOMContentLoaded", function () {
       constructor() {
         super();
         this.innerHTML = `
-      <xl-vista文本框 title="RSS订阅">
+      <xl-vistatextbox title="RSS订阅">
         <span>想第一时间知道更新了什么？此站已支持RSS订阅！复制下方的链接即可订阅！↓↓↓</span><br>
         <a href="/rss/main.xml">/rss/main.xml</a>
         <button onclick="xl_剪贴板_设置文本('http://dsy-xiaoluo.github.io/rss/main.xml')">复制</button>
-      </xl-vista文本框>
-      <xl-vista文本框 title="节日系统">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="节日系统">
         <span id="节日系统_祝福语显示框"></span>
-      </xl-vista文本框>
-      <xl-vista文本框 title="COPYRIGHT">
+      </xl-vistatextbox>
+      <xl-vistatextbox title="COPYRIGHT">
        <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
          <span>Copyright © 2024 XLuoFox.DSY</span>
          <hr>
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
          <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/wai4bu4lian4jie1.png"></a>
          </span>
        </div>
-      </xl-vista文本框>
+      </xl-vistatextbox>
       `;
       }
     }
@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
         super();
         this.innerHTML = `
 <dialog id="公告">
-  <xl-vista文本框 title="dialog">
+  <xl-vistatextbox title="dialog">
     <div style="display: flex; align-items: center; margin: 10px 10px 10px 10px">
       <div>
         <img src="/file/img/imageres-76.png" width="64px" height="64px" style="margin-right: 10px" />
@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <button onclick="xl_兼容性提示_不再显示()" style="margin-right: 10px">不再显示</button>
       </div>
     </div>
-  </xl-vista文本框>
+  </xl-vistatextbox>
 </dialog>
       `;
       }
