@@ -1,5 +1,15 @@
 # dsy-xiaoluo.github.io
 
+## README 语言
+
+当前：汉语简体中文
+
+[English](readme_en.md)
+
+## 说明
+
+有时候我会把这个网站的 vista 样式做成组件库，不过需要一定时间
+
 ## 介绍
 
 这是我的个人网站兼博客，同时也有一些小的在线工具
