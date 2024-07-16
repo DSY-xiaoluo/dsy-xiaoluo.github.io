@@ -83,5 +83,12 @@
       <description>小改了一些页面；改了万年不变的README</description>
       <pubDate>Mon, 15 Jul 2024 09:08:21 GMT</pubDate>
     </item>
+
+    <item>
+      <title>[开发日志][Rel.16.240716.15]从这个版本起将不会推送开发日志RSS！</title>
+      <link>https://dsy-xiaoluo.github.io/page/changelog/index.html</link>
+      <description>这个b越来越懒了（ </description>
+      <pubDate>Tue, 16 Jul 2024 07:36:12 GMT</pubDate>
+    </item>
   </channel>
 </rss>
