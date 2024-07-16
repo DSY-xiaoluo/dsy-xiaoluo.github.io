@@ -368,11 +368,11 @@ document.addEventListener("DOMContentLoaded", function () {
        <div style="text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff; background: url(/file/img/1.jpg);   background-size: cover; background-repeat: no-repeat; background-position: center;">
          <span>Copyright © 2024 XLuoFox.DSY</span>
          <hr>
-         <a href="https://icp.mcsite.cc/mc/11451419.html" target="_blank">MC ICP备: 11451419 号<img src="/file/img/wai4bu4lian4jie1.png"></a>
+         <a href="https://icp.mcsite.cc/mc/11451419.html" target="_blank">MC ICP备: 11451419 号<img src="/file/img/外链.png"></a>
          <hr>
          <span>友情链接：<br>
-         <a href="https://www.stylestar.win/" target="_blank">StyleStar论坛<img src="/file/img/wai4bu4lian4jie1.png"></a><br>
-         <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/wai4bu4lian4jie1.png"></a>
+         <a href="https://www.stylestar.win/" target="_blank">StyleStar论坛<img src="/file/img/外链.png"></a><br>
+         <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/外链.png"></a>
          </span>
        </div>
       </xl-vistatextbox>
