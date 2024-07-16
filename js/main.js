@@ -333,16 +333,16 @@ document.addEventListener("DOMContentLoaded", function () {
       </xl-vistatextbox>
       <xl-vistatextbox title="导航">
         <a href="/index.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>首页</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>首页</span><img src="/file/img/内链.png"></div>
         </a>
         <a href="/blog/index.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>博客</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>博客</span><img src="/file/img/内链.png"></div>
         </a>
         <a href="/page/index.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>页面</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>页面</span><img src="/file/img/内链.png"></div>
         </a>
         <a href="/about.html">
-          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>关于</span><img src="/file/img/mao2dian3lian4jie1.png"></div>
+          <div style="padding: 10px; text-align: center;" class="xl_项目列表"><span>关于</span><img src="/file/img/内链.png"></div>
         </a>
       </xl-vistatextbox>
       `;
