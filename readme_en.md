@@ -19,7 +19,7 @@ This is my personal website and blog, with some small online tools as well.
 - Home
 - Blog
   - Currently 8 articles (including 1 project)
-- Pages
+- Page
   - Internal
     - report
       - Here are the webmaster's computer configurations, not sure why this was made...
