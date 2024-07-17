@@ -286,6 +286,17 @@ xl_竖分割条 {
   direction: rtl;
 }
 
+.xl_侧边栏_全屏 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 75%;
+  height: 100%;
+
+  overflow-y: auto;
+
+  direction: rtl;
+}
 .xl_内容 {
   position: fixed;
   left: 25%;
@@ -296,6 +307,15 @@ xl_竖分割条 {
   overflow-y: auto;
 }
 
+.xl_内容_全屏 {
+  position: fixed;
+  left: 75%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+
+  overflow-y: auto;
+}
 .xl_占位1 {
   height: 110px;
 }

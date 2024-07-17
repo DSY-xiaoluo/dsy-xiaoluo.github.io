@@ -35,13 +35,23 @@ function xl_元素_获取_使用Class(elementClass) {
   return document.getElementsByClassName(elementClass);
 }
 // 添加样式类
-Element.prototype.xl_元素_样式_添加类 = function (styleClass) {
+Element.prototype.xl_元素_样式_添加类_bak = function (styleClass) {
   this.classList.add(styleClass);
 };
+
+function xl_元素_样式_添加类(xl_元素, xl_类) {
+  xl_元素.classList.add(xl_类);
+}
+
 // 移除样式类
-Element.prototype.xl_元素_样式_移除类 = function (styleClass) {
+Element.prototype.xl_元素_样式_移除类_bak = function (styleClass) {
   this.classList.remove(styleClass);
 };
+
+function xl_元素_样式_移除类(xl_元素, xl_类) {
+  xl_元素.classList.remove(xl_类);
+}
+
 // 调试输出
 function xl_调试_输出(message) {
   console.log(`${new Date().toLocaleString()} > ${message}`);
@@ -281,6 +291,42 @@ function xl_BUG反馈页面_设置不再弹出() {
   window.close();
 }
 
+function xl_视口太窄提示_判断是否显示() {
+  xl_元素_获取_使用ID("视口太窄提示").style.display = "none";
+  const vh = window.innerHeight;
+  xl_调试_输出("视口太窄提示_判断是否显示 > \n 视口高度：" + vh);
+  const vw = window.innerWidth;
+  xl_调试_输出("视口太窄提示_判断是否显示 > \n 视口宽度：" + vw);
+  if (vh > vw) {
+    xl_元素_获取_使用ID("视口太窄提示").style.display = "block";
+    xl_调试_输出("视口太窄提示_判断是否显示 > \n 是");
+    xl_内容_侧边栏_全屏(false);
+  } else {
+    xl_调试_输出("视口太窄提示_判断是否显示 > \n 否");
+  }
+}
+
+function xl_内容_侧边栏_全屏(xl_true为全屏false为取消全屏) {
+  let xl_侧边栏 = xl_元素_获取_使用Class("xl_侧边栏")[0];
+  let xl_内容 = xl_元素_获取_使用Class("xl_内容")[0];
+  let xl_全屏按钮 = xl_元素_获取_使用ID("全屏侧边栏按钮");
+  let xl_取消全屏按钮 = xl_元素_获取_使用ID("取消全屏侧边栏按钮");
+
+  if (xl_true为全屏false为取消全屏) {
+    xl_调试_输出("内容_侧边栏_全屏 > \n 全屏");
+    xl_元素_样式_添加类(xl_侧边栏, "xl_侧边栏_全屏");
+    xl_元素_样式_添加类(xl_内容, "xl_内容_全屏");
+    xl_全屏按钮.style.display = "none";
+    xl_取消全屏按钮.style.display = "block";
+  } else {
+    xl_调试_输出("内容_侧边栏_全屏 > \n 取消全屏");
+    xl_元素_样式_移除类(xl_侧边栏, "xl_侧边栏_全屏");
+    xl_元素_样式_移除类(xl_内容, "xl_内容_全屏");
+    xl_全屏按钮.style.display = "block";
+    xl_取消全屏按钮.style.display = "none";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   xl_you_know();
 
@@ -330,6 +376,11 @@ document.addEventListener("DOMContentLoaded", function () {
           <span>页面加载未完成（页面正在加载）<br>
           由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
         </div>
+      </xl-vistatextbox>
+      <xl-vistatextbox title="提示" id="视口太窄提示">
+        <span>当前视口宽度较小，可能会导致侧边栏显示不全</span>
+        <button onclick="xl_内容_侧边栏_全屏(true);" id="全屏侧边栏按钮">全屏侧边栏</button>
+        <button onclick="xl_内容_侧边栏_全屏(false);" id="取消全屏侧边栏按钮">取消全屏</button>
       </xl-vistatextbox>
       <xl-vistatextbox title="导航">
         <a href="/index.html">
@@ -419,6 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
   xl_兼容性提示_判断是否显示();
   xl_内容_适应标题栏高度();
   xl_内容_实现锚点链接平滑滚动();
+  xl_视口太窄提示_判断是否显示();
   xl_节日系统();
 });
 
