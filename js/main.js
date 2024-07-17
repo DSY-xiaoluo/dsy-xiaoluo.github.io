@@ -191,7 +191,7 @@ function xl_iframe_改变高度(iframeId, 尺寸) {
 }
 
 function xl_内容_隐藏加载指示器() {
-  xl_元素_获取_使用ID("jia1zai3ti2shi4").style.display = "none";
+  xl_元素_获取_使用ID("加载指示器").style.display = "none";
 }
 
 function xl_内容_实现锚点链接平滑滚动() {
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
       constructor() {
         super();
         this.innerHTML = `
-      <xl-vistatextbox title="加载指示器" id="jia1zai3ti2shi4">
+      <xl-vistatextbox title="加载指示器" id="加载指示器">
         <div style="background-color: #ff0;">
           <span>页面加载未完成（页面正在加载）<br>
           由于此站托管于GitHub，可能需要一段时间才可完全加载</span>
