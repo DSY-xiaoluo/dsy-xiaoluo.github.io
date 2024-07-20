@@ -7,18 +7,19 @@
 // main.js
 
 let 导航栏高度 = 110;
+let l_兼容性提示不再显示所要的次数 = 100;
 
 function xl_you_know() {
-  xl_调试_输出("\n\n __  ___                _____           ____  ______   __\n \\ \\/ / |   _   _  ___ |  ___|____  __ |  _ \\/ ___\\ \\ / /\n  \\  /| |  | | | |/ _ \\| |_ / _ \\ \\/ / | | | \\___ \\\\ V / \n  /  \\| |__| |_| | (_) |  _| (_) >  < _| |_| |___) || |  \n /_/\\_\\_____\\__,_|\\___/|_|  \\___/_/\\_(_)____/|____/ |_|  \n                                                         \n\nfound bugs? chick here -> https://wj.qq.com/s2/14752724/59a5/");
+  yi_调试_输出("", "\n __  ___                _____           ____  ______   __\n \\ \\/ / |   _   _  ___ |  ___|____  __ |  _ \\/ ___\\ \\ / /\n  \\  /| |  | | | |/ _ \\| |_ / _ \\ \\/ / | | | \\___ \\\\ V / \n  /  \\| |__| |_| | (_) |  _| (_) >  < _| |_| |___) || |  \n /_/\\_\\_____\\__,_|\\___/|_|  \\___/_/\\_(_)____/|____/ |_|  \n                                                         \n\nfound bugs? chick here -> https://wj.qq.com/s2/14752724/59a5/");
 }
 
 // 适应导航栏高度
 function xl_内容_适应标题栏高度() {
-  const 导航栏高度2 = xl_元素_获取_使用ID("导航栏");
+  const 导航栏高度2 = yi_元素_获取_使用ID("导航栏");
   const observer = new ResizeObserver((entries) => {
     for (let entry of entries) {
       导航栏高度 = entry.contentRect.height;
-      xl_调试_输出("内容_适应标题栏高度 > \n 标题栏高度：" + 导航栏高度);
+      yi_调试_输出("内容_适应标题栏高度", "标题栏高度：" + 导航栏高度);
       document.querySelectorAll(".xl_占位1").forEach((element) => {
         element.style.height = `${导航栏高度}px`;
       });
@@ -26,66 +27,20 @@ function xl_内容_适应标题栏高度() {
   });
   observer.observe(导航栏高度2);
 }
-// 使用id
-function xl_元素_获取_使用ID(elementId) {
-  return document.getElementById(elementId);
-}
-// 使用class
-function xl_元素_获取_使用Class(elementClass) {
-  return document.getElementsByClassName(elementClass);
-}
-// 添加样式类
-Element.prototype.xl_元素_样式_添加类_bak = function (styleClass) {
-  this.classList.add(styleClass);
-};
-
-function xl_元素_样式_添加类(xl_元素, xl_类) {
-  xl_元素.classList.add(xl_类);
-}
-
-// 移除样式类
-Element.prototype.xl_元素_样式_移除类_bak = function (styleClass) {
-  this.classList.remove(styleClass);
-};
-
-function xl_元素_样式_移除类(xl_元素, xl_类) {
-  xl_元素.classList.remove(xl_类);
-}
-
-// 调试输出
-function xl_调试_输出(message) {
-  console.log(`${new Date().toLocaleString()} > ${message}`);
-}
-// 调试输出错误
-function xl_调试_输出_错误(error) {
-  console.error(`${new Date().toLocaleString()} > ${error}`);
-}
-// 调试输出警告
-function xl_调试_输出_警告(warning) {
-  console.warn(`${new Date().toLocaleString()} > ${warning}`);
-}
-// 读本地存储
-function xl_本地存储_读(key) {
-  return localStorage.getItem(key);
-}
-// 写本地存储
-function xl_本地存储_写(key, value) {
-  localStorage.setItem(key, value);
-}
 
 // 复制文本到剪贴板函数
 function xl_剪贴板_设置文本(xl_文本) {
   if (!navigator.clipboard) {
-    xl_调试_输出_警告("剪贴板_设置文本 > \n不支持 Clipboard API，使用备用方法");
+    yi_调试_输出_警告("剪贴板_设置文本", "不支持 Clipboard API，使用备用方法");
     xl_剪贴板_设置文本_备用(xl_文本);
     return;
   }
   navigator.clipboard.writeText(xl_文本).then(
     function () {
-      xl_调试_输出("剪贴板_设置文本 > \n已成功复制到剪贴板：" + xl_文本);
+      yi_调试_输出("剪贴板_设置文本", "已成功复制到剪贴板：" + xl_文本);
     },
     function (错误) {
-      xl_调试_输出_错误(`剪贴板_设置文本 > \n无法复制文本到剪贴板: ${错误}`);
+      yi_调试_输出_错误(`剪贴板_设置文本", "无法复制文本到剪贴板: ${错误}`);
     }
   );
 }
@@ -101,37 +56,60 @@ function xl_剪贴板_设置文本_备用(xl_文本) {
   try {
     var xl_成功 = document.execCommand("copy");
     var xl_信息 = xl_成功 ? "成功" : "失败";
-    xl_调试_输出(`xl_剪贴板_设置文本_备用 > \n复制文本： ${xl_文本}指令： ${xl_信息}`);
+    yi_调试_输出(`xl_剪贴板_设置文本_备用", "复制文本： ${xl_文本}指令： ${xl_信息}`);
   } catch (xl_错误) {
-    xl_调试_输出_错误(`xl_剪贴板_设置文本_备用 > \n无法使用备用方法复制文本: ${xl_错误}`);
+    yi_调试_输出_错误(`xl_剪贴板_设置文本_备用", "无法使用备用方法复制文本: ${xl_错误}`);
   }
   document.body.removeChild(xl_文本区域);
 }
 
 // 判断是否弹出兼容性提示
 function xl_兼容性提示_判断是否显示() {
-  const c_应该显示 = xl_本地存储_读("显示兼容性提示") !== "false";
-  const c_提示元素 = xl_元素_获取_使用ID("公告");
+  const c_应该显示 = yi_cookie_读("显示兼容性提示") !== "false";
+  const c_提示元素 = yi_元素_获取_使用ID("公告");
 
   if (c_应该显示) {
+    const c_兼容性提示关闭按钮 = yi_元素_获取_使用ID("兼容性提示关闭按钮");
+    const c_兼容性提示不再显示按钮 = yi_元素_获取_使用ID("兼容性提示不再显示按钮");
     c_提示元素.showModal();
     xl_元素_可拖动(c_提示元素);
+    c_兼容性提示关闭按钮.disabled = true;
+    c_兼容性提示不再显示按钮.dsiabled = true;
+    c_兼容性提示关闭按钮.innerText = "关闭（给老子看5秒再点）";
+    c_兼容性提示不再显示按钮.innerText = "不再显示（给老子看10秒再点）";
+    setTimeout(() => {
+      c_兼容性提示关闭按钮.disabled = false;
+      c_兼容性提示关闭按钮.innerText = "关闭";
+      yi_调试_输出("兼容性提示_判断是否显示", "关闭按钮已启用");
+      setTimeout(() => {
+        c_兼容性提示不再显示按钮.disabled = false;
+        c_兼容性提示不再显示按钮.innerText = "不再显示（1周）";
+        yi_调试_输出("兼容性提示_判断是否显示", "不再显示按钮已启用");
+      }, 5000);
+    }, 5000);
   } else {
     xl_兼容性提示_关闭();
   }
-  xl_调试_输出("兼容性提示_判断是否显示 > \n 是否显示兼容性提示：" + c_应该显示);
+  yi_调试_输出("兼容性提示_判断是否显示", "是否显示兼容性提示：" + c_应该显示);
 }
 
 // 不再显示兼容性提示
-function xl_兼容性提示_不再显示() {
-  xl_本地存储_写("显示兼容性提示", "false");
-  xl_兼容性提示_关闭();
+function xl_兼容性提示_不再显示(c_次数) {
+  const c_兼容性提示不再显示按钮 = yi_元素_获取_使用ID("兼容性提示不再显示按钮");
+  if (c_次数 > 0) {
+    c_兼容性提示不再显示按钮.innerText = `再点${c_次数}次以不再弹出1周`;
+    yi_调试_输出("兼容性提示_不再显示", "次数：" + c_次数);
+    l_兼容性提示不再显示所要的次数 = l_兼容性提示不再显示所要的次数 - 1;
+  } else {
+    yi_cookie_写("显示兼容性提示", false, 7);
+    xl_兼容性提示_关闭();
+  }
 }
 
 // 关闭兼容性提示
 function xl_兼容性提示_关闭() {
-  xl_元素_获取_使用ID("公告").close();
-  xl_元素_获取_使用ID("公告").style.display = "none";
+  yi_元素_获取_使用ID("公告").close();
+  yi_元素_获取_使用ID("公告").style.display = "none";
 }
 
 // 元素的拖动
@@ -150,7 +128,7 @@ function xl_元素_可拖动(元素) {
     document.addEventListener("mouseup", 结束拖动);
     document.addEventListener("touchmove", 拖动中);
     document.addEventListener("touchend", 结束拖动);
-    xl_调试_输出("元素_可拖动 > \n 开始拖动");
+    yi_调试_输出("元素_可拖动", "开始拖动");
   }
 
   function 拖动中(事件) {
@@ -163,7 +141,7 @@ function xl_元素_可拖动(元素) {
 
     元素.style.left = 初始X + 移动X + "px";
     元素.style.top = 初始Y + 移动Y + "px";
-    xl_调试_输出("元素_可拖动 > \n 正在拖动");
+    yi_调试_输出("元素_可拖动", "正在拖动");
   }
 
   function 结束拖动() {
@@ -172,7 +150,7 @@ function xl_元素_可拖动(元素) {
     document.removeEventListener("mouseup", 结束拖动);
     document.removeEventListener("touchmove", 拖动中);
     document.removeEventListener("touchend", 结束拖动);
-    xl_调试_输出("元素_可拖动 > \n 停止拖动");
+    yi_调试_输出("元素_可拖动", "停止拖动");
   }
 
   元素.addEventListener("mousedown", 开始拖动);
@@ -180,18 +158,18 @@ function xl_元素_可拖动(元素) {
 }
 
 function xl_iframe_改变网址(iframeId, iframeSrc) {
-  const iframe = xl_元素_获取_使用ID(iframeId);
+  const iframe = yi_元素_获取_使用ID(iframeId);
   iframe.setAttribute("src", iframeSrc);
   iframe.style.height = iframeSrc ? "50vh" : "0vh";
 }
 
 function xl_iframe_改变高度(iframeId, 尺寸) {
-  const iframe = xl_元素_获取_使用ID(iframeId);
+  const iframe = yi_元素_获取_使用ID(iframeId);
   iframe.style.height = `${尺寸}vh`;
 }
 
 function xl_内容_隐藏加载指示器() {
-  xl_元素_获取_使用ID("加载指示器").style.display = "none";
+  yi_元素_获取_使用ID("加载指示器").style.display = "none";
 }
 
 function xl_内容_实现锚点链接平滑滚动() {
@@ -201,14 +179,14 @@ function xl_内容_实现锚点链接平滑滚动() {
 
       // 获取目标元素的ID
       const 目标Id = this.getAttribute("href").substring(1);
-      const 目标元素 = xl_元素_获取_使用ID(目标Id);
+      const 目标元素 = yi_元素_获取_使用ID(目标Id);
       if (目标元素) {
         // 移除目标元素的类
-        目标元素.xl_元素_样式_移除类("xl_遮罩1");
-        目标元素.xl_元素_样式_移除类("xl_遮罩11");
+        yi_元素_样式_移除类(目标元素, "xl_遮罩1");
+        yi_元素_样式_移除类(目标元素, "xl_遮罩11");
 
         const 偏移 = 导航栏高度; // 导航栏的高度
-        const 滚动容器 = xl_元素_获取_使用ID("xl_内容"); // 滚动的容器
+        const 滚动容器 = yi_元素_获取_使用ID("xl_内容"); // 滚动的容器
 
         if (滚动容器) {
           const 目标位置 = 目标元素.getBoundingClientRect().top + 滚动容器.scrollTop - 偏移;
@@ -218,24 +196,24 @@ function xl_内容_实现锚点链接平滑滚动() {
             behavior: "smooth",
           });
 
-          xl_调试_输出(`xl_内容_实现锚点链接平滑滚动 > \n 滚动到目标元素：${目标Id}, 位置：${目标位置}`);
+          yi_调试_输出(`内容_实现锚点链接平滑滚动`, `滚动到目标元素：${目标Id}, 位置：${目标位置}`);
 
           // 滚动完成后添加CSS类
           setTimeout(() => {
-            目标元素.xl_元素_样式_添加类("xl_遮罩1");
-            xl_调试_输出(`xl_内容_实现锚点链接平滑滚动 > \n 给目标元素添加类：xl_遮罩1`);
+            yi_元素_样式_添加类(目标元素, "xl_遮罩1");
+            yi_调试_输出(`xl_内容_实现锚点链接平滑滚动`, `给目标元素添加类：xl_遮罩1`);
 
             // 1秒后添加渐隐类
             setTimeout(() => {
-              目标元素.xl_元素_样式_添加类("xl_遮罩11");
-              xl_调试_输出(`xl_内容_实现锚点链接平滑滚动 > \n 给目标元素添加类：xl_遮罩11`);
+              yi_元素_样式_添加类(目标元素, "xl_遮罩11");
+              yi_调试_输出(`xl_内容_实现锚点链接平滑滚动`, `给目标元素添加类：xl_遮罩11`);
             }, 1000); // 1秒后渐隐
           }, 500); // 设置一个延迟时间以确保滚动完成
         } else {
-          xl_调试_输出_警告("xl_内容_实现锚点链接平滑滚动 > \n 未找到滚动容器");
+          yi_调试_输出_警告("xl_内容_实现锚点链接平滑滚动", "未找到滚动容器");
         }
       } else {
-        xl_调试_输出_错误(`xl_内容_实现锚点链接平滑滚动 > \n 未找到目标元素：${目标Id}`);
+        yi_调试_输出_错误("xl_内容_实现锚点链接平滑滚动", `未找到目标元素：${目标Id}`);
       }
     });
   });
@@ -264,64 +242,64 @@ function xl_节日系统() {
   const 日期 = String(今天.getDate()).padStart(2, "0"); // 获取日期并格式化为两位数字
   const 格式化日期 = `${月份}-${日期}`; // 将月份和日期组合成MM-DD格式
 
-  xl_调试_输出("节日系统 > \n 当前日期：" + 格式化日期);
+  yi_调试_输出("节日系统", "当前日期：" + 格式化日期);
 
   // 显示对应的祝福语
-  const 祝福语元素 = xl_元素_获取_使用ID("节日系统_祝福语显示框");
+  const 祝福语元素 = yi_元素_获取_使用ID("节日系统_祝福语显示框");
   if (节日祝福[格式化日期]) {
     // 检查今天是否是节日
     祝福语元素.textContent = 节日祝福[格式化日期]; // 显示对应的祝福语
-    xl_调试_输出("节日系统 > \n 显示祝福语：" + 节日祝福[格式化日期]);
+    yi_调试_输出("节日系统", "显示祝福语：" + 节日祝福[格式化日期]);
   } else {
     祝福语元素.textContent = "今天没有特别的节日"; // 显示默认信息
-    xl_调试_输出_警告("节日系统 > \n 今天没有特别的节日，奖励你一个警告[doge]");
+    yi_调试_输出_警告("节日系统", "今天没有特别的节日，奖励你一个警告[doge]");
   }
 }
 
 function xl_BUG反馈页面_弹出() {
-  const c_是否弹出BUG反馈页面 = xl_本地存储_读("弹出BUG反馈页面") !== "false";
+  const c_是否弹出BUG反馈页面 = yi_本地存储_读("弹出BUG反馈页面") !== "false";
   if (c_是否弹出BUG反馈页面) {
     window.open("/page/bugsreport/index.html", "_blank");
   }
-  xl_调试_输出("BUG反馈页面_弹出 > \n 是否弹出BUG反馈页面：" + c_是否弹出BUG反馈页面);
+  yi_调试_输出("BUG反馈页面_弹出", "是否弹出BUG反馈页面：" + c_是否弹出BUG反馈页面);
 }
 
 function xl_BUG反馈页面_设置不再弹出() {
-  xl_本地存储_写("弹出BUG反馈页面", "false");
+  yi_本地存储_写("弹出BUG反馈页面", "false");
   window.close();
 }
 
 function xl_视口太窄提示_判断是否显示() {
-  xl_元素_获取_使用ID("视口太窄提示").style.display = "none";
+  yi_元素_获取_使用ID("视口太窄提示").style.display = "none";
   const vh = window.innerHeight;
-  xl_调试_输出("视口太窄提示_判断是否显示 > \n 视口高度：" + vh);
+  yi_调试_输出("视口太窄提示_判断是否显示", "视口高度：" + vh);
   const vw = window.innerWidth;
-  xl_调试_输出("视口太窄提示_判断是否显示 > \n 视口宽度：" + vw);
+  yi_调试_输出("视口太窄提示_判断是否显示", "视口宽度：" + vw);
   if (vh > vw) {
-    xl_元素_获取_使用ID("视口太窄提示").style.display = "block";
-    xl_调试_输出("视口太窄提示_判断是否显示 > \n 是");
+    yi_元素_获取_使用ID("视口太窄提示").style.display = "block";
+    yi_调试_输出("视口太窄提示_判断是否显示", "是");
     xl_内容_侧边栏_全屏(false);
   } else {
-    xl_调试_输出("视口太窄提示_判断是否显示 > \n 否");
+    yi_调试_输出("视口太窄提示_判断是否显示", "否");
   }
 }
 
 function xl_内容_侧边栏_全屏(xl_true为全屏false为取消全屏) {
-  let xl_侧边栏 = xl_元素_获取_使用Class("xl_侧边栏")[0];
-  let xl_内容 = xl_元素_获取_使用Class("xl_内容")[0];
-  let xl_全屏按钮 = xl_元素_获取_使用ID("全屏侧边栏按钮");
-  let xl_取消全屏按钮 = xl_元素_获取_使用ID("取消全屏侧边栏按钮");
+  let xl_侧边栏 = yi_元素_获取_使用Class("xl_侧边栏")[0];
+  let xl_内容 = yi_元素_获取_使用Class("xl_内容")[0];
+  let xl_全屏按钮 = yi_元素_获取_使用ID("全屏侧边栏按钮");
+  let xl_取消全屏按钮 = yi_元素_获取_使用ID("取消全屏侧边栏按钮");
 
   if (xl_true为全屏false为取消全屏) {
-    xl_调试_输出("内容_侧边栏_全屏 > \n 全屏");
-    xl_元素_样式_添加类(xl_侧边栏, "xl_侧边栏_全屏");
-    xl_元素_样式_添加类(xl_内容, "xl_内容_全屏");
+    yi_调试_输出("内容_侧边栏_全屏", "全屏");
+    yi_元素_样式_添加类(xl_侧边栏, "xl_侧边栏_全屏");
+    yi_元素_样式_添加类(xl_内容, "xl_内容_全屏");
     xl_全屏按钮.style.display = "none";
     xl_取消全屏按钮.style.display = "block";
   } else {
-    xl_调试_输出("内容_侧边栏_全屏 > \n 取消全屏");
-    xl_元素_样式_移除类(xl_侧边栏, "xl_侧边栏_全屏");
-    xl_元素_样式_移除类(xl_内容, "xl_内容_全屏");
+    yi_调试_输出("内容_侧边栏_全屏", "取消全屏");
+    yi_元素_样式_移除类(xl_侧边栏, "xl_侧边栏_全屏");
+    yi_元素_样式_移除类(xl_内容, "xl_内容_全屏");
     xl_全屏按钮.style.display = "block";
     xl_取消全屏按钮.style.display = "none";
   }
@@ -447,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div style="font-size: 12px; overflow: auto;">
         <span style="font-size: 16px">公告</span><br />
-        <span>此网站的域名（xiaoluo.link）将在今年7月23日到期，我们后续可能会更换为“xluofox.top”域名，请注意关注此处</span>
+        <span>此网站的域名（xiaoluo.link）到期了！！！！！！！！！新域名没钱买，请使用dsy-xiaoluo.github.io域名！！！</span>
         <hr />
         <span style="font-size: 16px">兼容性提示</span><br />
         <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
@@ -456,8 +434,8 @@ document.addEventListener("DOMContentLoaded", function () {
     <div style="position: sticky; bottom: 0">
       <div style="border: 1px solid transparent; border-top-color: #00000040; border-bottom-color: #ffffff40"></div>
       <div style="background-color: #cbcbcb; text-align: right">
-        <button onclick="xl_兼容性提示_关闭()">关闭</button>
-        <button onclick="xl_兼容性提示_不再显示()" style="margin-right: 10px">不再显示</button>
+        <button onclick="xl_兼容性提示_关闭()" id="兼容性提示关闭按钮" disabled>关闭</button>
+        <button onclick="xl_兼容性提示_不再显示(l_兼容性提示不再显示所要的次数)" style="margin-right: 10px" id="兼容性提示不再显示按钮" disabled>不再显示</button>
       </div>
     </div>
   </xl-vistatextbox>
