@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>404|XLuoFox.DSY</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>404|XLuoFox.DSY</title>
-</head>
+  <body style="cursor: none; background-color: #000">
+    <img src="/file/img/bsod.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 114514" id="114514" />
+    <script>
+      // 通过ID获取元素
+      function yi_元素_获取_使用ID(elementId) {
+        return document.getElementById(elementId);
+      }
 
-<body style="cursor: none; background-color: #000;">
-  <img src="/file/img/bsod.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 114514;"
-    id="114514">
-  <script>
-    // 通过ID获取元素
-    function xl_元素_获取_使用ID(elementId) {
-      return document.getElementById(elementId);
-    }
-
-    var audio = new Audio('/file/aud/3000hz.mp3');
-    setTimeout(function () { // 5000 ms
-      xl_元素_获取_使用ID("114514").src = "/file/img/black.png";
-      setTimeout(function () { // 2000 ms
-        xl_元素_获取_使用ID("114514").src = "/file/img/nosgin.png";
-        setTimeout(function () { // 1000 ms
-          xl_元素_获取_使用ID("114514").src = "/file/img/black.png";
-          audio.play();
-          setTimeout(function () { // 1000 ms
-            xl_元素_获取_使用ID("114514").src = "/file/img/start.png";
-            setTimeout(function () { // 2000 ms
-              window.location.href = "/index.html";
-            }, 2000);
+      var audio = new Audio("/file/aud/3000hz.mp3");
+      setTimeout(function () {
+        // 5000 ms
+        yi_元素_获取_使用ID("114514").src = "/file/img/black.png";
+        setTimeout(function () {
+          // 2000 ms
+          yi_元素_获取_使用ID("114514").src = "/file/img/nosgin.png";
+          setTimeout(function () {
+            // 1000 ms
+            yi_元素_获取_使用ID("114514").src = "/file/img/black.png";
+            audio.play();
+            setTimeout(function () {
+              // 1000 ms
+              yi_元素_获取_使用ID("114514").src = "/file/img/start.png";
+              setTimeout(function () {
+                // 2000 ms
+                window.location.href = "/index.html";
+              }, 2000);
+            }, 1000);
           }, 1000);
-        }, 1000);
-      }, 2000);
-    }, 5000);
-  </script>
-</body>
+        }, 2000);
+      }, 5000);
+    </script>
+  </body>
+</html>
