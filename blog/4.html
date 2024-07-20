@@ -4,335 +4,316 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Windows, 窗口, 大小, 尺寸, 位置, 强制, 修改, 如何, 强制修改窗口位置, 调整窗口大小, 修改窗口尺寸, 窗口操作小程序, 窗口位置居中, 窗口大小精确调整" />
+    <meta name="description" content="不小心拖动窗口导致位置不居中？无法精确调整窗口大小？本博客介绍一个自制小程序，帮助你轻松实现强制修改窗口位置大小的功能，让窗口操作更加便捷！" />
+    <title>自制强制修改窗口位置大小的小程序 | DSY_xiaoluo</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/css/old/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords"
-    content="Windows, 窗口, 大小, 尺寸, 位置, 强制, 修改, 如何, 强制修改窗口位置, 调整窗口大小, 修改窗口尺寸, 窗口操作小程序, 窗口位置居中, 窗口大小精确调整">
-  <meta name="description" content="不小心拖动窗口导致位置不居中？无法精确调整窗口大小？本博客介绍一个自制小程序，帮助你轻松实现强制修改窗口位置大小的功能，让窗口操作更加便捷！">
-  <title>自制强制修改窗口位置大小的小程序 | DSY_xiaoluo</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/css/old/style.css">
-</head>
+  <body>
+    <div class="grid-container">
+      <!--我下面是标题-->
+      <div class="grid-item">
+        <span>www.xiaoluo.link > blog > <strong>4.html</strong></span
+        ><br />
+        <h1 style="font-size: 32px"><strong>自制强制修改窗口位置大小的小程序</strong></h1>
+        <!-- <h2>修改此处：网页简介</h2> -->
+      </div>
 
-<body>
-  <div class="grid-container">
-
-    <!--我下面是标题-->
-    <div class="grid-item">
-      <span>www.xiaoluo.link > blog > <strong>4.html</strong></span><br>
-      <h1 style="font-size: 32px;"><strong>自制强制修改窗口位置大小的小程序</strong></h1>
-      <!-- <h2>修改此处：网页简介</h2> -->
+      <!--我下面是页面信息-->
+      <div class="grid-item" style="text-align: right">
+        <span>2024年3月23日0时43分：页面创建时间</span><br />
+        <span>2024年3月26日2时42分：页面修改时间</span>
+      </div>
     </div>
 
-    <!--我下面是页面信息-->
-    <div class="grid-item" style="text-align: right;">
-      <span>2024年3月23日0时43分：页面创建时间</span><br>
-      <span>2024年3月26日2时42分：页面修改时间</span>
+    <!--看见标题栏和xl_内容区中间的空隙了吗？没错，那是我-->
+    <div style="height: 10px"></div>
 
-    </div>
+    <div class="grid-container2">
+      <!--侧边栏~~~-->
+      <div class="grid-item" style="direction: rtl">
+        <div style="direction: ltr">
+          <!--导航-->
+          <table class="textbox" style="border: 1px solid rgba(0, 128, 0, 1); width: 100%; text-align: center; box-shadow: -5px 5px 5px rgba(0, 0, 0, 1); line-height: 2">
+            <thead>
+              <tr>
+                <td style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold; text-align: left; line-height: 1.114514191981">
+                  <span><strong>导航</strong></span>
+                </td>
+              </tr>
+            </thead>
+            <tr>
+              <td style="background-color: rgba(0, 64, 0, 1)">
+                <span><a href="/index.html">首页</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-image: linear-gradient(to left, rgb(64, 64, 64), rgb(0, 64, 0)); background-size: 100% 100%; background-repeat: no-repeat; background-position: right top; width: 100%; height: 100%; border-right: 1px solid rgba(64, 64, 64, 1)">
+                <span><a href="/blog.html">博客</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color: rgba(0, 64, 0, 1)">
+                <span><a href="/pages.html">页面</a></span>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color: rgba(0, 64, 0, 1)">
+                <span><a href="/about.html">关于</a></span>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <!--目录-->
+          <table class="textbox" style="border: 1px solid rgba(0, 128, 0, 1); width: 100%">
+            <thead>
+              <tr>
+                <td style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold">
+                  <span><strong>目录</strong></span>
+                </td>
+              </tr>
+            </thead>
+            <tr>
+              <td style="background-color: rgba(0, 63, 0, 1); line-height: 1">
+                <span><a href="./4.html">文档头</a></span>
+                <br />
+                <span>├ <a href="#宇宙安全免责声明">宇宙安全免责声明</a></span>
+                <br />
+                <span>├ <a href="#导言">导言</a></span>
+                <br />
+                <span>├ <a href="#截图">截图</a></span>
+                <br />
+                <span>├ <a href="#使用方法">使用方法</a></span>
+                <br />
+                <span>├ <a href="#更新日志">更新日志</a></span>
+                <br />
+                <span>│└ <a href="#_ver.2相对ver.1">_ver.2相对ver.1</a></span>
+                <br />
+                <span>├ <a href="#下载">下载</a></span>
+                <br />
 
-  </div>
-
-  <!--看见标题栏和xl_内容区中间的空隙了吗？没错，那是我-->
-  <div style="height: 10px;"></div>
-
-  <div class="grid-container2">
-    <!--侧边栏~~~-->
-    <div class="grid-item" style="direction: rtl;">
-      <div style="direction: ltr;">
-        <!--导航-->
-        <table class="textbox"
-          style="border: 1px solid rgba(0, 128, 0, 1); width: 100%; text-align: center; box-shadow: -5px 5px 5px rgba(0, 0, 0, 1); line-height: 2;">
+                <span>文档尾</span>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <table class="textbox" style="border: 1px solid #008000; width: 100%">
+            <thead>
+              <tr>
+                <td style="background-color: #008000; color: #fff; font-weight: bold">
+                  <h3><strong>此页面以前的版本</strong></h3>
+                </td>
+              </tr>
+            </thead>
+            <tr>
+              <td style="background-color: #004000">
+                <span>
+                  <a href="./4.202403230043old.html">2024年3月23日0时43分</a>
+                </span>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <!--其它杂七杂八的-->
+          <div id="sidebar">
+            <!--动态xl_内容，见sidebar.html-->
+          </div>
+        </div>
+      </div>
+      <!--正文呐-->
+      <div class="grid-item">
+        <a name="宇宙安全免责声明"></a>
+        <table class="textbox" style="border: 1px solid #ffff00; width: 100%">
           <thead>
             <tr>
-              <td
-                style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold; text-align: left; line-height: 1.1145141919810;">
-                <span><strong>导航</strong></span>
+              <td style="background-color: #ffff00; color: rgba(0, 0, 0, 1); font-weight: bold">
+                <h3><strong>宇宙安全免责声明</strong></h3>
               </td>
             </tr>
           </thead>
           <tr>
-            <td style="background-color: rgba(0, 64, 0, 1);">
-              <span><a href="/index.html">首页</a></span>
-            </td>
-          </tr>
-          <tr>
-            <td
-              style="background-image: linear-gradient(to left, rgb(64, 64, 64), rgb(0, 64, 0)); background-size: 100% 100%; background-repeat: no-repeat; background-position: right top; width: 100%; height: 100%; border-right: 1px solid rgba(64, 64, 64, 1);">
-              <span><a href="/blog.html">博客</a></span>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color: rgba(0, 64, 0, 1);">
-              <span><a href="/pages.html">页面</a></span>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color: rgba(0, 64, 0, 1);">
-              <span><a href="/about.html">关于</a></span>
+            <td style="background-color: #808000">
+              <span> 此程序仅能在Windows系统上运行，且此软件著作权为站长所有，未经允许不得用于商业用途。可搬运，但需保留此声明 </span>
             </td>
           </tr>
         </table>
-        <br>
-        <!--目录-->
-        <table class="textbox" style="border: 1px solid rgba(0, 128, 0, 1); width: 100%;">
+        <br />
+        <a name="导言"></a>
+        <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%">
           <thead>
             <tr>
-              <td style="background-color: rgba(0, 128, 0, 1); color: rgb(255, 255, 255); font-weight: bold;">
-                <span><strong>目录</strong></span>
+              <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold">
+                <h3><strong>导言</strong></h3>
               </td>
             </tr>
           </thead>
           <tr>
-            <td style="background-color: rgba(0, 63, 0, 1); line-height: 1;">
-              <span><a href="./4.html">文档头</a></span>
-              <br>
-              <span>├ <a href="#宇宙安全免责声明">宇宙安全免责声明</a></span>
-              <br>
-              <span>├ <a href="#导言">导言</a></span>
-              <br>
-              <span>├ <a href="#截图">截图</a></span>
-              <br>
-              <span>├ <a href="#使用方法">使用方法</a></span>
-              <br>
-              <span>├ <a href="#更新日志">更新日志</a></span>
-              <br>
-              <span>│└ <a href="#_ver.2相对ver.1">_ver.2相对ver.1</a></span>
-              <br>
-              <span>├ <a href="#下载">下载</a></span>
-              <br>
-
-              <span>文档尾</span>
+            <td style="background-color: #606060">
+              <span> 你有强迫症吗？如果你有，那么当不小心拖动窗口时是不是非常崩溃？或者想将某个窗口的宽度或高度调整为整数但无法实现？下面我自制的程序将会很好地解决这些问题！ </span>
             </td>
           </tr>
         </table>
-        <br>
-        <table class="textbox" style="border: 1px solid #008000; width: 100%;">
+        <br />
+        <a name="截图"></a>
+        <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%">
           <thead>
             <tr>
-              <td style="background-color: #008000; color: #fff; font-weight: bold;">
-                <h3><strong>此页面以前的版本</strong></h3>
+              <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold">
+                <h3><strong>截图</strong></h3>
               </td>
             </tr>
           </thead>
           <tr>
-            <td style="background-color: #004000;">
+            <td style="background-color: #606060">
               <span>
-                <a href="./4.202403230043old.html">2024年3月23日0时43分</a>
+                程序属性：
+                <br />
+                <img src="/files/Snipaste_2024-03-26_02-43-23.png" alt="程序属性" /><br /><br />
+                主窗口：
+                <br />
+                <img src="/files/Snipaste_2024-03-26_02-44-48.png" alt="主窗口" /><br /><br />
               </span>
             </td>
           </tr>
         </table>
-        <br>
-        <!--其它杂七杂八的-->
-        <div id="sidebar">
-          <!--动态xl_内容，见sidebar.html-->
-        </div>
-      </div>
-    </div>
-    <!--正文呐-->
-    <div class="grid-item">
-      <a name="宇宙安全免责声明"></a>
-      <table class="textbox" style="border: 1px solid #ffff00; width: 100%;">
-        <thead>
+        <br />
+        <a name="使用方法"></a>
+        <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%">
+          <thead>
+            <tr>
+              <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold">
+                <h3><strong>使用方法</strong></h3>
+              </td>
+            </tr>
+          </thead>
           <tr>
-            <td style="background-color: #ffff00; color: rgba(0, 0, 0, 1); font-weight: bold;">
-              <h3><strong>宇宙安全免责声明</strong></h3>
+            <td style="background-color: #606060">
+              <span>
+                1.按住“选择”按钮不放<br />
+                2.将鼠标移动到目标窗口的标题栏<br />
+                3.松开鼠标，此时会在“选择”分组框显示窗口信息<br />
+                4.在“修改”分组框中修改窗口的位置和大小<br />
+                4.1如需居中，可以在下方“参考”分组框中点击“居中”按钮<br />
+                4.2可在“修改”分组框中的“位置”和“尺寸”分组框进行可视化调整，中间的编辑框为步进值<br />
+                5.按“修改”按钮<br />
+                6.如果修改成功将弹出“修改完成”信息框<br />
+              </span>
             </td>
           </tr>
-        </thead>
-        <tr>
-          <td style="background-color: #808000;">
-            <span>
-              此程序仅能在Windows系统上运行，且此软件著作权为站长所有，未经允许不得用于商业用途。可搬运，但需保留此声明
-            </span>
-          </td>
-        </tr>
-      </table>
-      <br>
-      <a name="导言"></a>
-      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
-        <thead>
+        </table>
+        <br />
+        <a name="更新日志"></a>
+        <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%">
+          <thead>
+            <tr>
+              <td style="background-color: #c0c0c0; color: #000; font-weight: bold">
+                <h3><strong>更新日志</strong></h3>
+              </td>
+            </tr>
+          </thead>
           <tr>
-            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
-              <h3><strong>导言</strong></h3>
-            </td>
-          </tr>
-        </thead>
-        <tr>
-          <td style="background-color: #606060;">
-            <span>
-              你有强迫症吗？如果你有，那么当不小心拖动窗口时是不是非常崩溃？或者想将某个窗口的宽度或高度调整为整数但无法实现？下面我自制的程序将会很好地解决这些问题！
-            </span>
-          </td>
-        </tr>
-      </table>
-      <br>
-      <a name="截图"></a>
-      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
-        <thead>
-          <tr>
-            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
-              <h3><strong>截图</strong></h3>
-            </td>
-          </tr>
-        </thead>
-        <tr>
-          <td style="background-color: #606060;">
-            <span>
-              程序属性：
-              <br>
-              <img src="/files/Snipaste_2024-03-26_02-43-23.png" alt="程序属性"><br><br>
-              主窗口：
-              <br>
-              <img src="/files/Snipaste_2024-03-26_02-44-48.png" alt="主窗口"><br><br>
-            </span>
-          </td>
-        </tr>
-      </table>
-      <br>
-      <a name="使用方法"></a>
-      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
-        <thead>
-          <tr>
-            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
-              <h3><strong>使用方法</strong></h3>
-            </td>
-          </tr>
-        </thead>
-        <tr>
-          <td style="background-color: #606060;">
-            <span>
-              1.按住“选择”按钮不放<br>
-              2.将鼠标移动到目标窗口的标题栏<br>
-              3.松开鼠标，此时会在“选择”分组框显示窗口信息<br>
-              4.在“修改”分组框中修改窗口的位置和大小<br>
-              4.1如需居中，可以在下方“参考”分组框中点击“居中”按钮<br>
-              4.2可在“修改”分组框中的“位置”和“尺寸”分组框进行可视化调整，中间的编辑框为步进值<br>
-              5.按“修改”按钮<br>
-              6.如果修改成功将弹出“修改完成”信息框<br>
-            </span>
-          </td>
-        </tr>
-      </table>
-      <br>
-      <a name="更新日志"></a>
-      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
-        <thead>
-          <tr>
-            <td style="background-color: #c0c0c0; color: #000; font-weight: bold;">
-              <h3><strong>更新日志</strong></h3>
-            </td>
-          </tr>
-        </thead>
-        <tr>
-          <td style="background-color: #606060;">
-            <span>
-              <a name="_ver.2相对ver.1"></a>
-              <table class="textbox" style="border: 1px solid #c0c0c0; margin: 10px;">
-                <thead style="top: 9px; z-index: 0;">
-                  <tr>
-                    <td style="background-color: #c0c0c0; color: #000; font-weight: bold;">
-                      <h4><strong>ver.2相对ver.1</strong></h4>
-                    </td>
-                  </tr>
-                </thead>
-                <tr>
-                  <td style="background-color: #606060;">
-                    <span>
-                      1.新增了对位置和尺寸的可视化调整分组框
-                    </span>
-                  </td>
-                </tr>
-              </table>
-
-            </span>
-          </td>
-        </tr>
-      </table>
-      <br>
-      <a name="下载"></a>
-      <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%;">
-        <thead>
-          <tr>
-            <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold;">
-              <h3><strong>下载</strong></h3>
-            </td>
-          </tr>
-        </thead>
-        <tr>
-          <td style="background-color: #606060;">
-            <span>
-              直接下载文件：<br>
-              <div class="temp1">
-                <table class="textbox" style="border: 1px solid #0080ff; background-color: #004080; margin: 10px;">
-                  <thead style="top: 9px; z-index: 0;">
-                    <tr style="background-color: #0080ff; color: rgba(0, 0, 0, 1); font-weight: bold; color: #fff;">
-                      <td colspan="2"><strong>附件</strong></td>
+            <td style="background-color: #606060">
+              <span>
+                <a name="_ver.2相对ver.1"></a>
+                <table class="textbox" style="border: 1px solid #c0c0c0; margin: 10px">
+                  <thead style="top: 9px; z-index: 0">
+                    <tr>
+                      <td style="background-color: #c0c0c0; color: #000; font-weight: bold">
+                        <h4><strong>ver.2相对ver.1</strong></h4>
+                      </td>
                     </tr>
                   </thead>
                   <tr>
-                    <td><span>下载链接</span></td>
-                    <td><a href="/files/file_强迫症助手v2.exe" download="强迫症助手v2.exe">强迫症助手v2.exe</a>
+                    <td style="background-color: #606060">
+                      <span> 1.新增了对位置和尺寸的可视化调整分组框 </span>
                     </td>
-                  </tr>
-                  <tr>
-                    <td><span>123云盘</span></td>
-                    <td><a href="https://www.123pan.com/s/UQ5RVv-BNBb.html"
-                        target="_blank">https://www.123pan.com/s/UQ5RVv-BNBb.html</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><span>网盘提取码</span></td>
-                    <td><span>“1145”（不含引号）</span></td>
-                  </tr>
-                  <tr>
-                    <td><span>文件类型</span></td>
-                    <td><span>Windows exe 可执行文件</span></td>
-                  </tr>
-                  <tr>
-                    <td><span>大小</span></td>
-                    <td><span>864KiB</span></td>
-                  </tr>
-                  <tr>
-                    <td><span>SHA256</span></td>
-                    <td><span>10 05 4f c1 fb f2 b7 68 04 ff b6 2f 59 a2 f6 47 1b 64 ad 84 e3 05 1a b5 1f d9 d4
-                        54 35 86 3d 7e</span></td>
                   </tr>
                 </table>
-              </div>
-              Windows下检查文件哈希值的命令
-              <table class="textbox" style="border: 1px solid #4040ff; margin: 10px;">
-                <thead style="top: 9px; z-index: 0;">
+              </span>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="下载"></a>
+        <table class="textbox" style="border: 1px solid #c0c0c0; width: 100%">
+          <thead>
+            <tr>
+              <td style="background-color: #c0c0c0; color: rgba(0, 0, 0, 1); font-weight: bold">
+                <h3><strong>下载</strong></h3>
+              </td>
+            </tr>
+          </thead>
+          <tr>
+            <td style="background-color: #606060">
+              <span>
+                直接下载文件：<br />
+                <div class="temp1">
+                  <table class="textbox" style="border: 1px solid #0080ff; background-color: #004080; margin: 10px">
+                    <thead style="top: 9px; z-index: 0">
+                      <tr style="background-color: #0080ff; color: rgba(0, 0, 0, 1); font-weight: bold; color: #fff">
+                        <td colspan="2"><strong>附件</strong></td>
+                      </tr>
+                    </thead>
+                    <tr>
+                      <td><span>下载链接</span></td>
+                      <td><a href="/files/file_强迫症助手v2.exe" download="强迫症助手v2.exe">强迫症助手v2.exe</a></td>
+                    </tr>
+                    <tr>
+                      <td><span>123云盘</span></td>
+                      <td><a href="https://www.123pan.com/s/UQ5RVv-BNBb.html" target="_blank">https://www.123pan.com/s/UQ5RVv-BNBb.html</a></td>
+                    </tr>
+                    <tr>
+                      <td><span>网盘提取码</span></td>
+                      <td><span>“1145”（不含引号）</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>文件类型</span></td>
+                      <td><span>Windows exe 可执行文件</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>大小</span></td>
+                      <td><span>864KiB</span></td>
+                    </tr>
+                    <tr>
+                      <td><span>SHA256</span></td>
+                      <td><span>10 05 4f c1 fb f2 b7 68 04 ff b6 2f 59 a2 f6 47 1b 64 ad 84 e3 05 1a b5 1f d9 d4 54 35 86 3d 7e</span></td>
+                    </tr>
+                  </table>
+                </div>
+                Windows下检查文件哈希值的命令
+                <table class="textbox" style="border: 1px solid #4040ff; margin: 10px">
+                  <thead style="top: 9px; z-index: 0">
+                    <tr>
+                      <td style="background-color: #4040ff; color: rgba(0, 0, 0, 1); font-weight: bold; color: #ffffff">
+                        <span><strong>batch</strong></span>
+                      </td>
+                    </tr>
+                  </thead>
                   <tr>
-                    <td style="background-color: #4040ff; color: rgba(0, 0, 0, 1); font-weight: bold; color: #ffffff;">
-                      <span><strong>batch</strong></span>
+                    <td style="background-color: #202080">
+                      <pre><code class="language-bash">certutil -hashfile 强迫症助手v2.exe SHA256</code></pre>
                     </td>
                   </tr>
-                </thead>
-                <tr>
-                  <td style="background-color: #202080; ">
-                    <pre><code class="language-bash">certutil -hashfile 强迫症助手v2.exe SHA256</code></pre>
-                  </td>
-                </tr>
-              </table>
-            </span>
-          </td>
-        </tr>
-      </table>
-      <br>
+                </table>
+              </span>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </div>
     </div>
-  </div>
-  <div style="width: 100%; text-align: center"><br>© 2024 DSY_xiaoluo - 妙狗国国王</div>
-</body>
+    <div style="width: 100%; text-align: center"><br />© 2024 DSY_xiaoluo - 妙狗国国王</div>
+  </body>
 
-<script>
-  // JavaScript 代码，检测用户代理，并根据需要添加类名
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    document.querySelector('.grid-container2').xl_元素_样式_添加类('mobile-disable');
-  }
-</script>
-
+  <script>
+    // JavaScript 代码，检测用户代理，并根据需要添加类名
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.querySelector(".grid-container2").yi_元素_样式_添加类("mobile-disable");
+    }
+  </script>
 </html>

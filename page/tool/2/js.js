@@ -12,9 +12,9 @@
 //       xl_结果输出元素id：结果输出元素的id
 //       xl_是否复制：是否复制到剪贴板
 function xl_unicode_位移编码(xl_原文本元素id, xl_偏移量元素id, xl_结果输出元素id, xl_是否复制) {
-  const xl_原文本 = xl_元素_获取_使用ID(xl_原文本元素id).value;
-  const xl_偏移量 = Number(xl_元素_获取_使用ID(xl_偏移量元素id).value);
-  const xl_结果输出元素 = xl_元素_获取_使用ID(xl_结果输出元素id);
+  const xl_原文本 = yi_元素_获取_使用ID(xl_原文本元素id).value;
+  const xl_偏移量 = Number(yi_元素_获取_使用ID(xl_偏移量元素id).value);
+  const xl_结果输出元素 = yi_元素_获取_使用ID(xl_结果输出元素id);
 
   // 遍历原文本的每个字符，处理偏移并生成结果
   const xl_结果 = Array.from(xl_原文本, (char) => {
