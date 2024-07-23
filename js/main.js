@@ -425,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div style="font-size: 12px; overflow: auto;">
         <span style="font-size: 16px">公告</span><br />
-        <span>此网站的域名（xiaoluo.link）到期了！！！！！！！！！新域名没钱买，请使用dsy-xiaoluo.github.io域名！！！</span>
+        <span>此网站的域名（xiaoluo.link）到期了！！！！！！！！！新域名：XLuoFox.us.kg！！！！！！！！！</span>
         <hr />
         <span style="font-size: 16px">兼容性提示</span><br />
         <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
