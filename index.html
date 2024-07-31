@@ -168,7 +168,7 @@
         <span>你有什么对想对站长说的话，还是自己的生活中发生的琐事，又或者是无聊没事干都可以写在下面！支持Markdown格式！这是完全匿名的！</span>
         <textarea id="匿名留言输入框" placeholder="请输入..."></textarea>
         <span style="display: none" id="匿名留言提交成功">已提交！</span>
-        <button onclick="yh_发送消息('9e0b1cbff1bd44d98e87becac87b894f', '9131970', 'markdown', 'user', yi_元素_获取_使用ID('匿名留言输入框').value, [{'text': '打开网站', 'actionType': 1, 'url': 'https://dsy-xiaoluo.github.io/'}]); yi_元素_获取_使用ID('匿名留言输入框').value = ''; yi_元素_获取_使用ID('匿名留言提交成功').style.display = 'block'; setTimeout(function(){ yi_元素_获取_使用ID('匿名留言提交成功').style.display = 'none'; }, 1000);">提交</button>
+        <button onclick="yh_发送消息('9e0b1cbff1bd44d98e87becac87b894f', '9131970', 'markdown', 'user', '### 匿名留言\n' + yi_元素_获取_使用ID('匿名留言输入框').value, ''); yi_元素_获取_使用ID('匿名留言输入框').value = ''; yi_元素_获取_使用ID('匿名留言提交成功').style.display = 'block'; setTimeout(function(){ yi_元素_获取_使用ID('匿名留言提交成功').style.display = 'none'; }, 1000);">提交</button>
       </xl-vistatextbox>
     </div>
   </body>

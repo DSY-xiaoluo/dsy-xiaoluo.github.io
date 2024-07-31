@@ -457,6 +457,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("load", function () {
   xl_内容_隐藏加载指示器();
+  xl_yh_发送消息("9e0b1cbff1bd44d98e87becac87b894f", "9131970", "markdown", "user", "### 访问提示\n目前有人正在访问" + window.location.href, "");
 });
 
 document.addEventListener("keydown", function (event) {
@@ -466,3 +467,38 @@ document.addEventListener("keydown", function (event) {
     }, 1000);
   }
 });
+
+async function xl_yh_发送消息(token, 接收者ID, 消息类型, 接收者类型, 消息内容, 消息按钮) {
+  // 创建一个Headers对象，并设置请求头
+  const xl_请求头 = new Headers({
+    "Content-Type": "application/json",
+  });
+
+  // 构造消息体，使用JSON格式
+  const xl_消息内容 = JSON.stringify({
+    recvId: 接收者ID,
+    recvType: 接收者类型,
+    contentType: 消息类型,
+    content: {
+      text: 消息内容,
+      buttons: 消息按钮,
+    },
+  });
+
+  // 配置请求选项
+  const xl_请求选项 = {
+    method: "POST",
+    headers: xl_请求头,
+    body: xl_消息内容,
+    redirect: "follow",
+  };
+
+  try {
+    // 发送请求到指定的URL
+    const response = await fetch(`https://chat-go.jwzhd.com/open-apis/v1/bot/send?token=${token}`, xl_请求选项);
+    const xl_结果 = await response.text();
+    yi_调试_输出("yh_发送消息", xl_结果);
+  } catch (xl_错误) {
+    yi_调试_输出_错误("yh_发送消息", xl_错误);
+  }
+}
