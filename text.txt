@@ -1,0 +1,21 @@
+vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogIlF1aWNrIiwNCiAgImFkZCI6ICIxMDQuMTkuMzIuMzMiLA0KICAicG9ydCI6ICIyMDgyIiwNCiAgImlkIjogIjg2ZTkyNmI5LWQ2N2EtNGM4Zi1hMzVlLTAyNDYzMTgzOGE0NSIsDQogICJhaWQiOiAiMCIsDQogICJzY3kiOiAiYXV0byIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAiaXAyLTIuZnJlZXNzcjIueHl6IiwNCiAgInBhdGgiOiAiZ2l0aHViLmNvbS9BbHZpbjk5OTkiLA0KICAidGxzIjogIiIsDQogICJzbmkiOiAiIiwNCiAgImFscG4iOiAiIg0KfQ==
+
+        <span> <xl_标签文本黄色>B</xl_标签文本黄色>：Beta，实验性 </span><br />
+        <span> <xl_标签文本红色>H</xl_标签文本红色>：Huge，重大更新（建议清除浏览器缓存） </span><br />
+        <span> <xl_标签文本灰色>N</xl_标签文本灰色>：Normal，普通更新 </span><br />
+        <span> <xl_标签文本蓝色>N</xl_标签文本蓝色>：New，新内容 </span><br />
+        <hr />
+        <span> <xl_标签文本透明>H</xl_标签文本透明>HTML </span><br />
+        <span> <xl_标签文本透明>C</xl_标签文本透明>CSS </span><br />
+        <span> <xl_标签文本透明>J</xl_标签文本透明>JavaScript </span><br />
+
+todo:
+1.添加yhchat.js[done][gited]
+2.添加匿名留言[done][gited]
+3.调整“页面”页面[done][gited]
+4.新增一篇博客[done][gited]
+5.添加一个友联[done]
+
+[{"text": "点击跳转", "actionType": 1, "url": "https://dsy-xiaoluo.github.io/"}]
+
+Rel.20.240801.01
