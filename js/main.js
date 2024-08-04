@@ -305,6 +305,64 @@ function xl_内容_侧边栏_全屏(xl_true为全屏false为取消全屏) {
   }
 }
 
+function xl_访问网站消息_发送() {
+  const c_访问地址 = window.location.href;
+  if (c_访问地址.includes("127.0.")) {
+    // 防止在本地调试时发送消息，在前面加上感叹号以只在调试时发送
+    yi_调试_输出("访问网站消息_发送", "不发送，因为地址栏包含127.0.");
+  } else {
+    const c_时间 = new Date().toLocaleString();
+    let c_累计访问次数 = parseInt(yi_本地存储_读("累计访问次数", 0), 10);
+    c_累计访问次数 += 1;
+    yi_本地存储_写("累计访问次数", c_累计访问次数);
+    const c_UA = xl_客户端_获取_用户UA();
+
+    xl_网络_获取_用户IP地址().then((c_访问IP) => {
+      // 不能再加了，不然就和开盒一样了
+      xl_yh_发送消息("9e0b1cbff1bd44d98e87becac87b894f", "9131970", "markdown", "user", `### 访问提示\n有人访问你的屎山网站了！\n- 访问时间：${c_时间}\n- 累计访问：${c_累计访问次数}次\n- 访问地址：${c_访问地址}\n- 访问IP：${c_访问IP}\n- UserAgent：${c_UA}`, "");
+      yi_调试_输出("访问网站消息_发送", `访问时间：${c_时间}\n 累计访问：${c_累计访问次数}次\n 访问地址：${c_访问地址}\n 访问IP：${c_访问IP}\n UserAgent：${c_UA}`);
+    });
+  }
+}
+
+async function xl_网络_获取_用户IP地址() {
+  try {
+    const c_响应 = await fetch("https://api.ipify.org?format=json");
+    if (!c_响应.ok) {
+      throw new Error("网络请求失败：" + c_响应.statusText);
+    }
+    const c_数据 = await c_响应.json();
+    return c_数据.ip;
+  } catch (c_错误) {
+    yi_调试_输出_错误("网络_获取_用户IP地址", c_错误);
+    return c_错误.message;
+  }
+}
+
+function xl_客户端_获取_用户UA() {
+  return window.navigator.userAgent;
+}
+
+// 这个涉及别人隐私太危险了
+// function xl_客户端_获取_用户地理位置(经度变量, 纬度变量) {
+//   if ("geolocation" in navigator) {
+//     navigator.geolocation.getCurrentPosition(
+//       (位置) => {
+//         const c_纬度 = 位置.coords.latitude;
+//         const c_经度 = 位置.coords.longitude;
+//         yi_调试_输出("客户端_获取_用户地理位置", `纬度: ${c_纬度}, 经度: ${c_经度}`);
+//         经度变量.value = c_经度;
+//         纬度变量.value = c_纬度;
+//       },
+//       (错误) => {
+//         yi_调试_输出_错误("客户端_获取_用户地理位置", 错误.message);
+//       }
+//     );
+//   } else {
+//     yi_调试_输出_错误("客户端_获取_用户地理位置", "Geolocation API在此环境中不可用。");
+//   }
+// }
+
 document.addEventListener("DOMContentLoaded", function () {
   xl_you_know();
 
@@ -453,11 +511,11 @@ document.addEventListener("DOMContentLoaded", function () {
   xl_内容_实现锚点链接平滑滚动();
   xl_视口太窄提示_判断是否显示();
   xl_节日系统();
+  xl_访问网站消息_发送();
 });
 
 window.addEventListener("load", function () {
   xl_内容_隐藏加载指示器();
-  xl_yh_发送消息("9e0b1cbff1bd44d98e87becac87b894f", "9131970", "markdown", "user", "### 访问提示\n目前有人正在访问" + window.location.href, "");
 });
 
 document.addEventListener("keydown", function (event) {

@@ -17,10 +17,10 @@
 //                     用户（"user"）
 //                     群组（"group"）
 //       消息类型：消息类型，接受以下值：
-//                     文本（"text"）
-//                     图片（"image"）
-//                     Markdown（"markdown"）
-//                     文件（"file"）
+//                   文本（"text"）
+//                   图片（"image"）
+//                   Markdown（"markdown"）
+//                   文件（"file"）
 //       消息内容：实际发送的消息内容
 //       消息按钮（非必填）：消息按钮对象
 async function yh_发送消息(token, 接收者ID, 消息类型, 接收者类型, 消息内容, 消息按钮) {

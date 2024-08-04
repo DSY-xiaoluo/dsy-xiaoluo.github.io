@@ -50,8 +50,9 @@ function yi_调试_输出_警告(欲输出消息时附带的备注, 欲输出的
   console.warn(`${new Date().toLocaleString()} > ${欲输出消息时附带的备注} > \n ${欲输出的消息}`);
 }
 
-function yi_本地存储_读(欲读的项目) {
-  return localStorage.getItem(欲读的项目);
+function yi_本地存储_读(欲读的项目, 默认值 = null) {
+  const value = localStorage.getItem(欲读的项目);
+  return value !== null ? value : 默认值;
 }
 
 function yi_本地存储_写(欲写的项目, 欲写的值) {
