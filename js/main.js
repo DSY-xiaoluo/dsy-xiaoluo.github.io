@@ -343,7 +343,7 @@ function xl_客户端_获取_用户UA() {
   return window.navigator.userAgent;
 }
 
-// 这个涉及别人隐私太危险了
+// 这个涉及别人隐私太危险了，拒绝开盒，从你我做起
 // function xl_客户端_获取_用户地理位置(经度变量, 纬度变量) {
 //   if ("geolocation" in navigator) {
 //     navigator.geolocation.getCurrentPosition(
@@ -506,12 +506,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   );
 
+  xl_访问网站消息_发送();
   xl_兼容性提示_判断是否显示();
   xl_内容_适应标题栏高度();
   xl_内容_实现锚点链接平滑滚动();
   xl_视口太窄提示_判断是否显示();
   xl_节日系统();
-  xl_访问网站消息_发送();
 });
 
 window.addEventListener("load", function () {
