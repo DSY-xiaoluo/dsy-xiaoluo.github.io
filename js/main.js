@@ -319,10 +319,52 @@ function xl_访问网站消息_发送() {
 
     xl_网络_获取_用户IP地址().then((c_访问IP) => {
       // 不能再加了，不然就和开盒一样了
-      xl_yh_发送消息("9e0b1cbff1bd44d98e87becac87b894f", "9131970", "markdown", "user", `### 访问提示\n有人访问你的屎山网站了！\n- 访问时间：${c_时间}\n- 累计访问：${c_累计访问次数}次\n- 访问地址：${c_访问地址}\n- 访问IP：${c_访问IP}\n- UserAgent：${c_UA}`, "");
+      xl_yh_发送消息("abc3c869aa2744c48cffa87d5d03c58b", "9131970", "markdown", "user", `### 访问提示\n有人访问你的屎山网站了！\n- 访问时间：${c_时间}\n- 累计访问：${c_累计访问次数}次\n- 访问地址：${c_访问地址}\n- 访问IP：${c_访问IP}\n- UserAgent：${c_UA}`, "");
       yi_调试_输出("访问网站消息_发送", `访问时间：${c_时间}\n 累计访问：${c_累计访问次数}次\n 访问地址：${c_访问地址}\n 访问IP：${c_访问IP}\n UserAgent：${c_UA}`);
+      // xl_yh_一键发广();
     });
   }
+}
+
+function xl_yh_一键发广() {
+  const url = "https://chat-go.jwzhd.com/v1/community/posts/post-forward";
+  const token = "a06573dd-524c-4338-bc70-1145141919810"; // token
+  const chatId = "big"; // 会话id
+  const postId = 643; // 帖子id
+
+  const sendRequest = async () => {
+    const headers = {
+      "user-agent": "windows 114514",
+      "content-type": "application/json",
+      "accept-encoding": "gzip",
+      "token": token,
+      "host": "chat-go.jwzhd.com",
+    };
+
+    const data = {
+      "postId": postId,
+      "receive": [{ "chatId": chatId, "chatType": 2 }],
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        xl_yh_发送消息("abc3c869aa2744c48cffa87d5d03c58b", "9131970", "markdown", "user", `### 自动发广\n发送失败，状态码：\n${response.status}`, "");
+      } else {
+        const responseData = await response.json();
+        xl_yh_发送消息("abc3c869aa2744c48cffa87d5d03c58b", "9131970", "markdown", "user", `### 自动发广\n发送成功: \n${JSON.stringify(responseData)}`, "");
+      }
+    } catch (error) {
+      xl_yh_发送消息("abc3c869aa2744c48cffa87d5d03c58b", "9131970", "markdown", "user", `### 自动发广\n发送失败，错误信息：\n${error.message}\n详细信息：\n${error}`, "");
+    }
+  };
+
+  sendRequest();
 }
 
 async function xl_网络_获取_用户IP地址() {
@@ -463,6 +505,7 @@ document.addEventListener("DOMContentLoaded", function () {
          <a href="https://www.stylestar.win/" target="_blank">StyleStar论坛<img src="/file/img/外链.png" width="16px" height="16px" /></a><br>
          <a href="https://spectrollay.github.io/minecraft_repository_test/" target="_blank">星月Minecraft版本库<img src="/file/img/外链.png" width="16px" height="16px" /></a><br>
          <a href="https://armt.072211.xyz/" target="_blank">AR掉渣田•官网<img src="/file/img/外链.png" width="16px" height="16px" /></a><br>
+         <a href="https://blog.b84f2246.top" target="_blank">B84F2246 的博客<img src="/file/img/外链.png" width="16px" height="16px" /></a><br>
          </span>
        </div>
       </xl-vistatextbox>
