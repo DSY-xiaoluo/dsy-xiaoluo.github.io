@@ -65,7 +65,7 @@ function xl_剪贴板_设置文本_备用(xl_文本) {
 
 // 判断是否弹出兼容性提示
 function xl_兼容性提示_判断是否显示() {
-  const c_应该显示 = yi_cookie_读("显示兼容性提示202408010226") !== "false";
+  const c_应该显示 = yi_cookie_读("显示兼容性提示202408070112") !== "false";
   const c_提示元素 = yi_元素_获取_使用ID("公告");
 
   if (c_应该显示) {
@@ -97,11 +97,11 @@ function xl_兼容性提示_判断是否显示() {
 function xl_兼容性提示_不再显示(c_次数) {
   const c_兼容性提示不再显示按钮 = yi_元素_获取_使用ID("兼容性提示不再显示按钮");
   if (c_次数 > 0) {
-    c_兼容性提示不再显示按钮.innerText = `再点${c_次数}次以不再弹出1周且有新公告时会重新弹出`;
+    c_兼容性提示不再显示按钮.innerText = `再点${c_次数}次以不再弹出但只有1周且有新公告时会重新弹出`;
     yi_调试_输出("兼容性提示_不再显示", "次数：" + c_次数);
     l_兼容性提示不再显示所要的次数 = l_兼容性提示不再显示所要的次数 - 1;
   } else {
-    yi_cookie_写("显示兼容性提示202408010226", false, 7);
+    yi_cookie_写("显示兼容性提示202408070112", false, 7);
     xl_兼容性提示_关闭();
   }
 }
@@ -529,7 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div style="font-size: 12px; overflow: auto;">
         <span style="font-size: 16px">公告</span><br />
-        <span>RSS坏了，我们的寄术人员正在紧急修复<br />此网站的域名（xiaoluo.link）到期了！！！！！！！！！新域名：XLuoFox.us.kg！！！！！！！！！</span>
+        <span>“博客”页面存在BUG，我们的寄术人员正在紧急修复<br />RSS坏了，我们的寄术人员同样在紧急修复<br />此网站的域名（xiaoluo.link）到期了！！！！！！！！！新域名：XLuoFox.us.kg！！！！！！！！！</span>
         <hr />
         <span style="font-size: 16px">兼容性提示</span><br />
         <span>此网站使用较复杂的CSS样式和较新的HTML标签，不能确保兼容所有浏览器，建议使用最新发行版Firefox、Chrome以及Edge访问此站</span>
