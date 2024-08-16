@@ -529,6 +529,21 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       <div style="font-size: 12px; overflow: auto;">
         <span style="font-size: 16px">公告</span><br />
+        <span>
+关于近期的第二次“AB233事件”，我为此发出道歉通知。
+
+我不应该剪辑并发布有关损害@EndermanAB233 荣誉的视频、发布辱骂有关@EndermanAB233 的信息和造谣有关事实。
+
+我已深刻反省我的错误。此后将不会再犯此错误。
+
+此通知将会发布于哔哩哔哩动态和个人网站博客dialog并置顶1月（至2024年9月16日）。
+
+
+
+@妙狗国国王 
+2024年8月16日
+</span>
+        <hr>
         <span>“博客”页面存在BUG，我们的寄术人员正在紧急修复<br />RSS坏了，我们的寄术人员同样在紧急修复<br />此网站的域名（xiaoluo.link）到期了！！！！！！！！！新域名：XLuoFox.us.kg！！！！！！！！！</span>
         <hr />
         <span style="font-size: 16px">兼容性提示</span><br />
